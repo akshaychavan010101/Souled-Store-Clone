@@ -1,0 +1,67 @@
+BACKEND 
+Routes ==>
+users-routes: 
+1.Login--post
+2.Register--post
+3.Update--patch
+4.Delete--delete
+
+
+products-routes:
+1.Show--get
+2.Add -- post
+3.Update--patch
+4.Delete--delete
+
+
+
+FRONTEND 
+Login page:
+1.login form ==> 
+two fields and a button
+
+Signup page:
+1.signup form ===>
+all fields and the submit button
+
+Home page:
+1.nav bar ===>
+i.women | men | kids  | TRACK ORDER | CONTACT US | 
+DOWNLOAD APP | TOPWEAR | BOTTOMWEAR | COLLECTIONS | ACCESSORIES | SHOP BY THEMES | MEMBERSHIP | user | cart | serach | watchlist
+2.body ===>
+ same for each section - women men and kids
+ Banner | COLLECTIONS | CATEGORIES | OFFICIAL MERCHANDISE | TOP SELLING | STRAIGHT OUT OF CELEBRITY CLOSETS |MEMBERSHIP  | banner | happy customers
+3.footer ===>
+ 3 info sections (NEED HELP | COMPANY | MORE INF )
+ donload the app
+ social media handles
+ two info sections
+ payment partners
+ popular search tags
+
+Product page:
+1. banner 
+2.display products ===>
+ right section == display products 
+3.filters left section == filters
+4.sorts left section == sorts 
+
+Individual page:
+1.show the individual page
+left section == product images
+right section == product info and add to cart/watchlist button
+bottom == other similar products
+
+Cart page:
+1.show the products
+left section == img | price | address btn | qty | remove btn |
+   address section == open as model
+2.show the details of price 
+rigth section == billing details
+
+
+Checkout page:
+1.left section == show the payment options
+2.right section == billing and confirm order btn
+
+Order place note
