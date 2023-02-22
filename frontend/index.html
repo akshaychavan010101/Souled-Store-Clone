@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/5cb8a0be4f.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins";
+      }
+      #page-container {
+        /* border: 1px solid; */
+        width: 97%;
+        height: fit-content;
+        margin: auto;
+        margin-top: 5rem;
+        padding: 1rem;
+        background-color: #e6e7e8;
+      }
+      #login-container {
+        /* border: 1px solid; */
+        width: 450px;
+        margin: auto;
+        padding: 1rem;
+        border-radius: 3px;
+        background-color: white;
+      }
+      #main-login-content-container {
+        /* border: 2px solid rgb(195, 255, 0); */
+        margin: auto;
+        box-sizing: border-box;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      #main-login-content-container-child1 {
+        /* border: 2px solid rgb(38, 38, 36); */
+        width: 100%;
+        height: 10%;
+        margin: auto;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      #main-login-content-container-child2 {
+        /* border: 2px solid rgb(234, 255, 0); */
+        width: 100%;
+        height: 90%;
+        margin: auto;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        box-sizing: border-box;
+      }
+      #login-content {
+        border: 1px solid;
+        height: 80%;
+        box-sizing: border-box;
+        display: flex;
+        margin-top: 1rem;
+        padding: 1rem;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: #e2e3e4;
+        box-sizing: border-box;
+      }
+      #login-content-inner-div {
+        /* border: 2px solid blue; */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+      }
+      .flex-div-for-login-signup {
+        display: flex;
+      }
+      .flex-div-for-login-signup > button {
+        width: 50%;
+        /* border: 1px solid; */
+        padding: 1rem;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      }
+      .flex-divs {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 1rem;
+      }
+      .flex-divs > button {
+        width: 35%;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+          rgb(209, 213, 219) 0px 0px 0px 1px inset;
+      }
+      .fa-brands {
+        border-right: 2px solid gray;
+        padding: 0.3rem;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+      #email-input-bar,
+      #password-input-bar,
+      #Proceed-btn,
+      #form-register-btn {
+        width: 80%;
+        margin: auto;
+        padding: 0.7rem;
+        box-sizing: border-box;
+        border: 1px solid skyblue;
+        border-radius: 7px;
+        outline: none;
+        margin: 2rem 0;
+      }
+      #Proceed-btn,
+      #form-register-btn {
+        background-color: #ed2d2f;
+        border: none;
+        color: white;
+        margin-bottom: 0;
+      }
+      #Proceed-btn:hover,
+      #form-register-btn:hover {
+        background-color: #da0a0d;
+        cursor: pointer;
+      }
+      a {
+        color: #ed2d2f;
+      }
+
+      #form-register-btn {
+        margin-top: 1rem;
+        width: 100%;
+      }
+      /* signup */
+      form {
+        /* border: 2px solid #cb0c0c; */
+        height: 80%;
+        background-color: #e2e3e4;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.2rem;
+        box-sizing: border-box;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 0.7rem;
+        border: 1px solid skyblue;
+        border-radius: 7px;
+        box-sizing: border-box;
+        margin-bottom: 0.5rem;
+        box-sizing: border-box;
+      }
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modal-msg">Modal content goes here.</p>
+      </div>
+    </div>
+
+
+    <div id="page-container">
+      <div id="login-container">
+        <div id="main-login-content-container">
+          <div id="main-login-content-container-child1">
+            <h3>Login with TRY-LEAF Fashions</h3>
+          </div>
+          <div id="main-login-content-container-child2">
+            <div class="flex-div-for-login-signup">
+              <button
+                onclick="loginfun()"
+                id="login-btn"
+                style="background-color: #117a7a; color: white"
+              >
+                Login
+              </button>
+              <button onclick="registerfun()" id="register-btn">
+                Register
+              </button>
+            </div>
+            <div id="login-content">
+              <div id="login-content-inner-div">
+                <div class="flex-divs">
+                  <button>
+                    <span><i class="fa-brands fa-square-facebook"></i> </span>
+                    <span>Facebook</span>
+                  </button>
+                  <button>
+                    <span><i class="fa-brands fa-google"></i></span>
+                    <span>Google</span>
+                  </button>
+                </div>
+                <div>-OR-</div>
+                <div>
+                  <input
+                    type="email"
+                    id="email-input-bar"
+                    placeholder="Enter Email *"
+                    required
+                  />
+                  <input
+                    type="password"
+                    id="password-input-bar"
+                    placeholder="Enter Password *"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <button id="Proceed-btn">Proceed</button>
+                </div>
+                <div>
+                  <span>New User ? </span
+                  ><span><a href="#">Create Account</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const login_btn = document.getElementById("login-btn");
+  const register_btn = document.getElementById("register-btn");
+  const login_container = document.getElementById("login-container");
+  const login_content_inner_div = document.getElementById(
+    "login-content-inner-div"
+  );
+  const modalfun = () => {
+    modal.style.display = "block";
+  };
+  const loginfun = () => {
+    login_content_inner_div.innerHTML = null;
+    login_btn.style.backgroundColor = "#117a7a";
+    login_btn.style.color = "white";
+    register_btn.style.backgroundColor = "white";
+    register_btn.style.color = "black";
+
+    const login = `
+      <div id="login-content-inner-div">
+                  <div class="flex-divs">
+                    <button>
+                      <span><i class="fa-brands fa-square-facebook"></i> </span>
+                      <span>Facebook</span>
+                    </button>
+                    <button>
+                      <span><i class="fa-brands fa-google"></i></span>
+                      <span>Google</span>
+                    </button>
+                  </div>
+                  <div>-OR-</div>
+                  <div>
+                    <input
+                      type="email"
+                      id="email-input-bar"
+                      placeholder="Enter Email *"
+                      required
+                    />
+                    <input
+                      type="password"
+                      id="password-input-bar"
+                      placeholder="Enter Password *"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <button id="Proceed-btn" >Proceed</button>
+                  </div>
+                  <div>
+                    <span>New User ? </span>
+                    <span onclick="createAccounfun()"><a href="#">Create Account</a></span>
+                  </div>
+                </div>
+      `;
+
+    login_container.style.height = "fit-content";
+    login_content_inner_div.innerHTML = login;
+
+    const email_input_bar = document.getElementById("email-input-bar");
+    const password_input_bar = document.getElementById("password-input-bar");
+    const alert_for_number = document.getElementById("alert-for-number");
+    const Proceed_btn = document.getElementById("Proceed-btn");
+
+    Proceed_btn.addEventListener("click", async () => {
+      if (email_input_bar.value && password_input_bar.value) {
+        const obj = {
+          email: email_input_bar.value,
+          password: password_input_bar.value,
+        };
+        const promise = await fetch("http://localhost:7200/login", {
+          headers: {
+            "Content-type": "application/json",
+          },
+          method: "POST",
+          body: JSON.stringify(obj),
+        });
+        const res = await promise.json();
+        sessionStorage.setItem("user", JSON.stringify(res.user));
+        sessionStorage.setItem("accesstoken", res.accesstoken);
+        if (res.accesstoken === sessionStorage.getItem("accesstoken")) {
+          alert(res.msg);
+        } else {
+          alert(res.msg);
+        }
+      } else {
+        modalfun();
+      }
+    });
+  };
+
+  window.onload = () => {
+    loginfun();
+  };
+
+  const registerfun = () => {
+    login_content_inner_div.innerHTML = null;
+    register_btn.style.backgroundColor = "#117a7a";
+    register_btn.style.color = "white";
+    login_btn.style.backgroundColor = "white";
+    login_btn.style.color = "black";
+
+    const signup = `
+      <div class="flex-divs">
+                    <button>
+                      <span><i class="fa-brands fa-square-facebook"></i> </span>
+                      <span>Facebook</span>
+                    </button>
+                    <button>
+                      <span><i class="fa-brands fa-google"></i></span>
+                      <span>Google</span>
+                    </button>
+                  </div>
+      <div>-OR-</div>
+      <form onsubmit="submitfun(event)">
+        <div style="display:flex;">
+          <input style="width:45%" type="text" id="first-name" name="first_name" required placeholder="First Name *">
+          <div style="width:10%"></div>
+          <input style="width:45%" type="text" id="last-name" name="last_name" required placeholder="Last Name *">
+        </div>
+        <input type="email" id="email" name="email" required placeholder="Email *">
+        <input type="password" id="password" name="password" required placeholder="Password *">
+        <input type="password" id="confirm-password" name="password" required placeholder="Confirm Password *">
+        <input type="tel" id="phone-number" name="phone" required placeholder="Phone Number *">
+        <div style="display:flex; justify-content:space-between; box-sizing: border-box;">
+          <label for="Gender">Gender</label>
+          &nbsp;
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" value="male" required >
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="other">Other</label>
+          <input type="radio" id="other" name="gender" value="other">
+          </div>
+          <input type="submit" id="form-register-btn"></input>
+          <div>
+            <span>Already a Customer ? </span><span onclick="loginAccounfun()"><a href="#">Login</a></span>
+          </div>
+        </form>
+
+      `;
+
+    login_container.style.height = "fit-content";
+    login_content_inner_div.innerHTML = signup;
+  };
+
+  const createAccounfun = () => {
+    registerfun();
+  };
+  const loginAccounfun = () => {
+    loginfun();
+  };
+
+  const submitfun = async (event) => {
+    event.preventDefault();
+    const password = document.getElementById("password");
+    const Confirm_password = document.getElementById("confirm-password");
+    if (password.value === Confirm_password.value) {
+      const formdata = new FormData(event.target);
+      const actualdata = Object.fromEntries(formdata);
+
+      const promise = await fetch("http://localhost:7200/register", {
+        headers: {
+          "Content-type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(actualdata),
+      });
+
+      const res = await promise.json();
+      alert(res.msg);
+      loginfun();
+    } else {
+      alert("Password Mis-matched");
+    }
+  };
+
+  var modal = document.getElementById("myModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on the button, open the modal
+  // btn.onclick = function () {
+  //   modal.style.display = "block";
+  // };
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
