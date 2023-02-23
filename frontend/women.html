@@ -4,14 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login</title>
+    <title>Document</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap"
       rel="stylesheet"
     />
     <script src="https://kit.fontawesome.com/5cb8a0be4f.js"></script>
-
     <style>
       body {
         margin: 0;
@@ -33,6 +31,7 @@
       }
 
       .navbar-1 ul {
+        /* border: 3px solid gray; */
         display: flex;
         justify-content: space-around;
         list-style: none;
@@ -42,6 +41,7 @@
       .navbar-1 ul > div {
         width: 25%;
         /* border: 1px solid; */
+        display: flex;
         margin: 0;
         font-size: 1rem;
         font-weight: bolder;
@@ -54,9 +54,7 @@
       .navbar-1 li {
         margin: 0;
       }
-      .navbar-1 > ul > div:nth-child(1) > li:hover {
-        background-color: white;
-      }
+     
 
       .navbar-1 li a {
         display: block;
@@ -67,13 +65,14 @@
 
       /* Navbar 2 */
       .navbar-2 {
-        /* border-bottom: 1px solid; */
+        border-bottom: 1px solid;
         background-color: white;
         color: #333;
         display: flex;
         justify-content: space-around;
         position: sticky;
         top: 0;
+        padding: 0;
         width: 100%;
         z-index: 1;
         box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px,
@@ -94,7 +93,7 @@
         width: 100%;
         /* height: 100%; */
         box-sizing: border-box;
-        border: 1px solid brown;
+        /* border: 1px solid brown; */
         border-radius: 7px;
         box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
           rgba(17, 17, 26, 0.1) 0px 8px 24px,
@@ -106,18 +105,18 @@
         justify-content: space-evenly;
         list-style: none;
         margin: 0;
-        padding: 0;
         margin-left: 10rem;
       }
 
       .navbar-2 li {
         /* margin-top: 0; */
         /* border: 1px solid; */
-        padding: 0;
-        margin: 0 0.5rem;
+        padding: 0.4rem;
+        margin: 0 0.4rem;
       }
 
       .navbar-2 li a {
+        /* border: 1px solid; */
         display: block;
         padding: 6px 6px;
         text-decoration: none;
@@ -126,18 +125,22 @@
         font-weight: bold;
       }
 
+      .icons-div {
+        font-size: 1.2rem;
+      }
       /* drop down menues */
 
       .drop-down-list-tag ul {
         list-style: none;
-        margin: 0.1rem;
-        padding: 0.2rem;
+        margin: 0;
+        padding: 0;
         background-color: white;
         border-bottom: 1px solid gray;
       }
 
       .drop-down-list-tag li {
         float: left;
+        padding: 0;
       }
 
       .flex-divs ul ul {
@@ -166,208 +169,153 @@
         top: 1%;
       }
 
-      /* nav bar ends */
-      #page-container {
-        /* border: 1px solid; */
-        width: 97%;
-        height: fit-content;
-        margin: auto;
-        padding: 1rem;
-        background-color: #e6e7e8;
-      }
-      #login-container {
-        /* border: 1px solid; */
-        width: 450px;
-        margin: auto;
-        padding: 1rem;
-        border-radius: 3px;
-        background-color: white;
-      }
-      #main-login-content-container {
-        /* border: 2px solid rgb(195, 255, 0); */
-        margin: auto;
-        box-sizing: border-box;
-        text-align: center;
-        box-sizing: border-box;
-      }
-      #main-login-content-container-child1 {
-        /* border: 2px solid rgb(38, 38, 36); */
+      /* body of the page */
+      .slideshow-container {
         width: 100%;
-        height: 10%;
+        position: relative;
         margin: auto;
-        box-sizing: border-box;
-        text-align: center;
       }
-      #main-login-content-container-child2 {
-        /* border: 2px solid rgb(234, 255, 0); */
-        width: 100%;
-        height: 90%;
-        margin: auto;
-        box-sizing: border-box;
-        text-align: center;
-        padding: 0.5rem 1rem;
-        box-sizing: border-box;
+
+      .mySlides {
+        display: none;
       }
-      #login-content {
-        border: 1px solid;
-        height: 80%;
-        box-sizing: border-box;
-        display: flex;
-        margin-top: 1rem;
-        padding: 1rem;
-        flex-direction: column;
-        justify-content: space-around;
-        background-color: #e2e3e4;
-        box-sizing: border-box;
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
       }
-      #login-content-inner-div {
-        /* border: 2px solid blue; */
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        box-sizing: border-box;
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
       }
-      .flex-div-for-login-signup {
-        display: flex;
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
       }
-      .flex-div-for-login-signup > button {
-        width: 50%;
+
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @-webkit-keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      #card-slider {
+        border: 2px solid;
+        height: 300px;
+      }
+
+      /* mid collections */
+      #collection {
         /* border: 1px solid; */
         padding: 1rem;
-        background-color: white;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-      }
-      .flex-divs {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 1rem;
-      }
-      .flex-divs > button {
-        width: 35%;
-        border: none;
-        padding: 0.5rem;
-        border-radius: 10px;
-        background-color: white;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
-          rgb(209, 213, 219) 0px 0px 0px 1px inset;
-      }
-      .fa-brands {
-        border-right: 2px solid gray;
-        padding: 0.3rem;
-        font-size: 1rem;
-        box-sizing: border-box;
-      }
-      #email-input-bar,
-      #password-input-bar,
-      #Proceed-btn,
-      #form-register-btn {
-        width: 80%;
-        margin: auto;
-        padding: 0.7rem;
-        box-sizing: border-box;
-        border: 1px solid skyblue;
-        border-radius: 7px;
-        outline: none;
         margin: 1rem 0;
       }
-      #Proceed-btn,
-      #form-register-btn {
-        background-color: #ed2d2f;
-        border: none;
-        color: white;
-        margin-bottom: 0;
+      .collection-heading {
+        text-align: center;
+        font-weight: bolder;
+        font-size: 1.8rem;
+        margin: 1rem 0;
       }
-      #Proceed-btn:hover,
-      #form-register-btn:hover {
-        background-color: #da0a0d;
-        cursor: pointer;
-      }
-      a {
-        color: #ed2d2f;
+      #card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
       }
 
-      #form-register-btn {
-        margin-top: 1rem;
-        width: 100%;
-      }
-      /* signup */
-      form {
-        /* border: 2px solid #cb0c0c; */
-        height: 80%;
-        background-color: #e2e3e4;
-        padding: 1rem;
-        box-sizing: border-box;
-      }
-      label {
-        display: block;
-        margin-bottom: 0.2rem;
-        box-sizing: border-box;
-      }
-      input[type="text"],
-      input[type="email"],
-      input[type="password"],
-      input[type="tel"] {
-        width: 100%;
-        padding: 0.7rem;
-        border: 1px solid skyblue;
-        border-radius: 7px;
-        box-sizing: border-box;
-        margin-bottom: 0.5rem;
-        box-sizing: border-box;
-      }
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
+      .img-card-div img {
+        /* border: 1px solid; */
         width: 100%;
         height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0);
-        animation: ease-out;
-      }
-      .modal-content {
-        background-color: rgb(7, 89, 88);
-        margin: 1% auto;
-        padding: 20px;
-        border-radius: 7px;
-        border: 1px solid #888;
-        width: 40%;
-        color: white;
+        box-sizing: border-box;
+        display: block;
+        margin: auto;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
       }
 
-      .close {
-        color: #aaaaaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: white;
-        text-decoration: none;
-        cursor: pointer;
-      }
       @keyframes modal-animation {
         0% {
-          opacity: 0;
-          transform: scale(0.9);
-        }
-        100% {
           opacity: 1;
           transform: scale(1);
         }
+        100% {
+          opacity: 0.9;
+          transform: scale(1.1);
+        }
       }
-      .modal {
-        animation: modal-animation 0.3s ease-out;
-      }
-      .flex-divs ul {
-        animation: modal-animation 0.3s ease-out;
+      .img-card-div img:hover {
+        animation: modal-animation 0.5s ease-out;
       }
 
+      /* category section , merchandise*/
+
+      #category-card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+      }
+
+      .category-img-card-div {
+        padding: 0.5rem;
+      }
+      .category-img-card-div img {
+        width: 100%;
+      }
+
+      #category2,
+      #OFFICIAL-MERCHANDISE {
+        display: flex;
+        justify-content: space-around;
+        padding: 0.3rem;
+        margin: 0;
+      }
+      #category2 img,
+      #OFFICIAL-MERCHANDISE img {
+        display: block;
+        margin: auto;
+        width: 98%;
+      }
+
+      /* sarah - poster */
+      #saradiv-poster {
+        margin: 2rem 0;
+      }
+      #saradiv-poster img {
+        width: 100%;
+      }
       /* banner */
 
       #banner-of-happy-custumer {
@@ -389,8 +337,7 @@
       }
 
       /* banner ends */
-
-      /* footer starts */
+      /* footer area */
       footer {
         /* border: 1px solid; */
         background-color: #e6e7e8;
@@ -543,7 +490,6 @@
       .pay-partners-flex-divs div:nth-child(2) img {
         width: 100%;
       }
-      /* footer ends */
     </style>
   </head>
   <body>
@@ -551,7 +497,9 @@
     <nav class="navbar-1">
       <ul>
         <div class="flex-divs">
-          <li><a href="#">WOMEN</a></li>
+          <li id="women-section-tab">
+            <a id="women-section-tab-a-tag" href="#">WOMEN</a>
+          </li>
           <li><a href="#">MEN</a></li>
           <li><a href="#">KIDS</a></li>
         </div>
@@ -627,76 +575,101 @@
       </div>
     </nav>
 
-    <!-- modal -->
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p id="modal-msg">Modal content goes here.</p>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="img/Web-Banner_1_1hVRa1i.webp" style="width: 100%" />
       </div>
+
+      <div class="mySlides fade">
+        <img src="img/Web-Banner_1_h0DvwUm.webp" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="img/Web-Banner_1_rwFtTge.webp" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <img
+          src="img/Homepage-Banner-Beautiful-Blues_1s9JnZs.webp"
+          style="width: 100%"
+        />
+      </div>
+      <div class="mySlides fade">
+        <img src="img/Sara_Homepage_cS1WnKo.webp" style="width: 100%" />
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-    <div id="page-container">
-      <div id="login-container">
-        <div id="main-login-content-container">
-          <div id="main-login-content-container-child1">
-            <h3>Login with TRY-LEAF Fashions</h3>
-          </div>
-          <div id="main-login-content-container-child2">
-            <div class="flex-div-for-login-signup">
-              <button
-                onclick="loginfun()"
-                id="login-btn"
-                style="background-color: #117a7a; color: white"
-              >
-                Login
-              </button>
-              <button onclick="registerfun()" id="register-btn">
-                Register
-              </button>
-            </div>
-            <div id="login-content">
-              <div id="login-content-inner-div">
-                <div class="flex-divs">
-                  <button>
-                    <span><i class="fa-brands fa-square-facebook"></i> </span>
-                    <span>Facebook</span>
-                  </button>
-                  <button>
-                    <span><i class="fa-brands fa-google"></i></span>
-                    <span>Google</span>
-                  </button>
-                </div>
-                <div>-OR-</div>
-                <div>
-                  <input
-                    type="email"
-                    id="email-input-bar"
-                    placeholder="Enter Email *"
-                    required
-                  />
-                  <input
-                    type="password"
-                    id="password-input-bar"
-                    placeholder="Enter Password *"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <button id="Proceed-btn">Proceed</button>
-                </div>
-                <div>
-                  <span>New User ? </span
-                  ><span><a href="#">Create Account</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div id="collection">
+      <div class="collection-heading">COLLECTIONS</div>
+      <div id="card-container">
+        <div class="img-card-div">
+          <img src="./img/Collection-tile-joggerd_1.webp" alt="" />
+        </div>
+        <div class="img-card-div">
+          <img src="./img/Collection-Tile2.webp" alt="" />
+        </div>
+        <div class="img-card-div">
+          <img src="./img/Collection-Tile3-Naruto_wNv392b.webp" alt="" />
+        </div>
+        <div class="img-card-div">
+          <img src="./img/Collection-tile_1.webp" alt="" />
+        </div>
+        <div class="img-card-div">
+          <img src="./img/collection-tile_pretty-Pink_2_Jz32NqG.webp" alt="" />
+        </div>
+        <div class="img-card-div">
+          <img src="./img/Colllection-Tiles-1-Sara-red.webp" alt="" />
         </div>
       </div>
     </div>
 
+    <div id="category">
+      <div class="collection-heading">CATEGORY</div>
+      <div id="category-card-container">
+        <div class="category-img-card-div">
+          <img src="./img/category1.webp" alt="" />
+        </div>
+        <div class="category-img-card-div">
+          <img src="./img/category2.webp" alt="" />
+        </div>
+        <div class="category-img-card-div">
+          <img src="./img/category3.webp" alt="" />
+        </div>
+        <div class="category-img-card-div">
+          <img src="./img/category4.webp" alt="" />
+        </div>
+        <div class="category-img-card-div">
+          <img src="./img/category5.webp" alt="" />
+        </div>
+        <div class="category-img-card-div">
+          <img src="./img/category6.webp" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div id="category2">
+      <div><img src="./img/category7.webp" alt="" /></div>
+      <div><img src="./img/category8.webp" alt="" /></div>
+      <div><img src="./img/category9.webp" alt="" /></div>
+      <div><img src="./img/category10.webp" alt="" /></div>
+    </div>
+
+    <div id="OFFICIAL-MERCHANDISE-parent">
+      <div class="collection-heading">OFFICIAL MERCHANDISE</div>
+      <div id="OFFICIAL-MERCHANDISE">
+        <div><img src="./img/netflix.webp" alt="" /></div>
+        <div><img src="./img/marvel.webp" alt="" /></div>
+        <div><img src="./img/disney.webp" alt="" /></div>
+        <div><img src="./img/dc.webp" alt="" /></div>
+      </div>
+    </div>
+
+    <div id="saradiv-poster">
+      <div class="collection-heading">STRAIGHT OUT OF CELEBRITY CLOSETS</div>
+      <img src="./img/sara poster.webp" alt="" />
+    </div>
     <div id="banner-of-happy-customer">
       <div id="home-brand-banner">
         <h1>HOMEGROWN INDIAN BRAND</h1>
@@ -915,212 +888,38 @@
     </footer>
   </body>
 </html>
-
 <script>
-  const login_btn = document.getElementById("login-btn");
-  const register_btn = document.getElementById("register-btn");
-  const login_container = document.getElementById("login-container");
-  const login_content_inner_div = document.getElementById(
-    "login-content-inner-div"
+  // for the top slider
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+  }
+
+  //   for the women tab
+  const women_section_tab = document.getElementById("women-section-tab");
+  const women_section_tab_a = document.getElementById(
+    "women-section-tab-a-tag"
   );
-  const modal_msg = document.getElementById("modal-msg");
 
-  const loginfun = () => {
-    login_content_inner_div.innerHTML = null;
-    login_btn.style.backgroundColor = "#117a7a";
-    login_btn.style.color = "white";
-    register_btn.style.backgroundColor = "white";
-    register_btn.style.color = "black";
-
-    const login = `
-      <div id="login-content-inner-div">
-                  <div class="flex-divs">
-                    <button>
-                      <span><i class="fa-brands fa-square-facebook"></i> </span>
-                      <span>Facebook</span>
-                    </button>
-                    <button>
-                      <span><i class="fa-brands fa-google"></i></span>
-                      <span>Google</span>
-                    </button>
-                  </div>
-                  <div>-OR-</div>
-                  <div>
-                    <input
-                      type="email"
-                      id="email-input-bar"
-                      placeholder="Enter Email *"
-                      required
-                    />
-                    <input
-                      type="password"
-                      id="password-input-bar"
-                      placeholder="Enter Password *"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <button id="Proceed-btn" >Proceed</button>
-                  </div>
-                  &nbsp;
-                  <div>
-                    <span>New User ? </span>
-                    <span onclick="createAccounfun()"><a href="#">Create Account</a></span>
-                  </div>
-                </div>
-      `;
-
-    login_container.style.height = "fit-content";
-    login_content_inner_div.innerHTML = login;
-
-    const email_input_bar = document.getElementById("email-input-bar");
-    const password_input_bar = document.getElementById("password-input-bar");
-    const alert_for_number = document.getElementById("alert-for-number");
-    const Proceed_btn = document.getElementById("Proceed-btn");
-
-    // to submit the login form
-    Proceed_btn.addEventListener("click", async () => {
-      if (email_input_bar.value && password_input_bar.value) {
-        const obj = {
-          email: email_input_bar.value,
-          password: password_input_bar.value,
-        };
-        const promise = await fetch("http://localhost:7200/login", {
-          headers: {
-            "Content-type": "application/json",
-          },
-          method: "POST",
-          body: JSON.stringify(obj),
-        });
-        const res = await promise.json();
-        sessionStorage.setItem("user", JSON.stringify(res.user));
-        sessionStorage.setItem("accesstoken", res.accesstoken);
-        if (res.accesstoken === sessionStorage.getItem("accesstoken")) {
-          modalfun(res.msg);
-        } else {
-          modalfun(res.msg);
-        }
-      } else {
-        modalfun("Please fill all the fields");
-      }
-    });
-  };
-
-  // append the login form
-  window.onload = () => {
-    loginfun();
-  };
-
-  //append the signup form
-  const registerfun = () => {
-    login_content_inner_div.innerHTML = null;
-    register_btn.style.backgroundColor = "#117a7a";
-    register_btn.style.color = "white";
-    login_btn.style.backgroundColor = "white";
-    login_btn.style.color = "black";
-
-    const signup = `
-      <div class="flex-divs">
-                    <button>
-                      <span><i class="fa-brands fa-square-facebook"></i> </span>
-                      <span>Facebook</span>
-                    </button>
-                    <button>
-                      <span><i class="fa-brands fa-google"></i></span>
-                      <span>Google</span>
-                    </button>
-                  </div>
-      <div>-OR-</div>
-      <form onsubmit="submitfun(event)">
-        <div style="display:flex;">
-          <input style="width:45%" type="text" id="first-name" name="first_name" required placeholder="First Name *">
-          <div style="width:10%"></div>
-          <input style="width:45%" type="text" id="last-name" name="last_name" required placeholder="Last Name *">
-        </div>
-        <input type="email" id="email" name="email" required placeholder="Email *">
-        <input type="password" id="password" name="password" required placeholder="Password *">
-        <input type="password" id="confirm-password" name="password" required placeholder="Confirm Password *">
-        <input type="tel" id="phone-number" name="phone" required placeholder="Phone Number *">
-        <div style="display:flex; justify-content:space-between; box-sizing: border-box;">
-          <label for="Gender">Gender</label>
-          &nbsp;
-          <label for="male" >Male</label>
-          <input type="radio" id="male" name="gender" value="male" required  checked>
-          <label for="female">Female</label>
-          <input type="radio" id="female" name="gender" value="female">
-          <label for="other">Other</label>
-          <input type="radio" id="other" name="gender" value="other">
-          </div>
-          <input type="submit" id="form-register-btn"></input>
-          &nbsp;
-          <div>
-            <span>Already a Customer ? </span><span onclick="loginAccounfun()"><a href="#">Login</a></span>
-          </div>
-        </form>
-
-      `;
-
-    login_container.style.height = "fit-content";
-    login_content_inner_div.innerHTML = signup;
-  };
-
-  // when click on the create account text
-  const createAccounfun = () => {
-    registerfun();
-  };
-
-  // when click on the login text
-  const loginAccounfun = () => {
-    loginfun();
-  };
-
-  // to submit the signnup form
-  const submitfun = async (event) => {
-    event.preventDefault();
-    const password = document.getElementById("password");
-    const Confirm_password = document.getElementById("confirm-password");
-    if (password.value === Confirm_password.value) {
-      const formdata = new FormData(event.target);
-      const actualdata = Object.fromEntries(formdata);
-
-      const promise = await fetch("http://localhost:7200/register", {
-        headers: {
-          "Content-type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify(actualdata),
-      });
-
-      const res = await promise.json();
-      modalfun(res.msg);
-      loginfun();
-    } else {
-      modalfun("Passwords do not match");
-    }
-  };
-
-  // modal
-  var modal = document.getElementById("myModal");
-
-  // function to desplay the modal
-  const modalfun = (msg) => {
-    modal_msg.innerText = msg;
-    modal.style.display = "block";
-  };
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
+  women_section_tab.style.backgroundColor = "white";
+  women_section_tab_a.style.color = "black";
 
   //footer
   const nav_link_plus = document.getElementById("nav-link-plus");
@@ -1152,17 +951,4 @@
       who_link_plus.innerText = "-";
     }
   };
-
-  // Add functionality to close dropdown menu on click outside
-  document.addEventListener("click", function (event) {
-    var dropdowns = document.querySelectorAll(".dropdown");
-
-    for (var i = 0; i < dropdowns.length; i++) {
-      var dropdown = dropdowns[i];
-
-      if (!dropdown.contains(event.target)) {
-        dropdown.classList.remove("active");
-      }
-    }
-  });
 </script>

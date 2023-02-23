@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #collection-heading {
+        text-align: center;
+        font-weight: bolder;
+      }
+      #card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem
+      }
+    
+      .img-card-div img {
+        /* border: 1px solid; */
+        width: 95%;
+        height: 95%;
+        box-sizing: border-box;
+        display: block;
+        margin: auto;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      }
+
+      @keyframes modal-animation {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0.9;
+          transform: scale(1.1);
+        }
+      }
+      .img-card-div img:hover {
+        animation: modal-animation 0.5s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="collection-heading">COLLECTIONS</div>
+    <div id="card-container">
+      <div class="img-card-div">
+        <img src="./img/Collection-tile-joggerd_1.webp" alt="" />
+      </div>
+      <div class="img-card-div">
+        <img src="./img/Collection-Tile2.webp" alt="" />
+      </div>
+      <div class="img-card-div">
+        <img src="./img/Collection-Tile3-Naruto_wNv392b.webp" alt="" />
+      </div>
+      <div class="img-card-div">
+        <img src="./img/Collection-tile_1.webp" alt="" />
+      </div>
+      <div class="img-card-div">
+        <img src="./img/collection-tile_pretty-Pink_2_Jz32NqG.webp" alt="" />
+      </div>
+      <div class="img-card-div">
+        <img src="./img/Colllection-Tiles-1-Sara-red.webp" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
