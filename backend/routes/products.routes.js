@@ -4,12 +4,21 @@ const { ProductModel } = require("../models/products.model");
 const ProductRouter = express.Router();
 ProductRouter.use(express.json());
 
-ProductRouter.use(authenticator);
 ProductRouter.get("/products", async (req, res) => {
   const products = await ProductModel.find();
   res.send(products);
 });
 
+ProductRouter.get("/products/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    const products = await ProductModel.findById({ _id: id });
+    res.send(products);
+  } catch (error) {
+    res.send({ msg: "Error", Error: error.message });
+  }
+});
+ProductRouter.use(authenticator);
 ProductRouter.get("/products/women", async (req, res) => {
   const products = await ProductModel.find({ gender: "Women" });
   const count = await ProductModel.find({ gender: "Women" }).count();
