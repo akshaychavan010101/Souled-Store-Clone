@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins";
+      }
+
+      #poster-top {
+        margin: auto;
+        margin-top: 1rem;
+        /* border: 1px solid; */
+        padding: 3rem 0rem;
+        box-sizing: border-box;
+      }
+      #poster-top img {
+        width: 100%;
+        display: block;
+        margin: auto;
+        box-sizing: border-box;
+      }
+      #page-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+      }
+      #left-section {
+        border: 1px solid;
+        width: 20%;
+        height: fit-content;
+        position: sticky;
+      }
+      .click-divs {
+        border: 1px solid;
+        width: 100%;
+        padding: 0.2rem;
+        box-sizing: border-box;
+      }
+      .open-click-div {
+        width: 100%;
+        display: none;
+        padding: 0.5rem;
+        /* border: 2px solid gray; */
+        box-sizing: border-box;
+      }
+      .search-bar input,
+      .open-click-options {
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      #apply-and-clear-btn-div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0.5rem;
+      }
+      #apply-and-clear-btn-div button {
+        width: 40%;
+        padding: 0.5rem;
+      }
+
+      #right-section {
+        width: 79%;
+        /* border: 2px solid red; */
+      }
+      #product-display {
+        /* border: 2px solid gray; */
+        width: 100%;
+        display: grid;
+        gap: 0.2rem;
+        grid-template-columns: repeat(4, 1fr);
+        box-sizing: border-box;
+      }
+      #product-display div {
+        border: 1px solid;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
+      }
+      #product-display div img {
+        width: 100%;
+        display: block;
+        margin: auto;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="poster-top">
+      <img src="./img/Sara_Homepage_cS1WnKo.webp" alt="" />
+    </div>
+    <div id="page-container">
+      <div id="left-section">
+        <div class="click-divs">GENDER</div>
+        <div class="open-click-div">
+          <div class="search-bar">
+            <input type="text" placeholder="Serach For the Products 🔍" />
+          </div>
+          <div class="open-click-options">
+            <input type="checkbox" name="" id="" value="Men" /><span>Men</span>
+            <br />
+            <input type="checkbox" name="" id="" value="Women" /><span
+              >Women</span
+            >
+            <br />
+            <input type="checkbox" name="" id="" value="Kids" /><span
+              >Kids</span
+            >
+          </div>
+        </div>
+        <div class="click-divs">PRODUCTS</div>
+        <div class="open-click-div">
+          <div class="search-bar">
+            <input type="text" placeholder="Serach For the Products 🔍" />
+          </div>
+          <div class="open-click-options">
+            <input type="checkbox" name="" id="" value="Cropped T-Shirt" /><span
+              >Cropped T-Shirt</span
+            >
+            <br />
+            <input
+              type="checkbox"
+              name=""
+              id=""
+              value="Full Sleeve T-Shirts"
+            /><span>Full Sleeve T-Shirts</span>
+            <br />
+            <input type="checkbox" name="" id="" value="Unisex T-Shirts" /><span
+              >Unisex T-Shirts</span
+            >
+            <br />
+            <input type="checkbox" name="" id="" value="T-Shirts" /><span
+              >T-Shirts</span
+            >
+            <br />
+            <input type="checkbox" name="" id="" value="Hooded T-Shirts" /><span
+              >Hooded T-Shirts</span
+            >
+            <br />
+            <input type="checkbox" name="" id="" value="Fit Polos" /><span
+              >Fit Polos</span
+            >
+          </div>
+        </div>
+        <div class="click-divs">THEMES</div>
+        <div class="open-click-div">
+          <div class="search-bar">
+            <input type="text" placeholder="Serach For the Products 🔍" />
+          </div>
+
+          <div class="open-click-options">
+            <input type="checkbox" name="" id="" value="The Office" /><span
+              >The Office</span
+            >
+            <br />
+            <input type="checkbox" name="" id="" value="Disney" /><span
+              >Disney</span
+            >
+            <br />
+            <input type="checkbox" name="" id="" value="Tom & Jerry" /><span
+              >Tom & Jerry</span
+            >
+            <br />
+            <input type="checkbox" name="" id="" value="Harry Potter" /><span
+              >Harry Potter</span
+            >
+          </div>
+        </div>
+        <div class="click-divs">SIZE</div>
+        <div class="open-click-div">
+          <div class="search-bar">
+            <input type="text" placeholder="Serach For the Products 🔍" />
+          </div>
+          <div class="open-click-options">
+            <input type="checkbox" name="" id="" value="XXS" /><span>XXS</span>
+            <br />
+            <input type="checkbox" name="" id="" value="XS" /><span>XS</span>
+            <br />
+            <input type="checkbox" name="" id="" value="XL" /><span>XL</span>
+            <br />
+            <input type="checkbox" name="" id="" value="L" /><span>L</span>
+            <br />
+            <input type="checkbox" name="" id="" value="M" /><span>M</span>
+          </div>
+        </div>
+        <div class="click-divs">PRICES</div>
+        <div class="open-click-div">
+          <div class="search-bar">
+            <input type="text" placeholder="Serach For the Products 🔍" />
+          </div>
+          <div class="open-click-options">
+            <span>200</span> <input type="range" name="" id="" /><span
+              >2000</span
+            >
+          </div>
+        </div>
+        <div class="click-divs">SORT</div>
+        <div class="open-click-div">
+          <div class="search-bar">
+            <input type="text" placeholder="Serach For the Products 🔍" />
+          </div>
+          <div class="open-click-options">
+            <input
+              type="checkbox"
+              name=""
+              id=""
+              value="Price Low To High"
+            /><span>Price Low To High</span>
+            <br />
+            <input
+              type="checkbox"
+              name=""
+              id=""
+              value="Price High To Low"
+            /><span>Price High To Low</span>
+            <br />
+            <input type="checkbox" name="" id="" value="Max Discount" /><span
+              >Max Discount</span
+            >
+          </div>
+        </div>
+        <div id="apply-and-clear-btn-div">
+          <button onclick="applyfun()">Apply</button>
+          <button onclick="clearfun()">Clear</button>
+        </div>
+      </div>
+      <div id="right-section">
+        <div id="product-display"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let tousearr = [];
+  // appending functions
+  const product_display = document.getElementById("product-display");
+  const checkproductfun = (id) => {
+    sessionStorage.setItem("productid", id);
+    window.location.assign("http://127.0.0.1:5500/frontend/products.html")
+  };
+  const appendfun = (data) => {
+    product_display.innerHTML = null;
+    for (let i = 0; i < data.length; i++) {
+      const div =
+        `
+                   <div onclick="checkproductfun('` +
+        data[i]._id +
+        `')">
+                      <img src="${data[i].image[0]}" alt="">
+                      <title>${data[i].title}</title>
+                      <p>${data[i].property}</p>
+                      <p>${data[i].price}</p>
+                      <span>${data[i].discount}%</span><span>${data[i].rating}</span>
+                   </div>
+
+      `;
+      product_display.innerHTML += div;
+    }
+  };
+
+  // to fetch the data
+  const fetchfun = async () => {
+    const promise = await fetch("http://localhost:7200/products", {
+      headers: {
+        "Content-type": "application/json",
+      },
+      method: "GET",
+    });
+
+    const res = await promise.json();
+    appendfun(res);
+    tousearr = res;
+  };
+
+  window.onload = () => {
+    fetchfun();
+  };
+
+
+  // for the filters and the sorts
+  const click_divs = document.getElementsByClassName("click-divs");
+  const open_click_div = document.getElementsByClassName("open-click-div");
+  const inputs = document.querySelectorAll(".open-click-options input");
+
+  for (let i = 0; i < click_divs.length; i++) {
+    click_divs[i].addEventListener("click", () => {
+      if (open_click_div[i].style.display === "block") {
+        open_click_div[i].style.display = "none";
+      } else {
+        open_click_div[i].style.display = "block";
+      }
+    });
+  }
+
+  const applyfun = () => {
+    let gender = [];
+    let property = [];
+    let theme = [];
+
+    for (let i = 0; i < inputs.length; i++) {
+      if (
+        inputs[i].attributes.type.nodeValue === "checkbox" &&
+        inputs[i].checked
+      ) {
+        if (i >= 0 && i <= 2) {
+          gender.push(inputs[i].value);
+        }
+        if (i >= 3 && i <= 8) {
+          property.push(inputs[i].value);
+        }
+        if (i >= 9 && i <= 13) {
+          theme.push(inputs[i].value);
+        }
+
+        // call the function that appends the relevant data
+      }
+    }
+    console.log(gender, property, theme);
+    let filteredarr = tousearr;
+
+    if (gender.length > 0) {
+      let final = [];
+      for (let i = 0; i < gender.length; i++) {
+        filteredarr.filter((item) => {
+          if (item.gender === gender[i]) {
+            final.push(item);
+          }
+        });
+      }
+    }
+
+    // console.log("---------------");
+
+    // if(final.length > 0){
+    //   appendfun(final);
+    // }else{
+    //   appendfun(tousearr);
+    // }
+  };
+
+  const clearfun = () => {
+    for (let i = 0; i < inputs.length; i++) {
+      if (
+        inputs[i].attributes.type.nodeValue === "checkbox" &&
+        inputs[i].checked
+      ) {
+        inputs[i].checked = false;
+        appendfun(tousearr);
+      }
+    }
+  };
+</script>

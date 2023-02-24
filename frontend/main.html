@@ -499,8 +499,12 @@
           <li id="women-section-tab">
             <a id="women-section-tab-a-tag" href="#">WOMEN</a>
           </li>
-          <li><a href="#">MEN</a></li>
-          <li><a href="#">KIDS</a></li>
+          <li id="men-section-tab">
+            <a id="men-section-tab-a-tag" href="#">MEN</a>
+          </li>
+          <li id="kids-section-tab">
+            <a id="kids-section-tab-a-tag" href="#">KIDS</a>
+          </li>
         </div>
         <div class="flex-divs">
           <li><a href="#">TRACK ORDER</a></li>
@@ -573,118 +577,9 @@
         </ul>
       </div>
     </nav>
-
-    <div class="slideshow-container">
-      <div class="mySlides fade">
-        <img src="img/Web-Banner_1_1hVRa1i.webp" style="width: 100%" />
-      </div>
-
-      <div class="mySlides fade">
-        <img src="img/men sliders.webp" style="width: 100%" />
-      </div>
-
-      <div class="mySlides fade">
-        <img src="img/men sliders2.webp" style="width: 100%" />
-      </div>
-      <div class="mySlides fade">
-        <img src="img/men sliders3.webp" style="width: 100%" />
-      </div>
-      <div class="mySlides fade">
-        <img src="./img/men top banner.webp" style="width: 100%" />
-      </div>
-
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
-    <div id="collection">
-      <div class="collection-heading">COLLECTIONS</div>
-      <div id="card-container">
-        <div class="img-card-div">
-          <img src="./img/men collection1.webp" alt="" />
-        </div>
-        <div class="img-card-div">
-          <img src="./img/men collection2.webp" alt="" />
-        </div>
-        <div class="img-card-div">
-          <img src="./img/men collection3.webp" alt="" />
-        </div>
-        <div class="img-card-div">
-          <img src="./img/men collection4.webp" alt="" />
-        </div>
-        <div class="img-card-div">
-          <img src="./img/men collection5.webp" alt="" />
-        </div>
-        <div class="img-card-div">
-          <img src="./img/men collection6.webp" alt="" />
-        </div>
-      </div>
-    </div>
-
-    <div id="category">
-      <div class="collection-heading">CATEGORY</div>
-      <div id="category-card-container">
-        <div class="category-img-card-div">
-          <img src="./img/men category1.webp" alt="" />
-        </div>
-        <div class="category-img-card-div">
-          <img src="./img/men category2.webp" alt="" />
-        </div>
-        <div class="category-img-card-div">
-          <img src="./img/men category3.webp" alt="" />
-        </div>
-        <div class="category-img-card-div">
-          <img src="./img/men category4.webp" alt="" />
-        </div>
-        <div class="category-img-card-div">
-          <img src="./img/men category5.webp" alt="" />
-        </div>
-        <div class="category-img-card-div">
-          <img src="./img/men category6.webp" alt="" />
-        </div>
-      </div>
-    </div>
-
-    <div class="category2">
-      <div><img src="./img/men category1.webp" alt="" /></div>
-      <div><img src="./img/men category2.webp" alt="" /></div>
-      <div><img src="./img/men category1.webp" alt="" /></div>
-      <div><img src="./img/men category3.webp" alt="" /></div>
-      <div><img src="./img/men category2.webp" alt="" /></div>
-
-    </div>
-    <div class="category2">
-      <div><img src="./img/men category9.webp" alt="" /></div>
-      <div><img src="./img/men category7.webp" alt="" /></div>
-      <div><img src="./img/men category5.webp" alt="" /></div>
-      <div><img src="./img/men category4.webp" alt="" /></div>
-      <div><img src="./img/men category10.webp" alt="" /></div>
-
-    </div>
-
-    <div id="OFFICIAL-MERCHANDISE-parent">
-      <div class="collection-heading">OFFICIAL MERCHANDISE</div>
-      <div id="OFFICIAL-MERCHANDISE">
-        <div><img src="./img/netflix.webp" alt="" /></div>
-        <div><img src="./img/marvel.webp" alt="" /></div>
-        <div><img src="./img/disney.webp" alt="" /></div>
-        <div><img src="./img/dc.webp" alt="" /></div>
-      </div>
-    </div>
-
-    <div id="saradiv-poster">
-      <div class="collection-heading">STRAIGHT OUT OF CELEBRITY CLOSETS</div>
-      <img src="./img/hardik poster bottom.webp" alt="" />
-    </div>
-    <div id="banner-of-happy-customer">
-      <div id="home-brand-banner">
-        <h1>HOMEGROWN INDIAN BRAND</h1>
-      </div>
-      <div id="happy-customers">
-        <h1>Over 5.5 Million Happy Customers</h1>
-      </div>
-    </div>
-
+    <!-- maincontent -->
+    <div id="sections-div"></div>
+    <!-- footer -->
     <footer>
       <div id="main-footer-div">
         <div id="top-details-footer-div">
@@ -895,26 +790,371 @@
   </body>
 </html>
 <script>
-  // for the top slider
-  var slideIndex = 1;
-  showSlides(slideIndex);
+  const women_section_tab = document.getElementById("women-section-tab");
+  const women_section_tab_a = document.getElementById(
+    "women-section-tab-a-tag"
+  );
+  const men_section_tab = document.getElementById("men-section-tab");
+  const men_section_tab_a = document.getElementById("men-section-tab-a-tag");
+  const kids_section_tab = document.getElementById("kids-section-tab");
+  const kids_section_tab_a = document.getElementById("kids-section-tab-a-tag");
 
-  async function plusSlides(n) {
-    showSlides((slideIndex += n));
-  }
+  const themaincontet = document.getElementById("sections-div");
 
-  async function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) {
-      slideIndex = 1;
+  //   to load the sliders
+
+  //   women_section_tab.addEventListener("click", womenfun);
+  let c = 0;
+  const womenfun = () => {
+    themaincontet.innerHTML = null;
+    const structure = `
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="img/Web-Banner_1_1hVRa1i.webp" style="width: 100%" />
+        </div>
+  
+        <div class="mySlides fade">
+          <img src="img/Web-Banner_1_h0DvwUm.webp" style="width: 100%" />
+        </div>
+  
+        <div class="mySlides fade">
+          <img src="img/Web-Banner_1_rwFtTge.webp" style="width: 100%" />
+        </div>
+        <div class="mySlides fade">
+          <img
+            src="img/Homepage-Banner-Beautiful-Blues_1s9JnZs.webp"
+            style="width: 100%"
+          />
+        </div>
+        <div class="mySlides fade">
+          <img src="img/Sara_Homepage_cS1WnKo.webp" style="width: 100%" />
+        </div>
+  
+        <a class="prev" onclick = "plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+  
+      <div id="collection">
+        <div class="collection-heading">COLLECTIONS</div>
+        <div id="card-container">
+          <div class="img-card-div">
+            <img src="./img/Collection-tile-joggerd_1.webp" alt="" />
+          </div>
+          <div class="img-card-div">
+            <img src="./img/Collection-Tile2.webp" alt="" />
+          </div>
+          <div class="img-card-div">
+            <img src="./img/Collection-Tile3-Naruto_wNv392b.webp" alt="" />
+          </div>
+          <div class="img-card-div">
+            <img src="./img/Collection-tile_1.webp" alt="" />
+          </div>
+          <div class="img-card-div">
+            <img src="./img/collection-tile_pretty-Pink_2_Jz32NqG.webp" alt="" />
+          </div>
+          <div class="img-card-div">
+            <img src="./img/Colllection-Tiles-1-Sara-red.webp" alt="" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="category">
+        <div class="collection-heading">CATEGORY</div>
+        <div id="category-card-container">
+          <div class="category-img-card-div">
+            <img src="./img/category1.webp" alt="" />
+          </div>
+          <div class="category-img-card-div">
+            <img src="./img/category2.webp" alt="" />
+          </div>
+          <div class="category-img-card-div">
+            <img src="./img/category3.webp" alt="" />
+          </div>
+          <div class="category-img-card-div">
+            <img src="./img/category4.webp" alt="" />
+          </div>
+          <div class="category-img-card-div">
+            <img src="./img/category5.webp" alt="" />
+          </div>
+          <div class="category-img-card-div">
+            <img src="./img/category6.webp" alt="" />
+          </div>
+        </div>
+      </div>
+  
+      <div class="category2">
+        <div><img src="./img/category7.webp" alt="" /></div>
+        <div><img src="./img/category8.webp" alt="" /></div>
+        <div><img src="./img/category9.webp" alt="" /></div>
+        <div><img src="./img/category10.webp" alt="" /></div>
+      </div>
+  
+      <div id="OFFICIAL-MERCHANDISE-parent">
+        <div class="collection-heading">OFFICIAL MERCHANDISE</div>
+        <div id="OFFICIAL-MERCHANDISE">
+          <div><img src="./img/netflix.webp" alt="" /></div>
+          <div><img src="./img/marvel.webp" alt="" /></div>
+          <div><img src="./img/disney.webp" alt="" /></div>
+          <div><img src="./img/dc.webp" alt="" /></div>
+        </div>
+      </div>
+  
+      <div id="saradiv-poster">
+        <div class="collection-heading">STRAIGHT OUT OF CELEBRITY CLOSETS</div>
+        <img src="./img/sara poster.webp" alt="" />
+      </div>
+      <div id="banner-of-happy-customer">
+        <div id="home-brand-banner">
+          <h1>HOMEGROWN INDIAN BRAND</h1>
+        </div>
+        <div id="happy-customers">
+          <h1>Over 5.5 Million Happy Customers</h1>
+        </div>
+      </div>
+       
+    `;
+    themaincontet.innerHTML = structure;
+
+    men_section_tab.style.backgroundColor = "#e11b23";
+    men_section_tab_a.style.color = "white";
+    women_section_tab.style.backgroundColor = "white";
+    women_section_tab_a.style.color = "black";
+    kids_section_tab.style.backgroundColor = "#e11b23";
+    kids_section_tab_a.style.color = "white";
+
+    c = 1;
+  };
+
+  window.onload = () => {
+    womenfun();
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides((slideIndex += n));
     }
-    if (n < 1) {
-      slideIndex = slides.length;
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
     }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+  };
+
+  //   on clicking the women section
+
+  women_section_tab.addEventListener("click", () => {
+    womenfun();
+  });
+
+  //   on clicking the men section
+  const mens = () => {
+    themaincontet.innerHTML = null;
+    const structure = `
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="img/men sliders.webp" style="width: 100%" />
+        </div>
+
+      <div class="mySlides fade">
+        <img src="img/Web-Banner_1_1hVRa1i.webp" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="img/men sliders2.webp" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <img src="img/men sliders3.webp" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <img src="./img/men top banner.webp" style="width: 100%" />
+      </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    
+    <div id="collection">
+      <div class="collection-heading">COLLECTIONS</div>
+      <div id="card-container">
+        <div class="img-card-div">
+          <img src="./img/men collection1.webp" alt="" />
+        </div>
+        <div class="img-card-div">
+          <img src="./img/men collection2.webp" alt="" />
+        </div>
+        <div class="img-card-div">
+          <img src="./img/men collection3.webp" alt="" />
+        </div>
+        <div class="img-card-div">
+          <img src="./img/men collection4.webp" alt="" />
+        </div>
+        <div class="img-card-div">
+          <img src="./img/men collection5.webp" alt="" />
+        </div>
+        <div class="img-card-div">
+          <img src="./img/men collection6.webp" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div id="category">
+      <div class="collection-heading">CATEGORY</div>
+      <div id="category-card-container">
+        <div class="category-img-card-div">
+          <img src="./img/men category1.webp" alt="" />
+        </div>
+        <div class="category-img-card-div">
+          <img src="./img/men category2.webp" alt="" />
+        </div>
+        <div class="category-img-card-div">
+          <img src="./img/men category3.webp" alt="" />
+        </div>
+        <div class="category-img-card-div">
+          <img src="./img/men category4.webp" alt="" />
+        </div>
+        <div class="category-img-card-div">
+          <img src="./img/men category5.webp" alt="" />
+        </div>
+        <div class="category-img-card-div">
+          <img src="./img/men category6.webp" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="category2">
+      <div><img src="./img/men category1.webp" alt="" /></div>
+      <div><img src="./img/men category2.webp" alt="" /></div>
+      <div><img src="./img/men category1.webp" alt="" /></div>
+      <div><img src="./img/men category3.webp" alt="" /></div>
+      <div><img src="./img/men category2.webp" alt="" /></div>
+
+    </div>
+    <div class="category2">
+      <div><img src="./img/men category9.webp" alt="" /></div>
+      <div><img src="./img/men category7.webp" alt="" /></div>
+      <div><img src="./img/men category5.webp" alt="" /></div>
+      <div><img src="./img/men category4.webp" alt="" /></div>
+      <div><img src="./img/men category10.webp" alt="" /></div>
+
+    </div>
+    <div id="OFFICIAL-MERCHANDISE-parent">
+      <div class="collection-heading">OFFICIAL MERCHANDISE</div>
+      <div id="OFFICIAL-MERCHANDISE">
+        <div><img src="./img/netflix.webp" alt="" /></div>
+        <div><img src="./img/marvel.webp" alt="" /></div>
+        <div><img src="./img/disney.webp" alt="" /></div>
+        <div><img src="./img/dc.webp" alt="" /></div>
+      </div>
+    </div>
+    
+    <div id="saradiv-poster">
+      <div class="collection-heading">STRAIGHT OUT OF CELEBRITY CLOSETS</div>
+      <img src="./img/hardik poster bottom.webp" alt="" />
+    </div>
+    <div id="banner-of-happy-customer">
+      <div id="home-brand-banner">
+        <h1>HOMEGROWN INDIAN BRAND</h1>
+      </div>
+      <div id="happy-customers">
+        <h1>Over 5.5 Million Happy Customers</h1>
+      </div>
+    </div>
+    `;
+    themaincontet.innerHTML = structure;
+
+    men_section_tab.style.backgroundColor = "white";
+    men_section_tab_a.style.color = "black";
+    women_section_tab.style.backgroundColor = "#e11b23";
+    women_section_tab_a.style.color = "white";
+    kids_section_tab_a.style.color = "white";
+    kids_section_tab.style.backgroundColor = "#e11b23";
+    c = 1;
+  };
+  men_section_tab.addEventListener("click", () => {
+    mens();
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    async function plusSlides(n) {
+      showSlides((slideIndex += n));
     }
-    slides[slideIndex - 1].style.display = "block";
-  }
+
+    async function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+  });
+
+  //   on clidking the kids section
+  const kids = () => {
+    const structure = `
+      
+    
+    `;
+
+    men_section_tab.style.backgroundColor = "#e11b23";
+    men_section_tab_a.style.color = "white";
+    women_section_tab.style.backgroundColor = "#e11b23";
+    women_section_tab_a.style.color = "white";
+    kids_section_tab_a.style.color = "black";
+    kids_section_tab.style.backgroundColor = "white";
+  };
+
+  kids_section_tab.addEventListener("click", () => {
+    kids();
+  });
+
+  //footer
+  const nav_link_plus = document.getElementById("nav-link-plus");
+  const who_link_plus = document.getElementById("who-link-plus");
+  const hidden_divs_footerOne = document.getElementById(
+    "hidden-divs-footerOne"
+  );
+  const hidden_divs_footerTow = document.getElementById(
+    "hidden-divs-footerTwo"
+  );
+
+  const openNaviLinkfun = () => {
+    console.log(hidden_divs_footerOne.style.display);
+    if (hidden_divs_footerOne.style.display === "block") {
+      hidden_divs_footerOne.style.display = "none";
+      nav_link_plus.innerText = "+";
+    } else {
+      hidden_divs_footerOne.style.display = "block";
+      nav_link_plus.innerText = "-";
+    }
+  };
+
+  const openWhoLinkfun = () => {
+    if (hidden_divs_footerTow.style.display === "block") {
+      hidden_divs_footerTow.style.display = "none";
+      who_link_plus.innerText = "+";
+    } else {
+      hidden_divs_footerTow.style.display = "block";
+      who_link_plus.innerText = "-";
+    }
+  };
+  //   for the women tab
 </script>
