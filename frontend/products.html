@@ -1,3 +1,5 @@
+<!-- single product page dont delete -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -305,15 +307,18 @@
   </body>
 </html>
 <script>
-  let productsIncart =
-    JSON.parse(sessionStorage.getItem("productsIncart")) || [];
+  let productsIncart = JSON.parse(localStorage.getItem("productsIncart")) || [];
   const left_section = document.getElementById("left-section");
   const product_title = document.querySelector("#product-title h2");
   const product_title_desc = document.querySelector("#product-title p");
   const product_price = document.querySelector("#product-price h4");
   let product = [];
+
+  let productBody = {};
   let Productprice = 1;
   const appendfun = (data) => {
+    productBody = data;
+
     Productprice = +product.price;
     product = data;
     let img1 = data.image[0];
@@ -361,6 +366,10 @@
   let check = false;
   let productSize = "size";
   const selectsizefun = (size) => {
+    let product_id = sessionStorage.getItem("productid") + size;
+    delete productBody._id;
+    productBody["product_id"] = product_id;
+
     const size_chart_buttons = document.querySelectorAll(
       "#size-chart-buttons button"
     );
@@ -376,7 +385,6 @@
   // quantity
 
   const product_quantity = document.getElementById("product-quantity-select");
-  console.log(product_quantity.value);
   let qtyclick = 0;
   product_quantity.addEventListener("change", () => {
     qtyclick = 1;
@@ -384,39 +392,35 @@
   });
 
   // to add to cart
-  const addtoCartfun = () => {
-    // getting the data to compare
-    let productsIncart =
-      JSON.parse(sessionStorage.getItem("productsIncart")) || [];
-    let flag = false;
-    for (let i = 0; i < productsIncart.length; i++) {
-      if (
-        product._id === productsIncart[i].id &&
-        productSize == productsIncart[i].size
-      ) {
-        flag = true;
-        break;
-      }
-    }
-
+  const addtoCartfun = async () => {
     // check all conditions and then add to the cart
-    if (check == true && flag === false) {
+    if (check == true) {
       if (qtyclick == 0) {
         Productprice = +product.price;
       }
-      let productobj = {
-        id: product._id,
-        size: productSize,
-        totalPrice: Productprice,
-      };
-      productsIncart.push(productobj);
-      sessionStorage.setItem("productsIncart", JSON.stringify(productsIncart));
-      alert("Product Added to the Cart");
-      window.location.assign("cartpage")
+      const product_quantity = document.getElementById(
+        "product-quantity-select"
+      );
+
+      productBody["Qty"] = product_quantity.value;
+      productBody["afterQtyprice"] = Productprice;
+      productBody.size = productSize;
+
+      const promise = await fetch("http://localhost:7200/user/addtocart", {
+        headers: {
+          "Content-type": "application/json",
+          Authorization:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2Y0ZGU4OWNlMzI4MTY1OTNkMWViYjEiLCJpYXQiOjE2NzczMzg4NTEsImV4cCI6MTY3NzM0MjQ1MX0.t2umQIARIlfrN_Dtjv7SBf_LWos0kiGRAcs5dTyHVcg"
+        },
+        method: "POST",
+        body: JSON.stringify(productBody)
+      });
+
+      const res = await promise.json();
+
+      alert(res.msg);
     } else if (check === false) {
       alert("Please Select size");
-    } else {
-      alert("Product Already in the cart");
     }
   };
 </script>

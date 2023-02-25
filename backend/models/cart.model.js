@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
-const productSchema = mongoose.Schema({
+
+const cartSchema = mongoose.Schema({
+  userid: { type: String, required: true },
+  product_id: { type: String, required: true },
   title: { type: String, required: true },
   gender: { type: String, required: true },
   price: { type: Number, required: true },
@@ -8,9 +11,11 @@ const productSchema = mongoose.Schema({
   property: { type: String, required: true },
   theme: { type: String, required: true },
   size: { type: String, required: true },
-  image: { type: [String], required: true }
+  image: { type: [String], required: true },
+  Qty: { type: Number, required: true },
+  afterQtyprice: { type: Number, required: true }
 });
 
-const ProductModel = mongoose.model("product", productSchema);
+const CartModel = mongoose.model("cartproduct", cartSchema);
 
-module.exports = { ProductModel };
+module.exports = { CartModel };
