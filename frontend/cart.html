@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/5cb8a0be4f.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins";
+      }
+      #cart-page-container {
+        /* border: 1px solid rgb(190, 190, 190); */
+        margin: auto;
+        margin-top: 1rem;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+      }
+      #left-section {
+        border: 1px solid rgb(190, 190, 190);
+        width: 60%;
+        border-radius: 3px;
+        height: fit-content;
+      }
+      .left-section-child {
+        width: 100%;
+        border-bottom: 1px solid rgb(236, 232, 232);
+        display: flex;
+        justify-content: space-between;
+      }
+      .left-section-child > div:nth-child(1) {
+        /* border: 1px solid; */
+        width: 30%;
+        padding: 0.7rem;
+        padding-bottom: 0;
+        box-sizing: border-box;
+      }
+      .left-section-child > div:nth-child(1) img {
+        width: 100%;
+        border-radius: 5px;
+      }
+      .left-section-child > div:nth-child(2) {
+        /* border: 2px solid gray; */
+        width: 55%;
+        padding: 1rem;
+        box-sizing: border-box;
+      }
+      .size-and-Qty {
+        width: 70%;
+        /* border: 1px solid; */
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .size-and-Qty select {
+        width: 49%;
+        border: 1px solid rgb(187, 183, 183);
+        padding: 0.4rem;
+        border-radius: 5px;
+        color: black;
+        font-weight: bolder;
+        font-size: 0.8rem;
+      }
+
+      .left-section-child > div:nth-child(3) {
+        /* border: 4px solid; */
+        width: 15%;
+        text-align: right;
+        padding: 1.2rem;
+        box-sizing: border-box;
+      }
+      .Remove-moveto-watch {
+        /* border: 2px solid; */
+        margin: 0.5rem 0;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .Remove-moveto-watch button {
+        width: 20%;
+        padding: 0.5rem;
+        margin: 0 0.5rem;
+        font-size: 0.7rem;
+        font-weight: bolder;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid rgb(215, 211, 211);
+        background-color: white;
+      }
+      #right-section {
+        /* border: 1px solid rgb(201, 198, 198); */
+        width: 35%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        border-radius: 3px;
+      }
+      .Place-ord-btn {
+        margin: 0 0 1rem 0;
+      }
+      .Place-ord-btn button {
+        width: 100%;
+        padding: 0.7rem;
+        background-color: #117a7a;
+        color: white;
+        font-weight: 500;
+        font-size: 0.9rem;
+        border: none;
+        border-radius: 3px;
+      }
+      #coupon-code-div {
+        /* border: 1px solid; */
+        padding: 0.8rem;
+        background-color: #ffb951;
+        font-size: 1rem;
+        margin: 0 0 0.5rem 0;
+        text-align: center;
+        font-weight: bolder;
+        border-radius: 3px;
+      }
+      #drop-downs {
+        /* border: 1px solid; */
+        padding: 0.5rem 0;
+      }
+      .click-divs {
+        border: 1px solid rgb(209, 207, 207);
+        padding: 0.5rem;
+        /* margin: 0.5rem 0; */
+        font-size: 0.9rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .open-click-div {
+        border: 1px solid rgb(209, 207, 207);
+        display: none;
+        line-height: 1.2;
+        padding: 0.7rem;
+        box-sizing: border-box;
+      }
+      .open-click-div > div {
+        display: flex;
+        justify-content: space-between;
+      }
+      .open-click-div > div input {
+        padding: 0.3rem;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid rgb(194, 191, 191);
+      }
+      .open-click-div > div button {
+        padding: 0.4rem;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid #117a7a;
+        background-color: white;
+        color: #117a7a;
+        cursor: pointer;
+      }
+      #gift-wrap-25 {
+        border: 1px solid rgb(209, 207, 207);
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+      }
+      .Billing-datails {
+        border: 1px solid rgb(209, 207, 207);
+        line-height: 1.2;
+        font-size: 0.9rem;
+        padding: 0.8rem;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cart-page-container">
+      <div id="left-section"></div>
+      <div id="right-section">
+        <div class="Place-ord-btn">
+          <button>PLACE ORDER</button>
+        </div>
+        <div id="coupon-code-div">
+          <span><input type="checkbox" /></span
+          ><span>Save an additional ₹ 100 on this order.</span>
+        </div>
+        <div id="dropping-lists">
+          <div id="drop-downs">
+            <div class="click-divs">
+              <i class="fa-solid fa-tag"></i> &nbsp; Apply Coupon
+            </div>
+            <div class="open-click-div">
+              <div>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Enter Code Here"
+                /><button>Apply</button>
+              </div>
+            </div>
+
+            <div class="click-divs">
+              <i class="fa-solid fa-tag"></i> &nbsp;Gift Voucher
+            </div>
+            <div class="open-click-div">
+              <div>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Enter Code Here"
+                /><button>Apply</button>
+              </div>
+            </div>
+
+            <div>
+              <div id="gift-wrap-25">
+                <span
+                  ><i class="fa-sharp fa-solid fa-gift"></i> &nbsp; Gift Wrap (₹
+                  25)</span
+                >
+                <input type="checkbox" name="" id="" />
+              </div>
+            </div>
+
+            <div class="click-divs">TSS Money / TSS Points</div>
+            <div class="open-click-div">
+              <div>
+                <div>
+                  <i class="fa-solid fa-money-bill-1-wave"></i> &nbsp;<span
+                    >TSS Money</span
+                  >
+                  &nbsp;<i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+                <input type="checkbox" name="" id="" />
+              </div>
+              <div>
+                <div>
+                  <i class="fa-solid fa-circle-dollar-to-slot"></i>&nbsp;<span
+                    >TSS Points</span
+                  >
+                  &nbsp;<i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+                <input type="checkbox" name="" id="" />
+              </div>
+            </div>
+
+            <div
+              class="Billing-datails"
+              style="border: none; font-size: 1rem; font-weight: bold"
+            >
+              Billing Details
+            </div>
+
+            <div class="Billing-datails">
+              <span>Cart Total</span
+              ><span id="product-amount-span">Amount</span>
+            </div>
+            <div class="Billing-datails">
+              <span>GST</span><span id="gst-amount-span">Amount</span>
+            </div>
+            <div class="Billing-datails">
+              <span>Shipping Charges</span
+              ><span id="Shipping-cahrges-span">Amount</span>
+            </div>
+            <div class="Billing-datails" style="font-weight: bold">
+              <span>Total Amount</span><span id="final-bill-span">Amount</span>
+            </div>
+          </div>
+        </div>
+        <div class="Place-ord-btn">
+          <button>PLACE ORDER</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const click_divs = document.getElementsByClassName("click-divs");
+  const open_click_div = document.getElementsByClassName("open-click-div");
+
+  for (let i = 0; i < click_divs.length; i++) {
+    click_divs[i].addEventListener("click", () => {
+      if (open_click_div[i].style.display === "block") {
+        open_click_div[i].style.display = "none";
+      } else {
+        open_click_div[i].style.display = "block";
+      }
+    });
+  }
+
+  // right section
+  const left_section = document.getElementById("left-section");
+  const product_amount_span = document.getElementById("product-amount-span");
+  const gst_amount_span = document.getElementById("gst-amount-span");
+  const Shipping_cahrges_span = document.getElementById(
+    "Shipping-cahrges-span"
+  );
+  const final_bill_span = document.getElementById("final-bill-span");
+
+  const appendfun = (data) => {
+    left_section.innerHTML = null;
+    let netsum = 0;
+    let gstsum = 0;
+    data.map((item) => {
+      netsum += item.afterQtyprice;
+      gstsum += (item.price * 18) / 100;
+      const product_to_display = `
+
+           <div class="left-section-child">
+            <div><img src="${item.image[0]}" alt="" /></div>
+            <div>
+              ${item.title}
+              <div class="size-and-Qty">
+                <select name="size" id="size">
+                  <option value="">Size : ${item.size}</option>
+                  <option value="">X</option>
+                  <option value="">L</option>
+                  <option value="">S</option>
+                  <option value="">M</option>
+                </select>
+                <select name="Qty" id="Qty">
+                  <option value="">Qty : ${item.Qty}</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+            <div>$${item.price}</div>
+          </div>
+          <div class="Remove-moveto-watch">
+            <button onclick= "removefun('${item._id}')" >REMOVE</button><button onclick= "addtowatchfun('${item._id}')">MOVE TO WATCHLIST</button>
+          </div>
+          <hr>
+
+      `;
+      left_section.innerHTML += product_to_display;
+    });
+
+    let shipping = (2 * netsum) / 100;
+
+    product_amount_span.innerText = "$ " + Math.round(netsum);
+    Shipping_cahrges_span.innerText = "$ " + Math.round(shipping);
+    gst_amount_span.innerText = "$ " + Math.round(gstsum);
+    final_bill_span.innerText = "$ " + Math.round(netsum + gstsum);
+  };
+
+  const fetchuserCart = async () => {
+    const promise = await fetch("http://localhost:7200/user/getcart", {
+      headers: {
+        "Contet-type": "application/json",
+        Authorization:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2Y0ZGU4OWNlMzI4MTY1OTNkMWViYjEiLCJpYXQiOjE2NzczMzg4NTEsImV4cCI6MTY3NzM0MjQ1MX0.t2umQIARIlfrN_Dtjv7SBf_LWos0kiGRAcs5dTyHVcg",
+      },
+      method: "GET",
+    });
+    const res = await promise.json();
+    appendfun(res.data);
+  };
+  fetchuserCart();
+
+  const removefun = async (id) => {
+    const promise = await fetch(`http://localhost:7200/user/remove/${id}`, {
+      headers: {
+        "Content-type": "application/json",
+      },
+      method: "DELETE",
+    });
+    const res = await promise.json();
+    alert(res.msg);
+    fetchuserCart();
+  };
+
+  const addtowatchfun = (id) => {
+    console.log(id);
+  };
+</script>
