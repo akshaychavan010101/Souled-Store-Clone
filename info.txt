@@ -65,3 +65,11 @@ Checkout page:
 2.right section == billing and confirm order btn
 
 Order place note
+
+
+
+main.html ===> landing page; finalized
+index.html ===> login/signup page; finalized(icon work remaining only)
+mainproduct.html ====> all products display page; (sort and filters are remaining)
+product.html ====> single product view;(header and footer and );
+cart.html ====> all products of the particular user;(almost done);

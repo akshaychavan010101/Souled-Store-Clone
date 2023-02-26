@@ -127,8 +127,28 @@
       }
 
       .icons-div {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
+      #cart-icon {
+        /* border: 1px solid; */
+        display: flex;
+      }
+      #cart-count {
+        position: absolute;
+        /* border: 1px solid; */
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        border-radius: 50%;
+        margin: 0.9% 1%;
+        padding: 0.1rem;
+        font-size: 1rem;
+        color: white;
+        font-weight: bold;
+        background-color: red;
+      }
+
+     
       /* drop down menues */
 
       .drop-down-list-tag ul {
@@ -310,11 +330,11 @@
         width: 98%;
       }
 
-      /* sarah - poster */
-      #saradiv-poster {
+      /* sarah - poster and below banner*/
+      .saradiv-poster {
         margin: 2rem 0;
       }
-      #saradiv-poster img {
+      .saradiv-poster img {
         width: 100%;
       }
       /* banner */
@@ -573,9 +593,12 @@
       <div class="flex-divs icons-div">
         <ul>
           <li><i class="fa-solid fa-magnifying-glass"></i></li>
-          <li><i class="fa-regular fa-user"></i></li>
+          <li id="user-icon" onclick="logoutfun()"><i class="fa-regular fa-user"></i><span id="Logout-span" style="font-size: 1.2rem;"> | Logout</span></li>
           <li><i class="fa-regular fa-heart"></i></li>
-          <li><i class="fa-sharp fa-solid fa-bag-shopping"></i></li>
+          <li id="cart-icon">
+            <span id="cart-count">0</span
+            ><i class="fa-sharp fa-solid fa-bag-shopping"></i>
+          </li>
         </ul>
       </div>
     </nav>
@@ -616,12 +639,16 @@
           <div class="op-details-footer-div-childs">
             <ul id="COD-and-return">
               <li>
-                <img src="./img//Screenshot 2023-02-23 131711.png" alt="" />COD
-                Available
+                <img
+                  src="./img//Screenshot 2023-02-23 131711.png"
+                  alt="error"
+                />COD Available
               </li>
               <li>
-                <img src="./img/Screenshot 2023-02-23 131818.png" alt="" />30
-                Days Easy Returns
+                <img
+                  src="./img/Screenshot 2023-02-23 131818.png"
+                  alt="error"
+                />30 Days Easy Returns
               </li>
             </ul>
           </div>
@@ -629,16 +656,16 @@
         <div id="middle-app-down-div">
           <div><h5>EXPERIENCE THE TRY-LEAF STORE APP</h5></div>
           <div>
-            <img src="./img/play store.png" alt="" />
-            <img src="./img/app store.png" alt="" />
+            <img src="./img/play store.png" alt="error" />
+            <img src="./img/app store.png" alt="error" />
           </div>
         </div>
         <div id="social-handles">
           <div>Follow Us:</div>
-          <div><img src="./img/facebook.png" alt="" /></div>
-          <div><img src="./img/insta.png" alt="" /></div>
-          <div><img src="./img/notify.png" alt="" /></div>
-          <div><img src="./img/twitter.png" alt="" /></div>
+          <div><img src="./img/facebook.png" alt="error" /></div>
+          <div><img src="./img/insta.png" alt="error" /></div>
+          <div><img src="./img/notify.png" alt="error" /></div>
+          <div><img src="./img/twitter.png" alt="error" /></div>
         </div>
         <div id="navigation-link-and-who-div">
           <div>
@@ -775,11 +802,11 @@
         <div id="pay-partners">
           <div class="pay-partners-flex-divs">
             <div><p>100% Secure Payment:</p></div>
-            <div><img src="./img/payment partners.png" alt="" /></div>
+            <div><img src="./img/payment partners.png" alt="error" /></div>
           </div>
           <div class="pay-partners-flex-divs">
             <div><p>Shipping Partners:</p></div>
-            <div><img src="./img/shipping partners.png" alt="" /></div>
+            <div><img src="./img/shipping partners.png" alt="error" /></div>
           </div>
         </div>
         <div style="margin: auto; width: fit-content">
@@ -792,6 +819,18 @@
   </body>
 </html>
 <script>
+  const logoutfun = () => {
+    if (sessionStorage.getItem("accesstoken")) {
+      const Logout_span = document.getElementById("Logout-span");
+      Logout_span.innerHTML = " | Logout"
+      sessionStorage.clear();
+      window.location.assign("http://127.0.0.1:5500/frontend/main.html");
+    } else {
+      const Logout_span = document.getElementById("Logout-span");
+      Logout_span.innerHTML = " | Login"
+      window.location.assign("http://127.0.0.1:5500/frontend/index.html");
+    }
+  };
   const women_section_tab = document.getElementById("women-section-tab");
   const women_section_tab_a = document.getElementById(
     "women-section-tab-a-tag"
@@ -803,10 +842,46 @@
 
   const themaincontet = document.getElementById("sections-div");
 
-  //   to load the sliders
+  // nav icons
+  const cart_count = document.getElementById("cart-count");
+  if (sessionStorage.getItem("accesstoken")) {
+    cart_count.innerText = sessionStorage.getItem("cartCount");
+  } else {
+    cart_count.innerText = 0;
+  }
+  const cart_icon = document.getElementById("cart-icon");
+  cart_icon.addEventListener("click", () => {
+    window.location.assign("http://127.0.0.1:5500/frontend/cart.html");
+  });
+
+  const user_icon = document.getElementById("user-icon");
+  user_icon.addEventListener("click", () => {});
+  //   to load the sliders mens page
+  const showSlides = async (n) => {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    if (slides[slideIndex - 1] !== undefined) {
+      slides[slideIndex - 1].style.display = "block";
+    }
+  };
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  const plusSlides = async (n) => {
+    showSlides((slideIndex += n));
+  };
 
   //   women_section_tab.addEventListener("click", womenfun);
-  let c = 0;
+
   const womenfun = () => {
     themaincontet.innerHTML = null;
     const structure = `
@@ -840,22 +915,22 @@
         <div class="collection-heading">COLLECTIONS</div>
         <div id="card-container">
           <div class="img-card-div">
-            <img src="./img/Collection-tile-joggerd_1.webp" alt="" />
+            <img src="./img/Collection-tile-joggerd_1.webp" alt="error" />
           </div>
           <div class="img-card-div">
-            <img src="./img/Collection-Tile2.webp" alt="" />
+            <img src="./img/Collection-Tile2.webp" alt="error" />
           </div>
           <div class="img-card-div">
-            <img src="./img/Collection-Tile3-Naruto_wNv392b.webp" alt="" />
+            <img src="./img/Collection-Tile3-Naruto_wNv392b.webp" alt="error" />
           </div>
           <div class="img-card-div">
-            <img src="./img/Collection-tile_1.webp" alt="" />
+            <img src="./img/Collection-tile_1.webp" alt="error" />
           </div>
           <div class="img-card-div">
-            <img src="./img/collection-tile_pretty-Pink_2_Jz32NqG.webp" alt="" />
+            <img src="./img/collection-tile_pretty-Pink_2_Jz32NqG.webp" alt="error" />
           </div>
           <div class="img-card-div">
-            <img src="./img/Colllection-Tiles-1-Sara-red.webp" alt="" />
+            <img src="./img/Colllection-Tiles-1-Sara-red.webp" alt="error" />
           </div>
         </div>
       </div>
@@ -864,46 +939,49 @@
         <div class="collection-heading">CATEGORY</div>
         <div id="category-card-container">
           <div class="category-img-card-div">
-            <img src="./img/category1.webp" alt="" />
+            <img src="./img/category1.webp" alt="error" />
           </div>
           <div class="category-img-card-div">
-            <img src="./img/category2.webp" alt="" />
+            <img src="./img/category2.webp" alt="error" />
           </div>
           <div class="category-img-card-div">
-            <img src="./img/category3.webp" alt="" />
+            <img src="./img/category3.webp" alt="error" />
           </div>
           <div class="category-img-card-div">
-            <img src="./img/category4.webp" alt="" />
+            <img src="./img/category4.webp" alt="error" />
           </div>
           <div class="category-img-card-div">
-            <img src="./img/category5.webp" alt="" />
+            <img src="./img/category5.webp" alt="error" />
           </div>
           <div class="category-img-card-div">
-            <img src="./img/category6.webp" alt="" />
+            <img src="./img/category6.webp" alt="error" />
           </div>
         </div>
       </div>
   
       <div class="category2">
-        <div><img src="./img/category7.webp" alt="" /></div>
-        <div><img src="./img/category8.webp" alt="" /></div>
-        <div><img src="./img/category9.webp" alt="" /></div>
-        <div><img src="./img/category10.webp" alt="" /></div>
+        <div><img src="./img/category7.webp" alt="error" /></div>
+        <div><img src="./img/category8.webp" alt="error" /></div>
+        <div><img src="./img/category9.webp" alt="error" /></div>
+        <div><img src="./img/category10.webp" alt="error" /></div>
       </div>
   
       <div id="OFFICIAL-MERCHANDISE-parent">
         <div class="collection-heading">OFFICIAL MERCHANDISE</div>
         <div id="OFFICIAL-MERCHANDISE">
-          <div><img src="./img/netflix.webp" alt="" /></div>
-          <div><img src="./img/marvel.webp" alt="" /></div>
-          <div><img src="./img/disney.webp" alt="" /></div>
-          <div><img src="./img/dc.webp" alt="" /></div>
+          <div><img src="./img/netflix.webp" alt="error" /></div>
+          <div><img src="./img/marvel.webp" alt="error" /></div>
+          <div><img src="./img/disney.webp" alt="error" /></div>
+          <div><img src="./img/dc.webp" alt="error" /></div>
         </div>
       </div>
   
-      <div id="saradiv-poster">
+      <div class="saradiv-poster">
         <div class="collection-heading">STRAIGHT OUT OF CELEBRITY CLOSETS</div>
-        <img src="./img/sara poster.webp" alt="" />
+        <img src="./img/sara poster.webp" alt="error" />
+      </div>
+      <div class="saradiv-poster">
+        <img src="./img/big bottom banner.webp" alt="" />
       </div>
       <div id="banner-of-happy-customer">
         <div id="home-brand-banner">
@@ -924,15 +1002,8 @@
     kids_section_tab.style.backgroundColor = "#e11b23";
     kids_section_tab_a.style.color = "white";
 
-    c = 1;
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides((slideIndex += n));
-    }
-
-    function showSlides(n) {
+    nextpager();
+    const showSlides = async (n) => {
       let i;
       let slides = document.getElementsByClassName("mySlides");
       if (n > slides.length) {
@@ -944,40 +1015,22 @@
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
-      slides[slideIndex - 1].style.display = "block";
-    }
-  };
 
-  window.onload = () => {
-    womenfun();
+      slides[slideIndex - 1].style.display = "block";
+    };
 
     let slideIndex = 1;
     showSlides(slideIndex);
-
-    function plusSlides(n) {
+    const plusSlides = async (n) => {
       showSlides((slideIndex += n));
-    }
-
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex - 1].style.display = "block";
-    }
+    };
   };
 
   //   on clicking the women section
 
   women_section_tab.addEventListener("click", () => {
     womenfun();
+    localStorage.setItem("pagetoLoad", "women");
   });
 
   //   on clicking the men section
@@ -985,115 +1038,106 @@
     themaincontet.innerHTML = null;
     const structure = `
     <div class="slideshow-container">
-        <div class="mySlides fade">
-          <img src="img/men sliders.webp" style="width: 100%" />
-        </div>
-
       <div class="mySlides fade">
-        <img src="img/Web-Banner_1_1hVRa1i.webp" style="width: 100%" />
+        <img src="./img/men sliders.webp" style="width: 100%" />
       </div>
 
       <div class="mySlides fade">
-        <img src="img/men sliders2.webp" style="width: 100%" />
-      </div>
-      <div class="mySlides fade">
-        <img src="img/men sliders3.webp" style="width: 100%" />
-      </div>
-      <div class="mySlides fade">
-        <img src="./img/men top banner.webp" style="width: 100%" />
+        <img src="./img/men sliders2.webp" style="width: 100%" />
       </div>
 
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <div class="mySlides fade">
+        <img src="./img/men sliders3.webp" style="width: 100%" />
+      </div>
+  
+        <a class="prev" onclick = "plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
-    
-    <div id="collection">
+      </div>
+  
+      <div id="collection">
       <div class="collection-heading">COLLECTIONS</div>
       <div id="card-container">
         <div class="img-card-div">
-          <img src="./img/men collection1.webp" alt="" />
+          <img src="./img/men collection1.webp" alt="error" />
         </div>
         <div class="img-card-div">
-          <img src="./img/men collection2.webp" alt="" />
+          <img src="./img/men collection2.webp" alt="error" />
         </div>
         <div class="img-card-div">
-          <img src="./img/men collection3.webp" alt="" />
+          <img src="./img/men collection3.webp" alt="error" />
         </div>
         <div class="img-card-div">
-          <img src="./img/men collection4.webp" alt="" />
+          <img src="./img/men collection4.webp" alt="error" />
         </div>
         <div class="img-card-div">
-          <img src="./img/men collection5.webp" alt="" />
+          <img src="./img/men collection5.webp" alt="error" />
         </div>
         <div class="img-card-div">
-          <img src="./img/men collection6.webp" alt="" />
+          <img src="./img/men collection6.webp" alt="error" />
         </div>
       </div>
     </div>
-
+  
     <div id="category">
       <div class="collection-heading">CATEGORY</div>
       <div id="category-card-container">
         <div class="category-img-card-div">
-          <img src="./img/men category1.webp" alt="" />
+          <img src="./img/men category1.webp" alt="error" />
         </div>
         <div class="category-img-card-div">
-          <img src="./img/men category2.webp" alt="" />
+          <img src="./img/men category10.webp" alt="error" />
         </div>
         <div class="category-img-card-div">
-          <img src="./img/men category3.webp" alt="" />
+          <img src="./img/men category11.webp" alt="error" />
         </div>
         <div class="category-img-card-div">
-          <img src="./img/men category4.webp" alt="" />
+          <img src="./img/men category2.webp" alt="error" />
         </div>
         <div class="category-img-card-div">
-          <img src="./img/men category5.webp" alt="" />
+          <img src="./img/men category5.webp" alt="error" />
         </div>
         <div class="category-img-card-div">
-          <img src="./img/men category6.webp" alt="" />
+          <img src="./img/men category7.webp" alt="error" />
         </div>
+        
       </div>
     </div>
-
+  
     <div class="category2">
-      <div><img src="./img/men category1.webp" alt="" /></div>
-      <div><img src="./img/men category2.webp" alt="" /></div>
-      <div><img src="./img/men category1.webp" alt="" /></div>
-      <div><img src="./img/men category3.webp" alt="" /></div>
-      <div><img src="./img/men category2.webp" alt="" /></div>
-
+      <div><img src="./img/men category6.webp" alt="error" /></div>
+      <div><img src="./img/men category3.webp" alt="error" /></div>
+      <div><img src="./img/men category4.webp" alt="error" /></div>
+      <div><img src="./img/men category8.webp" alt="error" /></div>
+      <div><img src="./img/men category2.webp" alt="error" /></div>
+      <div><img src="./img/men category11.webp" alt="error" /></div>
     </div>
-    <div class="category2">
-      <div><img src="./img/men category9.webp" alt="" /></div>
-      <div><img src="./img/men category7.webp" alt="" /></div>
-      <div><img src="./img/men category5.webp" alt="" /></div>
-      <div><img src="./img/men category4.webp" alt="" /></div>
-      <div><img src="./img/men category10.webp" alt="" /></div>
-
-    </div>
-    <div id="OFFICIAL-MERCHANDISE-parent">
-      <div class="collection-heading">OFFICIAL MERCHANDISE</div>
-      <div id="OFFICIAL-MERCHANDISE">
-        <div><img src="./img/netflix.webp" alt="" /></div>
-        <div><img src="./img/marvel.webp" alt="" /></div>
-        <div><img src="./img/disney.webp" alt="" /></div>
-        <div><img src="./img/dc.webp" alt="" /></div>
+  
+      <div id="OFFICIAL-MERCHANDISE-parent">
+        <div class="collection-heading">OFFICIAL MERCHANDISE</div>
+        <div id="OFFICIAL-MERCHANDISE">
+          <div><img src="./img/netflix.webp" alt="error" /></div>
+          <div><img src="./img/marvel.webp" alt="error" /></div>
+          <div><img src="./img/disney.webp" alt="error" /></div>
+          <div><img src="./img/dc.webp" alt="error" /></div>
+        </div>
       </div>
-    </div>
-    
-    <div id="saradiv-poster">
-      <div class="collection-heading">STRAIGHT OUT OF CELEBRITY CLOSETS</div>
-      <img src="./img/hardik poster bottom.webp" alt="" />
-    </div>
-    <div id="banner-of-happy-customer">
-      <div id="home-brand-banner">
-        <h1>HOMEGROWN INDIAN BRAND</h1>
+  
+      <div class="saradiv-poster">
+        <div class="collection-heading">STRAIGHT OUT OF CELEBRITY CLOSETS</div>
+        <img src="./img/hardik poster bottom.webp" alt="error" />
       </div>
-      <div id="happy-customers">
-        <h1>Over 5.5 Million Happy Customers</h1>
+      <div class="saradiv-poster">
+        <img src="./img/big bottom banner.webp" alt="" />
       </div>
-    </div>
+      <div id="banner-of-happy-customer">
+        <div id="home-brand-banner">
+          <h1>HOMEGROWN INDIAN BRAND</h1>
+        </div>
+        <div id="happy-customers">
+          <h1>Over 5.5 Million Happy Customers</h1>
+        </div>
+      </div>
+       
     `;
     themaincontet.innerHTML = structure;
 
@@ -1103,9 +1147,11 @@
     women_section_tab_a.style.color = "white";
     kids_section_tab_a.style.color = "white";
     kids_section_tab.style.backgroundColor = "#e11b23";
-    c = 1;
+
+    nextpager();
   };
   men_section_tab.addEventListener("click", () => {
+    localStorage.setItem("pagetoLoad", "men");
     mens();
     let slideIndex = 1;
     showSlides(slideIndex);
@@ -1130,6 +1176,40 @@
     }
   });
 
+  // on windows reload or from the login page
+  window.onload = () => {
+    const pagetoLoad = localStorage.getItem("pagetoLoad");
+    if (pagetoLoad === "women") {
+      womenfun();
+    } else if (pagetoLoad === "men") {
+      mens();
+    } else {
+      womenfun();
+    }
+    //   to load the sliders mens page
+    const showSlides = async (n) => {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      if (slides[slideIndex - 1] !== undefined) {
+        slides[slideIndex - 1].style.display = "block";
+      }
+    };
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    const plusSlides = async (n) => {
+      showSlides((slideIndex += n));
+    };
+  };
   //   on clidking the kids section
   const kids = () => {
     const structure = `
@@ -1179,5 +1259,58 @@
       who_link_plus.innerText = "-";
     }
   };
-  //   for the women tab
+
+  // to update the user cart total
+  // to update cart count
+  const updateCartcount = () => {
+    const cart_count = document.getElementById("cart-count");
+    if (sessionStorage.getItem("accesstoken")) {
+      cart_count.innerText = sessionStorage.getItem("cartCount");
+    } else {
+      cart_count.innerText = 0;
+    }
+    const cart_icon = document.getElementById("cart-icon");
+    cart_icon.addEventListener("click", () => {
+      window.location.assign("http://127.0.0.1:5500/frontend/cart.html");
+    });
+  };
+  // to count the cart total
+  const fetchuserCart = async () => {
+    const promise = await fetch("http://localhost:7200/user/getcart", {
+      headers: {
+        "Contet-type": "application/json",
+        Authorization: sessionStorage.getItem("accesstoken"),
+      },
+      method: "GET",
+    });
+    const res = await promise.json();
+    sessionStorage.setItem("cartCount", res.data.length);
+    updateCartcount();
+  };
+  fetchuserCart();
+  //  product page link
+
+  const nextpager = async () => {
+    const nextpagefun = () => {
+      window.location.assign("http://127.0.0.1:5500/frontend/mainproduct.html");
+    };
+
+    const slideshow_container = document.querySelectorAll(
+      "#card-container div"
+    );
+    const category_card_container = document.querySelectorAll(
+      "#category-card-container div"
+    );
+    const category2 = document.querySelectorAll(".category2 img");
+
+    slideshow_container.forEach((Element) => {
+      Element.addEventListener("click", nextpagefun);
+    });
+    category_card_container.forEach((Element) => {
+      Element.addEventListener("click", nextpagefun);
+    });
+    category2.forEach((Element) => {
+      Element.addEventListener("click", nextpagefun);
+    });
+  };
 </script>

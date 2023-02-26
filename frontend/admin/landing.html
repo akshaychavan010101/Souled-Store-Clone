@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #page-container {
+        display: flex;
+        justify-content: space-around;
+        border: 2px solid red;
+      }
+      #left-section {
+        /* border: 3px solid blue; */
+        width: 30%;
+      }
+      #website-div {
+        /* border: 1px solid green; */
+        text-align: center;
+        line-height: 1;
+        color: rgb(29, 3, 136);
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        background: linear-gradient(
+          to left,
+          rgb(242, 246, 179),
+          rgb(253, 253, 250)
+        );
+      }
+      #website-div img {
+        width: 30%;
+        display: block;
+        margin: auto;
+      }
+      #logged-admin {
+        /* border: 1px solid green; */
+        text-align: center;
+        line-height: 1;
+        color: rgb(29, 3, 136);
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        background: linear-gradient(
+          to left,
+          rgb(230, 230, 244),
+          rgb(249, 244, 206)
+        );
+      }
+      #logged-admin img {
+        width: 20%;
+        height: 20%;
+        border-radius: 50%;
+        display: block;
+        margin: auto;
+      }
+      #logged-admin button {
+        padding: 0.3rem;
+        border: none;
+        background-color: rgb(0, 107, 128);
+        color: white;
+        font-weight: bold;
+        border-radius: 3px;
+      }
+
+      .drop-down-click-div {
+        padding: 0.2rem;
+        text-align: center;
+        background: linear-gradient(
+          to top,
+          rgb(141, 249, 141),
+          rgb(228, 249, 228)
+        );
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      }
+      #drop-down {
+        display: none;
+        border: 1px dotted;
+        padding: 0.2rem;
+        line-height: 1;
+      }
+      .drop-down-result {
+        border: 1px dotted;
+        padding: 0.2rem;
+        line-height: 1;
+      }
+      .drop-down-result div {
+        padding: 0.2rem;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+      }
+      .drop-down-result div img {
+        width: 10%;
+        height: 10%;
+        margin: 0 1rem;
+        border-radius: 50%;
+        border: 1px solid;
+      }
+      #click-and-show-on-right {
+        text-align: center;
+        margin: 0.5rem 0;
+        /* border: 1px solid; */
+      }
+      #click-and-show-on-right div {
+        border: 1px solid rgb(220, 173, 254);
+        border-radius: 5px;
+        margin: 0.2rem 0;
+        background: linear-gradient(
+          to left,
+          rgb(253, 172, 172),
+          rgb(188, 130, 230)
+        );
+      }
+      #right-section {
+        /* border: 3px solid; */
+        width: 68%;
+      }
+      #right-section > div:nth-child(1) {
+        /* border: 1px solid; */
+        text-align: center;
+        padding: 0.2rem;
+      }
+      #admin-panel-heading {
+        border: 1px solid rgb(204, 137, 252);
+        margin-bottom: 0.5rem;
+        border-radius: 7px;
+        color: white;
+        background: linear-gradient(to left, rgb(253, 172, 172), indigo);
+      }
+      #info-divs {
+        display: flex;
+        /* border: 1px solid; */
+        justify-content: space-between;
+      }
+      #info-divs > div {
+        width: 32%;
+        border-radius: 5px;
+        padding: 0.2rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        font-weight: bold;
+      }
+      #info-divs > div:nth-child(1) {
+        background-color: rgb(248, 52, 85);
+        color: white;
+      }
+      #info-divs > div:nth-child(2) {
+        background-color: rgb(52, 248, 150);
+        color: blue;
+      }
+      #info-divs > div:nth-child(3) {
+        background-color: rgb(245, 248, 71);
+      }
+      #dynamic-div {
+        border: 1px solid;
+        padding: 0.1rem;
+        /* background-color: turquoise; */
+        margin: 0.2rem;
+        box-sizing: border-box;
+      }
+      #dynamic-div-child1 {
+        display: flex;
+        justify-content: space-between;
+      }
+      #the-crud {
+        width: 50%;
+        /* border: 2px solid; */
+        height: fit-content;
+        padding: 0.5rem;
+        background-color: white;
+      }
+
+      #the-crud div {
+        /* border:2px dashed ; */
+
+        padding: 0.5rem;
+        margin: 1.7rem 0;
+        font-size: 1.5rem;
+        color: white;
+        border-radius: 5px;
+        font-weight: bolder;
+      }
+      #info {
+        width: 50%;
+        height: fit-content;
+      }
+      #info img {
+        width: 100%;
+      }
+
+      #stat-and-graph {
+        /* border: 1px solid; */
+        display: flex;
+        font-weight: bold;
+      }
+      #stat-and-graph div,
+      #the-stat {
+        width: 50%;
+        padding: 1rem;
+        /* border: 2px solid; */
+        box-sizing: border-box;
+      }
+      #stat-and-graph div img,
+      #the-stat img {
+        width: 100%;
+      }
+      #the-stat img {
+        margin-top: 0.7rem;
+      }
+
+      #addform ,#updateform{
+        display: none;
+      }
+
+      tr {
+        border: none;
+      }
+      td {
+        color: black;
+        border-radius: 7px;
+        border: none;
+      }
+      td input {
+        width: 80%;
+        padding: 0.5rem;
+        border-radius: 7px;
+        box-sizing: border-box;
+      }
+      td select {
+        width: 20%;
+        padding: 0.4rem;
+        border-radius: 7px;
+      }
+
+      td input[type="submit"] {
+        width: 100%;
+        border-radius: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page-container">
+      <div id="left-section">
+        <div id="logged-admin">
+          <img src="/frontend/img/Collection-tile_1.webp" alt="" />
+          <p>Admin Name</p>
+          <button>Logout</button>
+        </div>
+        <div id="website-div">
+          <h2>Go to website</h2>
+          <img src="/frontend/img/Accessories Shop Logo.gif" alt="" />
+        </div>
+        <div id="drop-down-list">
+          <div class="drop-down-click-div" onclick="showDiv()">
+            <h2>Registered Admins</h2>
+          </div>
+          <div id="drop-down">
+            <div class="drop-down-result">
+              <div>
+                <img src="/frontend/img/Womens-Best-Seller_.webp" alt="" />
+                <div><p>Admins name</p></div>
+              </div>
+            </div>
+            <div class="drop-down-result">
+              <div>
+                <img src="/frontend/img/Womens-Best-Seller_.webp" alt="" />
+                <div><p>Admins name</p></div>
+              </div>
+            </div>
+            <div class="drop-down-result">
+              <div>
+                <img src="/frontend/img/Womens-Best-Seller_.webp" alt="" />
+                <div><p>Admins name</p></div>
+              </div>
+            </div>
+            <div class="drop-down-result">
+              <div>
+                <img src="/frontend/img/Womens-Best-Seller_.webp" alt="" />
+                <div><p>Admins name</p></div>
+              </div>
+            </div>
+            <div class="drop-down-result">
+              <div>
+                <img src="/frontend/img/Womens-Best-Seller_.webp" alt="" />
+                <div><p>Admins name</p></div>
+              </div>
+            </div>
+            <div class="drop-down-result">
+              <div>
+                <img src="/frontend/img/Womens-Best-Seller_.webp" alt="" />
+                <div><p>Admins name</p></div>
+              </div>
+            </div>
+            <div class="drop-down-result">
+              <div>
+                <img src="/frontend/img/Womens-Best-Seller_.webp" alt="" />
+                <div><p>Admins name</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="click-and-show-on-right">
+          <div class="click-div" onclick="loadallproductsfun()">
+            <h2>ALL PRODUCTS</h2>
+          </div>
+          <div class="click-div" onclick="loaduserfun()">
+            <h2>REGISTERED USERS</h2>
+          </div>
+          <div class="click-div" onclick="loadorderfun()">
+            <h2>PLACED ORDERS</h2>
+          </div>
+        </div>
+      </div>
+      <div id="right-section">
+        <div>
+          <div id="admin-panel-heading">
+            <h1>THE ADMIN PANEL</h1>
+          </div>
+          <div id="info-divs">
+            <div>
+              <h3>TOTAL REVENUE</h3>
+              <h3>Amount</h3>
+            </div>
+            <div>
+              <h3>TOTAL SALE</h3>
+              <h3>Amount</h3>
+            </div>
+            <div>
+              <h3>TOTAL PRODUCTS</h3>
+              <h3>Amount</h3>
+            </div>
+          </div>
+        </div>
+        <div id="dynamic-div">
+          <div id="dynamic-div-child1">
+            <div id="the-crud">
+              <h3>TO DO OPERATIONS</h3>
+              <div
+                style="background-color: green; color: white"
+                onclick="addfun()"
+              >
+                ADD PRODUCTS
+              </div>
+              <div id="addform">
+                <form action="" onsubmit="submitAddform(event)">
+                  <table border="1px" cellspacing="5px" cellpadding="8px" style="background-color: antiquewhite;">
+                    <tr>
+                      <td>Title</td>
+                      <td><input type="text" name="title" id="" required /></td>
+                    </tr>
+                    <tr>
+                      <td>Gender</td>
+                      <td>
+                        <select name="gender" id="" required>
+                          <option value="Men">Men</option>
+                          <option value="Women">Women</option>
+                          <option value="Kids">Kids</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Price</td>
+                      <td>
+                        <input type="number" name="price" id="" required />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Discount</td>
+                      <td>
+                        <input type="number" name="discount" id="" required />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Rating</td>
+                      <td>
+                        <input type="text" name="rating" id="" required />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Product</td>
+                      <td>
+                        <input type="text" name="property" id="" required />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Theme</td>
+                      <td><input type="text" name="theme" id="" required /></td>
+                    </tr>
+                    <tr>
+                      <td>Size</td>
+                      <td><input type="text" name="size" id="" required /></td>
+                    </tr>
+                    <tr>
+                      <td>Image</td>
+                      <td>
+                        <input
+                          type="text"
+                          name="image1"
+                          id=""
+                          required
+                          style="margin: 0.1rem"
+                        />
+                        <input
+                          type="text"
+                          name="image2"
+                          id=""
+                          required
+                          style="margin: 0.1rem"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"><input type="submit" name="" id="" /></td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
+              <div
+                style="background-color: yellow; color: red"
+                onclick="updatefun()"
+              >
+                UPDATE PRODUCT
+              </div>
+              <div id="updateform">
+                <form action="" onsubmit="submitUpdateform(event)">
+                  <table
+                    border="1px"
+                    cellspacing="5px"
+                    cellpadding="8px"
+                    style="background-color: rgb(141, 249, 141)"
+                  >
+                    <tr>
+                      <td>Title</td>
+                      <td><input type="text" name="title" id="" required /></td>
+                    </tr>
+                    <tr>
+                      <td>Gender</td>
+                      <td>
+                        <select name="gender" id="" required>
+                          <option value="Men">Men</option>
+                          <option value="Women">Women</option>
+                          <option value="Kids">Kids</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Price</td>
+                      <td>
+                        <input type="number" name="price" id="" required />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Discount</td>
+                      <td>
+                        <input type="number" name="discount" id="" required />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Rating</td>
+                      <td>
+                        <input type="text" name="rating" id="" required />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Product</td>
+                      <td>
+                        <input type="text" name="property" id="" required />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Theme</td>
+                      <td><input type="text" name="theme" id="" required /></td>
+                    </tr>
+                    <tr>
+                      <td>Size</td>
+                      <td><input type="text" name="size" id="" required /></td>
+                    </tr>
+                    <tr>
+                      <td>Image</td>
+                      <td>
+                        <input
+                          type="text"
+                          name="image1"
+                          id=""
+                          required
+                          style="margin: 0.1rem"
+                        />
+                        <input
+                          type="text"
+                          name="image2"
+                          id=""
+                          required
+                          style="margin: 0.1rem"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"><input type="submit" name="" id="" /></td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
+              <div
+                style="background-color: red; color: white"
+                onclick="deletefun()"
+              >
+                DELETE PRODUCT
+              </div>
+            </div>
+            <div id="info">
+              <img src="/frontend/img/stat.png" alt="" />
+            </div>
+          </div>
+          <div id="the-changing-div"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const drop_down = document.getElementById("drop-down");
+  const showDiv = () => {
+    if (drop_down.style.display == "block") {
+      drop_down.style.display = "none";
+    } else {
+      drop_down.style.display = "block";
+    }
+  };
+
+  const loadallproductsfun = () => {
+    console.log("products");
+  };
+  const loaduserfun = () => {
+    console.log("users");
+  };
+  const loadorderfun = () => {
+    console.log("orders");
+  };
+
+  window.onload = () => {
+    const the_changing_div = document.getElementById("the-changing-div");
+    const toappend = `
+              <div id=stat-and-graph>
+                  <div id="the-graph">
+                     <h4>PROFIT GRAPH</h4>
+                     <img src="/frontend/img/pie chart.png" alt="">
+                  </div>
+                  <div id="the-stat">
+                      <div>STATS</div>
+                      <img src="/frontend/img/SGfIy.png" alt="">
+                  </div>
+              </div>
+
+      `;
+    the_changing_div.innerHTML = toappend;
+  };
+
+  const addfun = () => {
+    const addform = document.getElementById("addform");
+    if (addform.style.display === "none") {
+      addform.style.display = "block";
+    } else {
+      addform.style.display = "none";
+    }
+  };
+
+  const submitAddform = (event) => {
+    event.preventDefault();
+
+    alert("hello");
+  };
+  const updatefun = () => {
+    const updateform = document.getElementById("updateform");
+    if (updateform.style.display === "none") {
+      updateform.style.display = "block";
+    } else {
+      updateform.style.display = "none";
+    }
+  };
+  const deletefun = () => {};
+</script>
