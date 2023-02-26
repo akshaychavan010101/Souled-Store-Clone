@@ -19,19 +19,175 @@
         font-family: "Poppins";
       }
 
-      #poster-top {
-        margin: auto;
-        margin-top: 1rem;
-        /* border: 1px solid; */
-        padding: 3rem 0rem;
-        box-sizing: border-box;
-      }
-      #poster-top img {
+      /* nav bar */
+      /* Navbar 1 */
+      .navbar-1 {
+        /* border: 2px solid blue; */
+        background-color: #e11b23;
+        border: none;
+        position: relative;
+        top: 0;
         width: 100%;
+        transition: top 0.3s;
+        z-index: 1;
+      }
+
+      .navbar-1 ul {
+        /* border: 3px solid gray; */
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .navbar-1 ul > div {
+        width: 25%;
+        /* border: 1px solid; */
+        display: flex;
+        margin: 0;
+        font-size: 1rem;
+        font-weight: bolder;
+      }
+      .navbar-1 ul > div:nth-child(2) {
+        /* border: 1px solid; */
+        font-size: 0.8rem;
+        font-weight: normal;
+      }
+      .navbar-1 li {
+        margin: 0;
+      }
+
+      .navbar-1 li a {
         display: block;
-        margin: auto;
+        padding: 1rem;
+        text-decoration: none;
+        color: white;
+      }
+
+      /* Navbar 2 */
+      .navbar-2 {
+        border-bottom: 1px solid;
+        background-color: white;
+        color: #333;
+        display: flex;
+        justify-content: space-around;
+        position: sticky;
+        top: 0;
+        padding: 0;
+        width: 100%;
+        z-index: 1;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px,
+          rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px,
+          rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+      }
+
+      #logo-img-div {
+        /* border: 1px solid; */
+        padding: 0.2rem;
+        width: 5%;
+        position: absolute;
+        margin-right: 90%;
+        /* margin-top: 1%; */
         box-sizing: border-box;
       }
+      #logo-img-div img {
+        width: 100%;
+        /* height: 100%; */
+        box-sizing: border-box;
+        /* border: 1px solid brown; */
+        border-radius: 7px;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+          rgba(17, 17, 26, 0.1) 0px 8px 24px,
+          rgba(17, 17, 26, 0.1) 0px 16px 56px;
+      }
+      .navbar-2 ul {
+        /* border: 1px solid; */
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        margin: 0;
+        margin-left: 10rem;
+      }
+
+      .navbar-2 li {
+        /* margin-top: 0; */
+        /* border: 1px solid; */
+        padding: 0.4rem;
+        margin: 0 0.4rem;
+      }
+
+      .navbar-2 li a {
+        /* border: 1px solid; */
+        display: block;
+        padding: 6px 6px;
+        text-decoration: none;
+        color: rgb(94, 11, 11);
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+
+      .icons-div {
+        font-size: 1.4rem;
+      }
+      #cart-icon {
+        /* border: 1px solid; */
+        display: flex;
+      }
+      #cart-count {
+        position: absolute;
+        /* border: 1px solid; */
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        border-radius: 50%;
+        margin: 0.9% 1%;
+        padding: 0.1rem;
+        font-size: 1rem;
+        color: white;
+        font-weight: bold;
+        background-color: red;
+      }
+      /* drop down menues */
+
+      .drop-down-list-tag ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        border-bottom: 1px solid gray;
+      }
+
+      .drop-down-list-tag li {
+        float: left;
+        padding: 0;
+      }
+
+      .flex-divs ul ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+      }
+
+      .flex-divs ul li:hover > ul {
+        display: inherit;
+      }
+
+      .flex-divs ul ul li {
+        float: none;
+        position: relative;
+      }
+      .flex-divs ul ul li a {
+        color: gray;
+        font-size: 0.7rem;
+        line-height: 1;
+      }
+
+      .flex-divs ul ul ul {
+        position: absolute;
+        left: 100%;
+        top: 1%;
+      }
+
       #page-container {
         border-top: 1px solid rgb(211, 209, 209);
         display: flex;
@@ -192,12 +348,284 @@
         padding: 1rem;
         box-sizing: border-box;
       }
+
+      /* banners */
+      .saradiv-poster {
+        margin: 2rem 0;
+      }
+      .saradiv-poster img {
+        width: 100%;
+      }
+
+      #banner-of-happy-custumer {
+        border: 1ox solid;
+      }
+
+      #home-brand-banner {
+        /* border: 1px solid; */
+        text-align: center;
+        padding: 0.5rem;
+        background-color: #e11b23;
+        color: white;
+      }
+
+      #happy-customers {
+        /* border: 1px solid; */
+        text-align: center;
+        padding: 1rem;
+      }
+
+      /* footer */
+      /* footer area */
+      footer {
+        /* border: 1px solid; */
+        background-color: #e6e7e8;
+      }
+      #main-footer-div {
+        /* border: 2px solid red; */
+        width: 70%;
+        margin: auto;
+      }
+      #top-details-footer-div {
+        display: flex;
+        justify-content: space-between;
+      }
+      .op-details-footer-div-childs {
+        /* border: 1px solid; */
+        text-align: left;
+      }
+      h3 {
+        text-align: center;
+        color: #ed2e30;
+      }
+      .op-details-footer-div-childs ul {
+        /* border: 1px solid; */
+        text-decoration: none;
+        list-style: none;
+        margin: 0;
+      }
+      .op-details-footer-div-childs ul li {
+        /* border: 1px solid; */
+        margin: 0;
+        padding: 0.3rem 0;
+      }
+      .op-details-footer-div-childs ul li a {
+        /* border: 1px solid; */
+        text-decoration: none;
+        color: rgb(35, 5, 5);
+        font-weight: bold;
+        font-size: 0.9rem;
+        text-align: left;
+      }
+      .op-details-footer-div-childs ul li a:hover {
+        color: red;
+      }
+
+      #COD-and-return {
+        margin-top: 0.6rem;
+      }
+      #COD-and-return li {
+        /* border: 1px solid; */
+        margin-top: 0.2rem;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+      }
+      #COD-and-return img {
+        width: 15%;
+        margin-right: 0.3rem;
+      }
+      #middle-app-down-div {
+        /* border: 1px solid; */
+        margin: auto;
+        width: fit-content;
+        margin-top: 3rem;
+      }
+      #middle-app-down-div div {
+        /* border: 1px solid; */
+        margin: auto;
+        width: fit-content;
+        height: fit-content;
+      }
+
+      #social-handles {
+        /* border: 1px solid; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 30%;
+        margin: auto 72%;
+        font-size: 1rem;
+      }
+      #social-handles img {
+        width: 90%;
+      }
+      #social-handles img:hover {
+        width: 95%;
+      }
+      #navigation-link-and-who-div {
+        /* border: 1px solid; */
+        margin-top: 2rem;
+        font-size: 1rem;
+      }
+      .to-flex-divs-footer {
+        border: 1px solid gray;
+        display: flex;
+        margin-top: 0.2rem;
+        padding: 0 0.5rem;
+        justify-content: space-between;
+        font-size: 1rem;
+        color: #e11b23;
+      }
+      .to-flex-divs-footer button {
+        width: 5%;
+        border: none;
+        background-color: #e6e7e8;
+        font-size: 1.5rem;
+        color: #e11b23;
+        font-weight: bolder;
+        cursor: pointer;
+      }
+
+      #hidden-divs-footerOne,
+      #hidden-divs-footerTwo {
+        display: none;
+        border: 1px solid gray;
+        padding: 0.8rem;
+      }
+      #hidden-divs-footerOne a,
+      #hidden-divs-footerTwo a,
+      #hidden-divs-footerOne h4,
+      #hidden-divs-footerTwo h4 {
+        text-decoration-line: none;
+        color: rgb(62, 7, 7);
+        font-size: 0.9rem;
+      }
+      #hidden-divs-footerOne h4,
+      #hidden-divs-footerTwo h4 {
+        font-size: 1rem;
+      }
+
+      #pay-partners {
+        display: flex;
+        margin: auto;
+        font-size: 0.7rem;
+        margin: 2rem 0;
+      }
+      .pay-partners-flex-divs {
+        /* border: 1px solid; */
+        display: flex;
+        align-items: center;
+      }
+      .pay-partners-flex-divs div:nth-child(1) {
+        /* border: 1px solid; */
+        display: flex;
+        width: 30%;
+        align-items: center;
+      }
+      .pay-partners-flex-divs div:nth-child(2) {
+        width: 60%;
+      }
+      .pay-partners-flex-divs div:nth-child(2) img {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
-    <div id="poster-top">
-      <img src="./img/Sara_Homepage_cS1WnKo.webp" alt="" />
-    </div>
+    <!-- nav bar -->
+    <nav class="navbar-1">
+      <ul>
+        <div class="flex-divs">
+          <li id="women-section-tab">
+            <a id="women-section-tab-a-tag" href="#">WOMEN</a>
+          </li>
+          <li id="men-section-tab">
+            <a id="men-section-tab-a-tag" href="#">MEN</a>
+          </li>
+          <li id="kids-section-tab">
+            <a id="kids-section-tab-a-tag" href="#">KIDS</a>
+          </li>
+        </div>
+        <div class="flex-divs">
+          <li><a href="#">TRACK ORDER</a></li>
+          <li><a href="#">CONTACT US</a></li>
+          <li><a href="#">DOWNLOAD APP</a></li>
+        </div>
+      </ul>
+    </nav>
+
+    <nav class="navbar-2">
+      <div id="logo-img-div">
+        <img src="./img/Accessories Shop Logo.gif" alt="error" />
+      </div>
+      <div class="flex-divs">
+        <ul>
+          <li class="drop-down-list-tag">
+            <a href="#">TOPWEAR</a>
+            <ul class="dropdown">
+              <li><a href="#"> Tops New</a></li>
+              <li><a href="#">Shirts</a></li>
+              <li><a href="#">Co-ord Sets</a></li>
+              <li><a href="#">Women's T-Shirts </a></li>
+              <li><a href="#">Boyfriend T-shirts </a></li>
+              <li><a href="#">Sweatshirts & Sweaters New </a></li>
+              <li><a href="#">Hoodies & Jackets </a></li>
+              <li><a href="#">Dresses </a></li>
+            </ul>
+          </li>
+          <li class="drop-down-list-tag">
+            <a href="#">BOTTOMWEAR</a>
+            <ul class="dropdown">
+              <li><a href="#"> Joggers</a></li>
+              <li><a href="#">Freestyle Leggings New</a></li>
+              <li><a href="#">Innerwear New</a></li>
+              <li><a href="#">Shorts </a></li>
+              <li><a href="#">Boyfriend T-shirts </a></li>
+              <li><a href="#">All Day Pants</a></li>
+              <li><a href="#">Pajamas </a></li>
+            </ul>
+          </li>
+          <li class="drop-down-list-tag">
+            <a href="#">COLLECTIONS</a>
+            <ul class="dropdown">
+              <li><a href="#"> New Arrivals</a></li>
+              <li><a href="#">Best Sellers Activewear</a></li>
+              <li><a href="#">Hottest Deals New</a></li>
+            </ul>
+          </li>
+          <li class="drop-down-list-tag">
+            <a href="#">ACCESSORIES</a>
+            <ul class="dropdown">
+              <li><a href="#"> Footwear New</a></li>
+              <li><a href="#">Backpacks</a></li>
+              <li><a href="#">Perfumes</a></li>
+              <li><a href="#">Socks</a></li>
+            </ul>
+          </li>
+          <li class="drop-down-list-tag">
+            <a href="#">SHOP BY THEMES</a>
+          </li>
+          <li><a href="#">MEMBERSHIP</a></li>
+        </ul>
+      </div>
+      <div class="flex-divs icons-div">
+        <ul>
+          <li><i class="fa-solid fa-magnifying-glass"></i></li>
+          <li id="user-icon" onclick="logoutfun()">
+            <i class="fa-regular fa-user"></i
+            ><span style="font-size: 1.2rem" id="Logout-span"> | Logout</span>
+          </li>
+          <li><i class="fa-regular fa-heart"></i></li>
+          <li id="cart-icon">
+            <span id="cart-count">0</span
+            ><i class="fa-sharp fa-solid fa-bag-shopping"></i>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- main body -->
+
     <div id="page-container">
       <div id="left-section"></div>
 
@@ -304,15 +732,309 @@
         </div>
       </div>
     </div>
+
+    <div class="saradiv-poster">
+      <img src="./img/big bottom banner.webp" alt="" />
+    </div>
+    <div id="banner-of-happy-customer">
+      <div id="home-brand-banner">
+        <h1>HOMEGROWN INDIAN BRAND</h1>
+      </div>
+      <div id="happy-customers">
+        <h1>Over 5.5 Million Happy Customers</h1>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div id="main-footer-div">
+        <div id="top-details-footer-div">
+          <div class="op-details-footer-div-childs">
+            <h3>NEED HELP</h3>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">My Account</a></li>
+            </ul>
+          </div>
+          <div class="op-details-footer-div-childs">
+            <h3>COMPANY</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Stores Near Me</a></li>
+              <li><a href="#">From The Soul</a></li>
+              <li><a href="#">Souled Army</a></li>
+            </ul>
+          </div>
+          <div class="op-details-footer-div-childs">
+            <h3>MORE INFO</h3>
+            <ul>
+              <li><a href="#">T&C</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+          <div class="op-details-footer-div-childs">
+            <ul id="COD-and-return">
+              <li>
+                <img
+                  src="./img//Screenshot 2023-02-23 131711.png"
+                  alt="error"
+                />COD Available
+              </li>
+              <li>
+                <img
+                  src="./img/Screenshot 2023-02-23 131818.png"
+                  alt="error"
+                />30 Days Easy Returns
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="middle-app-down-div">
+          <div><h5>EXPERIENCE THE TRY-LEAF STORE APP</h5></div>
+          <div>
+            <img src="./img/play store.png" alt="error" />
+            <img src="./img/app store.png" alt="error" />
+          </div>
+        </div>
+        <div id="social-handles">
+          <div>Follow Us:</div>
+          <div><img src="./img/facebook.png" alt="error" /></div>
+          <div><img src="./img/insta.png" alt="error" /></div>
+          <div><img src="./img/notify.png" alt="error" /></div>
+          <div><img src="./img/twitter.png" alt="error" /></div>
+        </div>
+        <div id="navigation-link-and-who-div">
+          <div>
+            <div class="to-flex-divs-footer" onclick="openNaviLinkfun()">
+              <h4>NAVIGATION LINKS</h4>
+              <button id="nav-link-plus">+</button>
+            </div>
+            <div id="hidden-divs-footerOne">
+              <h4>Mens</h4>
+              <div>
+                <a href="#">T-ShirtsOversized</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#">T-ShirtsOversized</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#"> Full Sleeve</a> |
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#">Sleeve</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#"> T-Shirts</a> | <a href="#"> T-ShirtsFull</a> |
+                <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <a href="#"> Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <a href="#">Sweatshirts & Sweaters</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a>
+              </div>
+              <h4>Women</h4>
+              <div>
+                <a href="#">T-ShirtsOversized</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#">T-ShirtsOversized</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#"> Full Sleeve</a> |
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#">Sleeve</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#"> T-Shirts</a> | <a href="#"> T-ShirtsFull</a> |
+                <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <a href="#"> Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <a href="#">Sweatshirts & Sweaters</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a>
+              </div>
+              <h4>Kids</h4>
+              <div>
+                <a href="#">T-ShirtsOversized</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#">T-ShirtsOversized</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+                <a href="#"> Full Sleeve</a> |
+                <a href="#"> PolosHoodies & Jackets</a> |
+                <a href="#"> T-ShirtsFull</a> | <a href="#"> T-Shirts</a> |
+                <a href="#"> PolosHoodies & Jackets</a>
+                <br />
+              </div>
+              <h4>GET EXTRA DISCOUNTS WITH MEMBERSHIP</h4>
+              <h4>MY MEMBERSHIP</h4>
+            </div>
+          </div>
+          <div>
+            <div class="to-flex-divs-footer" onclick="openWhoLinkfun()">
+              <h4>WHO WE ARE</h4>
+              <button id="who-link-plus">+</button>
+            </div>
+            <div id="hidden-divs-footerTwo">
+              <div>
+                <p>
+                  The Souled Store was born out of the simple idea of loving
+                  what you do - following your soul – and, of course, our love
+                  for puns (sold/ souled). Our philosophy is just as simple-
+                  life is short, don’t spend it doing something you don’t like.
+                  From our products to our website, from our office culture to
+                  the way we interact with our customers, this philosophy’s a
+                  part of everything we do.
+                </p>
+              </div>
+              <div>
+                <p>
+                  In June 2013,TRY-LEAF was founded by four people, with just a
+                  cupboard full of t-shirts (probably as big as yours). Although
+                  we’ve grown from cupboards to warehouses, a lot of things have
+                  remained the same. Our core values are now shared not by just
+                  four people, but by a team that’s now grown to over a hundred
+                  people.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="pay-partners">
+          <div class="pay-partners-flex-divs">
+            <div><p>100% Secure Payment:</p></div>
+            <div><img src="./img/payment partners.png" alt="error" /></div>
+          </div>
+          <div class="pay-partners-flex-divs">
+            <div><p>Shipping Partners:</p></div>
+            <div><img src="./img/shipping partners.png" alt="error" /></div>
+          </div>
+        </div>
+        <div style="margin: auto; width: fit-content">
+          <span style="font-size: 0.8rem; color: gray">
+            &#9400;The TRY-LEAF Fashions 2023-24</span
+          >
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 <script>
+  // logout
+  const logoutfun = () => {
+    if (sessionStorage.getItem("accesstoken")) {
+      // const Logout_span = document.getElementById("Logout-span");
+      // Logout_span.style.display = "block";
+      sessionStorage.clear();
+      window.location.assign("http://127.0.0.1:5500/frontend/main.html");
+    } else {
+      // const Logout_span = document.getElementById("Logout-span");
+      // Logout_span.style.display = "none";
+      window.location.assign("http://127.0.0.1:5500/frontend/index.html");
+    }
+  };
+  // for the nav bar
+  const pagetoLoad = localStorage.getItem("pagetoLoad");
+  const women_section_tab = document.getElementById("women-section-tab");
+  const women_section_tab_a = document.getElementById(
+    "women-section-tab-a-tag"
+  );
+  const men_section_tab = document.getElementById("men-section-tab");
+  const men_section_tab_a = document.getElementById("men-section-tab-a-tag");
+  const kids_section_tab = document.getElementById("kids-section-tab");
+  const kids_section_tab_a = document.getElementById("kids-section-tab-a-tag");
+  if (pagetoLoad === "women") {
+    men_section_tab.style.backgroundColor = "#e11b23";
+    men_section_tab_a.style.color = "white";
+    women_section_tab.style.backgroundColor = "white";
+    women_section_tab_a.style.color = "black";
+    kids_section_tab.style.backgroundColor = "#e11b23";
+    kids_section_tab_a.style.color = "white";
+  } else if (pagetoLoad == "men") {
+    men_section_tab.style.backgroundColor = "white";
+    men_section_tab_a.style.color = "black";
+    women_section_tab.style.backgroundColor = "#e11b23";
+    women_section_tab_a.style.color = "white";
+    kids_section_tab_a.style.color = "white";
+    kids_section_tab.style.backgroundColor = "#e11b23";
+  }
+
+  //   on clicking the women section
+
+  women_section_tab.addEventListener("click", () => {
+    localStorage.setItem("pagetoLoad", "women");
+    window.location.assign("http://127.0.0.1:5500/frontend/main.html");
+  });
+
+  //   on clicking the men section
+
+  men_section_tab.addEventListener("click", () => {
+    localStorage.setItem("pagetoLoad", "men");
+    window.location.assign("http://127.0.0.1:5500/frontend/main.html#");
+  });
+
+  // on clicking the kids section
+  kids_section_tab.addEventListener("click", () => {
+    window.location.assign("#");
+  });
+
+  // main body
   let productsIncart = JSON.parse(localStorage.getItem("productsIncart")) || [];
   const left_section = document.getElementById("left-section");
   const product_title = document.querySelector("#product-title h2");
   const product_title_desc = document.querySelector("#product-title p");
   const product_price = document.querySelector("#product-price h4");
   let product = [];
+  const cart_count = document.getElementById("cart-count");
+  if (sessionStorage.getItem("accesstoken")) {
+    cart_count.innerText = sessionStorage.getItem("cartCount");
+  } else {
+    cart_count.innerText = 0;
+  }
+  const cart_icon = document.getElementById("cart-icon");
+  cart_icon.addEventListener("click", () => {
+    window.location.assign("http://127.0.0.1:5500/frontend/cart.html");
+  });
 
   let productBody = {};
   let Productprice = 1;
@@ -339,6 +1061,8 @@
 
    `;
     left_section.innerHTML = div;
+
+   
   };
   const fetchOnlyfun = async () => {
     const id = sessionStorage.getItem("productid");
@@ -391,36 +1115,125 @@
     Productprice = +product.price * +product_quantity.value;
   });
 
+  // to update cart count
+  const updateCartcount = () => {
+    const cart_count = document.getElementById("cart-count");
+    if (sessionStorage.getItem("accesstoken")) {
+      cart_count.innerText = sessionStorage.getItem("cartCount");
+    } else {
+      cart_count.innerText = 0;
+    }
+    const cart_icon = document.getElementById("cart-icon");
+    cart_icon.addEventListener("click", () => {
+      window.location.assign("http://127.0.0.1:5500/frontend/cart.html");
+    });
+  };
+  // to count the cart total
+  const fetchuserCart = async () => {
+    const promise = await fetch("http://localhost:7200/user/getcart", {
+      headers: {
+        "Contet-type": "application/json",
+        Authorization: sessionStorage.getItem("accesstoken"),
+      },
+      method: "GET",
+    });
+    const res = await promise.json();
+    sessionStorage.setItem("cartCount", res.data.length);
+    updateCartcount();
+  };
+
+  // validate before addding to cart whether login or not
+
+  const fetchtovalidateToken = async () => {
+    const promise = await fetch("http://localhost:7200/validatetoken", {
+      headers: {
+        "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("accesstoken"),
+      },
+      method: "POST",
+    });
+
+    const res = await promise.json();
+    if (!res.msg) {
+      window.location.assign("http://127.0.0.1:5500/frontend/index.html");
+    }
+  };
+
   // to add to cart
+
   const addtoCartfun = async () => {
+    fetchtovalidateToken();
     // check all conditions and then add to the cart
-    if (check == true) {
-      if (qtyclick == 0) {
-        Productprice = +product.price;
+    const promise = await fetch("http://localhost:7200/validatetoken", {
+      headers: {
+        "Content-type": "application/json",
+        Authorization: sessionStorage.getItem("accesstoken"),
+      },
+      method: "POST",
+    });
+
+    const res = await promise.json();
+    if (!res.msg) {
+      window.location.assign("http://127.0.0.1:5500/frontend/index.html");
+    } else {
+      if (check == true) {
+        if (qtyclick == 0) {
+          Productprice = +product.price;
+        }
+        const product_quantity = document.getElementById(
+          "product-quantity-select"
+        );
+
+        productBody["Qty"] = product_quantity.value;
+        productBody["afterQtyprice"] = Productprice;
+        productBody.size = productSize;
+
+        const promise = await fetch("http://localhost:7200/user/addtocart", {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: sessionStorage.getItem("accesstoken"),
+          },
+          method: "POST",
+          body: JSON.stringify(productBody),
+        });
+
+        const res = await promise.json();
+        fetchuserCart();
+        alert(res.msg);
+      } else if (check === false) {
+        alert("Please Select size");
       }
-      const product_quantity = document.getElementById(
-        "product-quantity-select"
-      );
+    }
+  };
 
-      productBody["Qty"] = product_quantity.value;
-      productBody["afterQtyprice"] = Productprice;
-      productBody.size = productSize;
+  //footer
+  const nav_link_plus = document.getElementById("nav-link-plus");
+  const who_link_plus = document.getElementById("who-link-plus");
+  const hidden_divs_footerOne = document.getElementById(
+    "hidden-divs-footerOne"
+  );
+  const hidden_divs_footerTow = document.getElementById(
+    "hidden-divs-footerTwo"
+  );
 
-      const promise = await fetch("http://localhost:7200/user/addtocart", {
-        headers: {
-          "Content-type": "application/json",
-          Authorization:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2M2Y0ZGU4OWNlMzI4MTY1OTNkMWViYjEiLCJpYXQiOjE2NzczMzg4NTEsImV4cCI6MTY3NzM0MjQ1MX0.t2umQIARIlfrN_Dtjv7SBf_LWos0kiGRAcs5dTyHVcg"
-        },
-        method: "POST",
-        body: JSON.stringify(productBody)
-      });
+  const openNaviLinkfun = () => {
+    console.log(hidden_divs_footerOne.style.display);
+    if (hidden_divs_footerOne.style.display === "block") {
+      hidden_divs_footerOne.style.display = "none";
+      nav_link_plus.innerText = "+";
+    } else {
+      hidden_divs_footerOne.style.display = "block";
+      nav_link_plus.innerText = "-";
+    }
+  };
 
-      const res = await promise.json();
-
-      alert(res.msg);
-    } else if (check === false) {
-      alert("Please Select size");
+  const openWhoLinkfun = () => {
+    if (hidden_divs_footerTow.style.display === "block") {
+      hidden_divs_footerTow.style.display = "none";
+      who_link_plus.innerText = "+";
+    } else {
+      hidden_divs_footerTow.style.display = "block";
+      who_link_plus.innerText = "-";
     }
   };
 </script>

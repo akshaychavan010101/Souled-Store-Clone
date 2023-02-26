@@ -106,6 +106,14 @@ UserRouter.delete("/delete/:id", async (req, res) => {
   }
 });
 
-
+UserRouter.post("/validatetoken", (req, res) => {
+  const token = req.headers.authorization;
+  try {
+    const verify = jwt.verify(token, process.env.secretKey);
+    res.send({msg : true });
+  } catch (error) {
+    res.send({msg : false , Error : error.message});
+  }
+});
 
 module.exports = { UserRouter };
