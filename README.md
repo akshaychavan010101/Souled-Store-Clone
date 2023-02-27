@@ -12,4 +12,5 @@ Akshay Chavan
 Tech Stack Used : - Languages HTML CSS JavaScript, Node.js, Express, Mongoose
 
 Followings are the screenshots of the pages of the website
+<br>
 <img src="https://tse4.mm.bing.net/th?id=OIP.PYipJ_hSncugM2SwnZitvgHaEK&pid=Api&P=0">
