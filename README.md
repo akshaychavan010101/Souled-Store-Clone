@@ -13,4 +13,4 @@ Tech Stack Used : - Languages HTML CSS JavaScript, Node.js, Express, Mongoose
 
 Followings are the screenshots of the pages of the website
 <br>
-<img src="[https://tse4.mm.bing.net/th?id=OIP.PYipJ_hSncugM2SwnZitvgHaEK&pid=Api&P=0](https://drive.google.com/file/d/1TXR2bAzcSj3x8OWY6mcPzAz-e_k0Zmw8/view?usp=share_link)">
+<img src="https://drive.google.com/file/d/1TXR2bAzcSj3x8OWY6mcPzAz-e_k0Zmw8/view?usp=share_link">
