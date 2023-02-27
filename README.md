@@ -15,6 +15,7 @@ Followings are the screenshots of the pages of the website
 <br>
 
 
+
 <h1>Home Page</h1>
 <a href="https://ibb.co/7rnjZj0"><img src="https://i.ibb.co/5srGSGJ/Screenshot-2023-02-27-140728.png" alt="Screenshot-2023-02-27-140728" border="0"></a>
 <a href="https://ibb.co/wR8JdZc"><img src="https://i.ibb.co/DtmG1Pr/Screenshot-2023-02-27-140812.png" alt="Screenshot-2023-02-27-140812" border="0"></a>
