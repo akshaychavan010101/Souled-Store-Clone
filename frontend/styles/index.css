@@ -1,0 +1,238 @@
+
+/* body of the page */
+#page-container {
+    /* border: 1px solid; */
+    width: 97%;
+    height: fit-content;
+    margin: auto;
+    padding: 1rem;
+    background-color: #e6e7e8;
+}
+
+#login-container {
+    /* border: 1px solid; */
+    width: 450px;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 3px;
+    background-color: white;
+}
+
+#main-login-content-container {
+    /* border: 2px solid rgb(195, 255, 0); */
+    margin: auto;
+    box-sizing: border-box;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#main-login-content-container-child1 {
+    /* border: 2px solid rgb(38, 38, 36); */
+    width: 100%;
+    height: 10%;
+    margin: auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#main-login-content-container-child2 {
+    /* border: 2px solid rgb(234, 255, 0); */
+    width: 100%;
+    height: 90%;
+    margin: auto;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+#login-content {
+    border: 1px solid;
+    height: 80%;
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 1rem;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #e2e3e4;
+    box-sizing: border-box;
+}
+
+#login-content-inner-div {
+    /* border: 2px solid blue; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.flex-div-for-login-signup {
+    display: flex;
+}
+
+.flex-div-for-login-signup>button {
+    width: 50%;
+    /* border: 1px solid; */
+    padding: 1rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.flex-divs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-divs>a {
+    text-decoration: none;
+    color: #000;
+    width: 35%;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+        rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+.fa-brands {
+    border-right: 2px solid gray;
+    padding: 0.3rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#email-input-bar,
+#password-input-bar,
+#Proceed-btn,
+#form-register-btn {
+    width: 80%;
+    margin: auto;
+    padding: 0.7rem;
+    box-sizing: border-box;
+    border: 1px solid skyblue;
+    border-radius: 7px;
+    outline: none;
+    margin: 1rem 0;
+}
+
+#Proceed-btn,
+#form-register-btn {
+    background-color: #ed2d2f;
+    border: none;
+    color: white;
+    margin-bottom: 0;
+}
+
+#Proceed-btn:hover,
+#form-register-btn:hover {
+    background-color: #da0a0d;
+    cursor: pointer;
+}
+
+a {
+    color: #ed2d2f;
+}
+
+#form-register-btn {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* signup */
+
+/* register box */
+#register-box {
+    display: none;
+}
+
+form {
+    /* border: 2px solid #cb0c0c; */
+    height: 80%;
+    background-color: #e2e3e4;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.2rem;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid skyblue;
+    border-radius: 7px;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+    animation: ease-out;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: rgb(7, 89, 88);
+    margin: 1% auto;
+    padding: 20px;
+    border-radius: 7px;
+    border: 1px solid #888;
+    width: 40%;
+    color: white;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes modal-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal {
+    animation: modal-animation 0.3s ease-out;
+}
+
+.flex-divs ul {
+    animation: modal-animation 0.3s ease-out;
+}
+

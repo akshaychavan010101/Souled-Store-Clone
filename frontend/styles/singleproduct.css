@@ -1,0 +1,299 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+    animation: ease-out;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: rgb(7, 89, 88);
+    margin: 1% auto;
+    padding: 20px;
+    border-radius: 7px;
+    border: 1px solid #888;
+    width: 40%;
+    color: white;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes modal-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal {
+    animation: modal-animation 0.3s ease-out;
+}
+
+/* no result and preloader starts here*/
+#no_result {
+    display: none;
+}
+
+#no_result>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#no_result>div>img {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+#preloader {
+    display: none;
+}
+
+#preloader>div {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* no result and preloader ends here */
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    75% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#page-container {
+    border-top: 1px solid rgb(211, 209, 209);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+#left-section {
+    /* border: 1px solid rebeccapurple; */
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* gap: 1rem; */
+}
+
+#left-section div {
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
+#left-section img {
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid;
+}
+
+#right-section {
+    width: 50%;
+    /* border: 1px solid; */
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
+#product-title {
+    /* border: 1px solid; */
+    padding: 0.5rem;
+    box-sizing: border-box;
+    line-height: 0.3;
+    color: rgb(77, 69, 69);
+    border-bottom: 1px solid rgb(151, 145, 145);
+}
+
+#product-title p {
+    color: rgb(151, 145, 145);
+    font-size: 0.8rem;
+}
+
+#product-price {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    box-sizing: border-box;
+    color: rgb(77, 69, 69);
+}
+
+#size-chart {
+    /* border: 1px solid; */
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    line-height: 1;
+    box-sizing: border-box;
+    color: rgb(77, 69, 69);
+}
+
+#size-chart-buttons {
+    width: 60%;
+    /* border: 1px solid; */
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#size-chart-buttons button {
+    width: 13%;
+    border-radius: 2cqmax;
+    border: 2px solid rgb(199, 196, 196);
+    padding: 0.5rem;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+#size-chart-buttons button:hover {
+    border: 2px solid rgb(118, 117, 117);
+    cursor: pointer;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+#product-quantity {
+    /* border: 1px solid; */
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1;
+    box-sizing: border-box;
+    color: rgb(77, 69, 69);
+}
+
+#product-quantity-select {
+    padding: 0.2rem;
+    border-radius: 5px;
+}
+
+#add-to-cart-and-add-to-whishlist-btn {
+    /* border: 1px solid; */
+    padding: 0.5rem;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+}
+
+#add-to-cart-and-add-to-whishlist-btn button {
+    width: 45%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: white;
+    border: 1px solid rgb(62, 236, 242);
+    font-weight: bold;
+}
+
+#add-to-cart-and-add-to-whishlist-btn button:nth-child(1) {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+#add-to-cart-and-add-to-whishlist-btn button:nth-child(1):hover {
+    background-color: rgb(239, 66, 8);
+}
+
+#add-to-cart-and-add-to-whishlist-btn button:nth-child(2):hover {
+    border: 1px solid rgb(9, 147, 119);
+    color: black;
+    box-sizing: border-box;
+}
+
+#share-and-icons {
+    width: 40%;
+    /* border: 1px solid; */
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    box-sizing: border-box;
+    color: rgb(77, 69, 69);
+}
+
+#share-and-icons span {
+    width: 50%;
+    font-size: 1rem;
+}
+
+#share-and-icons span i {
+    font-size: 1.2rem;
+    margin: 0 0.1rem;
+    cursor: pointer;
+}
+
+#drop-downs {
+    /* border: 1px solid; */
+    padding: 0.5rem;
+}
+
+.click-divs {
+    border: 1px solid rgb(209, 207, 207);
+    padding: 0.5rem;
+    /* margin: 0.5rem 0; */
+    cursor: pointer;
+}
+
+.open-click-div {
+    border: 1px solid rgb(209, 207, 207);
+    display: none;
+    line-height: 1.2;
+    font-size: 0.9rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* banners */
+.saradiv-poster {
+    margin: 2rem 0;
+}
+
+.saradiv-poster img {
+    width: 100%;
+}
+

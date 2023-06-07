@@ -9,183 +9,66 @@
       href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./styles/navbar.css" />
     <script src="https://kit.fontawesome.com/5cb8a0be4f.js"></script>
-    <script src="./scripts/validate.token.js"></script>
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Poppins";
-      }
-
-      /* nav bar */
-      /* Navbar 1 */
-      .navbar-1 {
-        /* border: 2px solid blue; */
-        background-color: #e11b23;
-        border: none;
-        position: relative;
-        top: 0;
-        width: 100%;
-        transition: top 0.3s;
-        z-index: 1;
-      }
-
-      .navbar-1 ul {
-        /* border: 3px solid gray; */
-        display: flex;
-        justify-content: space-around;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .navbar-1 ul > div {
-        width: 25%;
-        /* border: 1px solid; */
-        display: flex;
-        margin: 0;
-        font-size: 1rem;
-        font-weight: bolder;
-      }
-      .navbar-1 ul > div:nth-child(2) {
-        /* border: 1px solid; */
-        font-size: 0.8rem;
-        font-weight: normal;
-      }
-      .navbar-1 li {
-        margin: 0;
-      }
-
-      .navbar-1 li a {
-        display: block;
-        padding: 1rem;
-        text-decoration: none;
-        color: white;
-      }
-
-      /* Navbar 2 */
-      .navbar-2 {
-        border-bottom: 1px solid;
-        background-color: white;
-        color: #333;
-        display: flex;
-        justify-content: space-around;
-        position: sticky;
-        top: 0;
-        padding: 0;
-        width: 100%;
-        z-index: 1;
-        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px,
-          rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px,
-          rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
-      }
-
-      #logo-img-div {
-        /* border: 1px solid; */
-        padding: 0.2rem;
-        width: 5%;
-        position: absolute;
-        margin-right: 90%;
-        /* margin-top: 1%; */
-        box-sizing: border-box;
-      }
-      #logo-img-div img {
-        width: 100%;
-        /* height: 100%; */
-        box-sizing: border-box;
-        /* border: 1px solid brown; */
-        border-radius: 7px;
-        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-          rgba(17, 17, 26, 0.1) 0px 8px 24px,
-          rgba(17, 17, 26, 0.1) 0px 16px 56px;
-      }
-      .navbar-2 ul {
-        /* border: 1px solid; */
-        display: flex;
-        justify-content: space-evenly;
-        list-style: none;
-        margin: 0;
-        margin-left: 10rem;
-      }
-
-      .navbar-2 li {
-        /* margin-top: 0; */
-        /* border: 1px solid; */
-        padding: 0.4rem;
-        margin: 0 0.4rem;
-      }
-
-      .navbar-2 li a {
-        /* border: 1px solid; */
-        display: block;
-        padding: 6px 6px;
-        text-decoration: none;
-        color: rgb(94, 11, 11);
-        font-size: 0.9rem;
-        font-weight: bold;
-      }
-
-      .icons-div {
-        font-size: 1.4rem;
-      }
-      #cart-icon {
-        /* border: 1px solid; */
-        display: flex;
-      }
-      #cart-count {
-        position: absolute;
-        /* border: 1px solid; */
-        height: 20px;
-        width: 20px;
-        text-align: center;
-        border-radius: 50%;
-        margin: 0.9% 1%;
-        padding: 0.1rem;
-        font-size: 1rem;
-        color: white;
-        font-weight: bold;
-        background-color: red;
-      }
-      /* drop down menues */
-
-      .drop-down-list-tag ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        background-color: white;
-        border-bottom: 1px solid gray;
-      }
-
-      .drop-down-list-tag li {
-        float: left;
-        padding: 0;
-      }
-
-      .flex-divs ul ul {
+      .modal {
         display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0);
+        animation: ease-out;
       }
 
-      .flex-divs ul li:hover > ul {
-        display: inherit;
+      .modal-content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        align-items: center;
+        background-color: rgb(7, 89, 88);
+        margin: 1% auto;
+        padding: 20px;
+        border-radius: 7px;
+        border: 1px solid #888;
+        width: 40%;
+        color: white;
       }
 
-      .flex-divs ul ul li {
-        float: none;
-        position: relative;
-      }
-      .flex-divs ul ul li a {
-        color: gray;
-        font-size: 0.7rem;
-        line-height: 1;
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
       }
 
-      .flex-divs ul ul ul {
-        position: absolute;
-        left: 100%;
-        top: 1%;
+      .close:hover,
+      .close:focus {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
       }
+
+      @keyframes modal-animation {
+        0% {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .modal {
+        animation: modal-animation 0.3s ease-out;
+      }
+
       /* body of the page */
       #cart-page-container {
         /* border: 1px solid rgb(190, 190, 190); */
@@ -249,7 +132,6 @@
         box-sizing: border-box;
       }
       .Remove-moveto-watch {
-        /* border: 2px solid; */
         margin: 0.5rem 0;
         display: flex;
         justify-content: flex-end;
@@ -264,6 +146,7 @@
         border-radius: 3px;
         border: 1px solid rgb(215, 211, 211);
         background-color: white;
+        cursor: pointer;
       }
       #right-section {
         /* border: 1px solid rgb(201, 198, 198); */
@@ -284,6 +167,7 @@
         font-size: 0.9rem;
         border: none;
         border-radius: 3px;
+        cursor: pointer;
       }
       #coupon-code-div {
         /* border: 1px solid; */
@@ -558,7 +442,7 @@
 
     <nav class="navbar-2">
       <div id="logo-img-div">
-        <img src="./img/Accessories Shop Logo.gif" alt="error" />
+        <img src="./img/mainlogo.png" alt="error" />
       </div>
       <div class="flex-divs">
         <ul>
@@ -610,13 +494,22 @@
           <li><a href="#">MEMBERSHIP</a></li>
         </ul>
       </div>
-      <div class="flex-divs icons-div">
+      <div class="icons-div">
         <ul>
           <li><i class="fa-solid fa-magnifying-glass"></i></li>
-          <li id="user-icon" onclick="logoutfun()">
-            <i class="fa-regular fa-user"></i
-            ><span style="font-size: 1.2rem" id="Logout-span"> | Logout</span>
+          <li id="user-icon-btn">
+            <i class="fa-regular fa-user"></i>
           </li>
+          <div class="user-drop-wrap">
+            <ul>
+              <li id="closeDiv">❌</li>
+              <li id="login_option"><a href="./index.html">Login</a></li>
+              <li id="logout_option" onclick="logoutfun()">
+                <a href="#">Logout</a>
+              </li>
+              <li id="account_option"><a href="">Account</a></li>
+            </ul>
+          </div>
           <li><i class="fa-regular fa-heart"></i></li>
           <li id="cart-icon">
             <span id="cart-count">0</span
@@ -625,6 +518,15 @@
         </ul>
       </div>
     </nav>
+
+    <!-- modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modal-msg">Modal content goes here.</p>
+      </div>
+    </div>
 
     <!-- main body of the page -->
     <div id="cart-page-container">
@@ -955,19 +857,13 @@
   </body>
 </html>
 <script>
-  // logout
-  const logoutfun = () => {
-    if (sessionStorage.getItem("accesstoken")) {
-      const Logout_span = document.getElementById("Logout-span");
-      Logout_span.innerHTML = " | Logout"
-      sessionStorage.clear();
-      window.location.assign("http://127.0.0.1:5500/frontend/main.html");
-    } else {
-      const Logout_span = document.getElementById("Logout-span");
-      Logout_span.innerHTML = " | Login"
-      window.location.assign("http://127.0.0.1:5500/frontend/index.html");
-    }
-  };
+  const baseURL = "http://localhost:4000";
+
+  // modal
+  const modal_msg = document.getElementById("modal-msg");
+  let modal = document.getElementById("myModal");
+  let span = document.getElementsByClassName("close")[0];
+
   // for the nav bar
   const pagetoLoad = localStorage.getItem("pagetoLoad");
   const women_section_tab = document.getElementById("women-section-tab");
@@ -994,18 +890,97 @@
     kids_section_tab.style.backgroundColor = "#e11b23";
   }
 
+  // nav bar user icon
+  const user_icon = document.getElementById("user-icon-btn");
+  const user_drop_wrap = document.querySelector(".user-drop-wrap");
+  const closeDiv = document.getElementById("closeDiv");
+  const login_option = document.getElementById("login_option");
+  const logout_option = document.getElementById("logout_option");
+  const account_option = document.getElementById("account_option");
+
+  //cart count
+  const cart_count = document.getElementById("cart-count");
+
+  // cart icon
+  const cart_icon = document.getElementById("cart-icon");
+
+  // function to desplay the modal
+  const modalfun = (msg) => {
+    modal_msg.innerText = msg;
+    modal.style.display = "block";
+  };
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+ 
+  // validate the token
+  const fetchtovalidateToken = async () => {
+    if (!sessionStorage.getItem("accesstoken")) {
+      return false;
+    }
+    let res = false;
+    const promise = await fetch(`${baseURL}/validatetoken`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        authorization: `${sessionStorage.getItem("accesstoken")}`,
+      },
+    });
+    res = await promise.json();
+    if (!res.msg && !res) {
+      return false;
+    }
+    return true;
+  };
+  // onload
+  const onload = () => {
+    let res = fetchtovalidateToken();
+
+    if (!sessionStorage.getItem("accesstoken") || !res) {
+      logout_option.style.display = "none";
+      account_option.style.display = "none";
+      login_option.style.display = "block";
+      cart_count.style.display = "none";
+      window.location.assign("./index.html");
+    } else {
+      logout_option.style.display = "block";
+      account_option.style.display = "block";
+      login_option.style.display = "none";
+      cart_count.style.display = "block";
+    }
+  };
+  onload();
+
+  // logout
+  const logoutfun = () => {
+    sessionStorage.clear();
+    modalfun("Logged out successfully");
+    setTimeout(() => {
+      window.location.assign("./index.html");
+    }, 1500);
+  };
+
+  user_icon.addEventListener("click", () => {
+    user_drop_wrap.style.display = "block";
+  });
+
+  closeDiv.addEventListener("click", () => {
+    user_drop_wrap.style.display = "none";
+  });
+
   //   on clicking the women section
 
   women_section_tab.addEventListener("click", () => {
     localStorage.setItem("pagetoLoad", "women");
-    window.location.assign("http://127.0.0.1:5500/frontend/main.html");
+    window.location.assign("./main.html");
   });
 
   //   on clicking the men section
 
   men_section_tab.addEventListener("click", () => {
     localStorage.setItem("pagetoLoad", "men");
-    window.location.assign("http://127.0.0.1:5500/frontend/main.html#");
+    window.location.assign("./main.html#");
   });
 
   // on clicking the kids section
@@ -1013,20 +988,31 @@
     window.location.assign("#");
   });
 
-  // nav icons
-  const updateCartcount = () => {
-    const cart_count = document.getElementById("cart-count");
-    if (sessionStorage.getItem("accesstoken")) {
+  // to update cart count
+  const updateCartcount = async () => {
+    if (
+      sessionStorage.getItem("accesstoken") &&
+      sessionStorage.getItem("cartCount")
+    ) {
       cart_count.innerText = sessionStorage.getItem("cartCount");
     } else {
-      cart_count.innerText = 0;
+      try {
+        const promise = await fetch(`${baseURL}/user/getcart`, {
+          headers: {
+            "Contet-type": "application/json",
+            authorization: `${sessionStorage.getItem("accesstoken")}`,
+          },
+        });
+        const res = await promise.json();
+        sessionStorage.setItem("cartCount", res.data.length);
+        updateCartcount();
+      } catch (error) {
+        cart_count.innerText = 0;
+      }
     }
-    const cart_icon = document.getElementById("cart-icon");
-    cart_icon.addEventListener("click", () => {
-      window.location.assign("http://127.0.0.1:5500/frontend/cart.html");
-    });
   };
-  // main body of the page
+  updateCartcount();
+
   const click_divs = document.getElementsByClassName("click-divs");
   const open_click_div = document.getElementsByClassName("open-click-div");
 
@@ -1100,7 +1086,7 @@
   };
 
   const fetchuserCart = async () => {
-    const promise = await fetch("http://localhost:7200/user/getcart", {
+    const promise = await fetch(`${baseURL}/user/getcart`, {
       headers: {
         "Contet-type": "application/json",
         Authorization: sessionStorage.getItem("accesstoken"),
@@ -1115,15 +1101,20 @@
   fetchuserCart();
 
   const removefun = async (id) => {
-    const promise = await fetch(`http://localhost:7200/user/remove/${id}`, {
-      headers: {
-        "Content-type": "application/json",
-      },
-      method: "DELETE",
-    });
-    const res = await promise.json();
-    alert(res.msg);
-    fetchuserCart();
+    try {
+      const promise = await fetch(`${baseURL}/user/remove/${id}`, {
+        headers: {
+          "Content-type": "application/json",
+          authorization: `${sessionStorage.getItem("accesstoken")}`,
+        },
+        method: "DELETE",
+      });
+      const res = await promise.json();
+      modalfun(res.msg);
+      fetchuserCart();
+    } catch (error) {
+      modalfun("something went wrong");
+    }
   };
 
   const addtowatchfun = (id) => {
@@ -1141,7 +1132,6 @@
   );
 
   const openNaviLinkfun = () => {
-    console.log(hidden_divs_footerOne.style.display);
     if (hidden_divs_footerOne.style.display === "block") {
       hidden_divs_footerOne.style.display = "none";
       nav_link_plus.innerText = "+";

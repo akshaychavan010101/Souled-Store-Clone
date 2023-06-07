@@ -1,14 +1,22 @@
 const express = require("express");
 const { UserModel } = require("../models/users.model");
 const UserRouter = express.Router();
-UserRouter.use(express.json());
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
+
+// new code for google auth
+const passport = require("../oauths/google.oauth");
+const { v4: uuidv4 } = require("uuid");
+
+// Initialize Passport.js
+UserRouter.use(passport.initialize());
+UserRouter.use(passport.session());
 
 UserRouter.get("/users", async (req, res) => {
   try {
     const users = await UserModel.find();
-    res.send({ msg: "All users data", data: users });
+    res.json({ msg: "All users data", data: users, ok: true });
   } catch (error) {
     res.send({ msg: "Server Error", Error: error.message });
   }
@@ -17,30 +25,23 @@ UserRouter.get("/users", async (req, res) => {
 UserRouter.post("/register", async (req, res) => {
   try {
     const { first_name, last_name, email, password, phone, gender } = req.body;
-    const user = await UserModel.find({ email: email });
-    if (user.length > 0) {
-      res.send({ msg: "Email is already registered, Please Login" });
-    } else {
-      bcrypt.hash(password, 6, async (err, hash) => {
-        if (err) {
-          res.send({
-            msg: "Something went wrong, Please try again",
-            Error: err.message,
-          });
-        } else {
-          const newUser = await UserModel({
-            first_name,
-            last_name,
-            email,
-            password: hash,
-            phone,
-            gender,
-          });
-          await newUser.save();
-          res.send({ msg: "User Registered Successfully" });
-        }
-      });
+    const user = await UserModel.findOne({ email: email });
+    if (user) {
+      return res.send({ msg: "User already exists", ok: false });
     }
+
+    const newUser = await new UserModel({
+      first_name,
+      last_name,
+      email,
+      password,
+      phone,
+      gender,
+    });
+
+    await newUser.save();
+
+    res.json({ msg: "User Registered", ok: true });
   } catch (error) {
     res.send({ msg: "Server error", Error: error.message });
   }
@@ -49,37 +50,29 @@ UserRouter.post("/register", async (req, res) => {
 UserRouter.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = await UserModel.find({ email: email });
-    if (user.length > 0) {
-      bcrypt.compare(password, user[0].password, async (err, result) => {
-        if (result) {
-          const token = await jwt.sign(
-            { userid: user[0]._id },
-            process.env.secretKey,
-            { expiresIn: "1h" }
-          );
-          const tosendUser = {
-            first_name: user[0].first_name,
-            last_name: user[0].last_name,
-            email: user[0].email,
-            phone: user[0].phone,
-            gender: user[0].gender,
-            _id: user[0]._id,
-          };
-          res.send({
-            msg: "Login Successfull",
-            accesstoken: token,
-            user: tosendUser,
-          });
-        } else {
-          res.send({
-            msg: "Wrong Credentials",
-          });
-        }
-      });
-    } else {
-      res.send({ msg: "Account not found, Please register first" });
+    const user = await UserModel.findOne({ email });
+    if (!user) {
+      return res.json({ msg: "User does not exist", ok: false });
     }
+
+    const isMatch = bcrypt.compareSync(password, user.password);
+    if (!isMatch) {
+      return res.json({ msg: "Invalid Credentials", ok: false });
+    }
+
+    const token = jwt.sign({ userid: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "7h",
+    });
+
+    const refreshToken = jwt.sign(
+      { id: user._id },
+      process.env.JWT_REFRESH_SECRET,
+      {
+        expiresIn: "7d",
+      }
+    );
+
+    res.json({ msg: "Login Successful", token, refreshToken, ok: true });
   } catch (error) {
     res.send({ msg: "Server error", Error: error.message });
   }
@@ -106,13 +99,82 @@ UserRouter.delete("/delete/:id", async (req, res) => {
   }
 });
 
-UserRouter.post("/validatetoken", (req, res) => {
+UserRouter.get("/validatetoken", (req, res) => {
   const token = req.headers.authorization;
   try {
-    const verify = jwt.verify(token, process.env.secretKey);
-    res.send({msg : true });
+    jwt.verify(token, process.env.JWT_SECRET);
+    res.json({ msg: "Valid token", ok: true });
   } catch (error) {
-    res.send({msg : false , Error : error.message});
+    res.json({ msg: false, Error: error.message });
+  }
+});
+
+// ------------------ Google auth -----------------------
+// Set up Google authentication callback route
+UserRouter.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "send the link of register page",
+  }),
+  (req, res) => {
+    try {
+      // Redirect user to the home page after authentication
+      res.redirect("/google-verify");
+    } catch (error) {
+      res.send(error.message);
+    }
+  }
+);
+
+// Set up Google authentication route (hit this to start the Google authentication process)
+UserRouter.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+// Set up Google authentication verification route
+UserRouter.get("/google-verify", async (req, res) => {
+  try {
+    // check if the email is verified from the googel if not send error
+    if (!req.user || !req.user.emails[0].verified || !req.user.id) {
+      res.status(400).json({ msg: "Invalid access to route" });
+      return;
+    }
+
+    const { displayName, emails } = req.user;
+
+    const user = {
+      first_name: displayName,
+      last_name: displayName,
+      email: emails[0].value,
+      password: uuidv4(),
+      phone: 123456789,
+      gender: "google",
+    };
+
+    // // save the user details in the database here
+    const userInDb = await UserModel.findOne({ email: user.email });
+
+    let newUserId = "";
+    if (!userInDb) {
+      const newUser = new UserModel(user);
+      await newUser.save();
+      newUserId = newUser._id;
+    }
+    //  send the token to the frontend
+    const token = jwt.sign(
+      { userid: newUserId ? newUserId : userInDb._id },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "7h",
+      }
+    );
+
+    // redirect the user to the frontend
+    res.redirect(`http://127.0.0.1:5500/frontend/main.html?token=${token}`);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ msg: "Something went wrong*", error });
   }
 });
 

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payment Page</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto;
+      padding: 0.5rem;
+    }
+
+    main {
+      width: 80%;
+      height: 90vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #top-section {
+      width: 90%;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    #bottom-section {
+      width: 90%;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    #address {
+      margin-bottom: 20px;
+    }
+
+    #address h2 {
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    h2 {
+      color: #555;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    label {
+      color: #666;
+      font-weight: normal;
+    }
+
+    button[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    button[type="submit"]:focus {
+      outline: none;
+    }
+  </style>
+  <body>
+    <div id="heading">
+      <span>logo</span>
+      <h2>Fashion Factory</h2>
+    </div>
+    <main>
+      <div id="top-section">
+        <div>
+          <h1>Order Summary</h1>
+          <h2>Cart Total: $50</h2>
+          <h3>Items:</h3>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+        </div>
+        <div>
+          <div id="address">
+            <h1>Shipping Address</h1>
+            <p>
+              John Doe
+              <br />
+              123 Main St
+              <br />
+              New York, NY 10001
+            </p>
+            <button>Change Address</button>
+          </div>
+        </div>
+      </div>
+      <div id="bottom-section">
+        <h1>Payment Options</h1>
+        <form>
+          <h3>Select Payment Method:</h3>
+          <input
+            type="radio"
+            name="payment"
+            id="credit-card"
+            value="credit-card"
+          />
+          <label for="credit-card">Credit Card</label>
+          <br />
+          <input type="radio" name="payment" id="paypal" value="paypal" />
+          <label for="paypal">PayPal</label>
+          <br />
+          <input
+            type="radio"
+            name="payment"
+            id="google-pay"
+            value="google-pay"
+          />
+          <label for="google-pay">Google Pay</label>
+          <br />
+
+          <button type="submit">Confirm Order</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

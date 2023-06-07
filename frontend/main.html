@@ -11,517 +11,21 @@
       href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+
     <script src="https://kit.fontawesome.com/5cb8a0be4f.js"></script>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Poppins";
-      }
-
-      /* nav bar */
-      /* Navbar 1 */
-      .navbar-1 {
-        /* border: 2px solid blue; */
-        background-color: #e11b23;
-        border: none;
-        position: relative;
-        top: 0;
-        width: 100%;
-        transition: top 0.3s;
-        z-index: 1;
-      }
-
-      .navbar-1 ul {
-        /* border: 3px solid gray; */
-        display: flex;
-        justify-content: space-around;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .navbar-1 ul > div {
-        width: 25%;
-        /* border: 1px solid; */
-        display: flex;
-        margin: 0;
-        font-size: 1rem;
-        font-weight: bolder;
-      }
-      .navbar-1 ul > div:nth-child(2) {
-        /* border: 1px solid; */
-        font-size: 0.8rem;
-        font-weight: normal;
-      }
-      .navbar-1 li {
-        margin: 0;
-      }
-
-      .navbar-1 li a {
-        display: block;
-        padding: 1rem;
-        text-decoration: none;
-        color: white;
-      }
-
-      /* Navbar 2 */
-      .navbar-2 {
-        border-bottom: 1px solid;
-        background-color: white;
-        color: #333;
-        display: flex;
-        justify-content: space-around;
-        position: sticky;
-        top: 0;
-        padding: 0;
-        width: 100%;
-        z-index: 1;
-        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px,
-          rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px,
-          rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
-      }
-
-      #logo-img-div {
-        /* border: 1px solid; */
-        padding: 0.2rem;
-        width: 5%;
-        position: absolute;
-        margin-right: 90%;
-        /* margin-top: 1%; */
-        box-sizing: border-box;
-      }
-      #logo-img-div img {
-        width: 100%;
-        /* height: 100%; */
-        box-sizing: border-box;
-        /* border: 1px solid brown; */
-        border-radius: 7px;
-        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-          rgba(17, 17, 26, 0.1) 0px 8px 24px,
-          rgba(17, 17, 26, 0.1) 0px 16px 56px;
-      }
-      .navbar-2 ul {
-        /* border: 1px solid; */
-        display: flex;
-        justify-content: space-evenly;
-        list-style: none;
-        margin: 0;
-        margin-left: 10rem;
-      }
-
-      .navbar-2 li {
-        /* margin-top: 0; */
-        /* border: 1px solid; */
-        padding: 0.4rem;
-        margin: 0 0.4rem;
-      }
-
-      .navbar-2 li a {
-        /* border: 1px solid; */
-        display: block;
-        padding: 6px 6px;
-        text-decoration: none;
-        color: rgb(94, 11, 11);
-        font-size: 0.9rem;
-        font-weight: bold;
-      }
-
-      .icons-div {
-        font-size: 1.4rem;
-      }
-      #cart-icon {
-        /* border: 1px solid; */
-        display: flex;
-      }
-      #cart-count {
-        position: absolute;
-        /* border: 1px solid; */
-        height: 20px;
-        width: 20px;
-        text-align: center;
-        border-radius: 50%;
-        margin: 0.9% 1%;
-        padding: 0.1rem;
-        font-size: 1rem;
-        color: white;
-        font-weight: bold;
-        background-color: red;
-      }
-
-     
-      /* drop down menues */
-
-      .drop-down-list-tag ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        background-color: white;
-        border-bottom: 1px solid gray;
-      }
-
-      .drop-down-list-tag li {
-        float: left;
-        padding: 0;
-      }
-
-      .flex-divs ul ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-      }
-
-      .flex-divs ul li:hover > ul {
-        display: inherit;
-      }
-
-      .flex-divs ul ul li {
-        float: none;
-        position: relative;
-      }
-      .flex-divs ul ul li a {
-        color: gray;
-        font-size: 0.7rem;
-        line-height: 1;
-      }
-
-      .flex-divs ul ul ul {
-        position: absolute;
-        left: 100%;
-        top: 1%;
-      }
-
-      /* body of the page */
-      .slideshow-container {
-        width: 100%;
-        position: relative;
-        margin: auto;
-      }
-
-      .mySlides {
-        display: none;
-      }
-
-      .prev,
-      .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        margin-top: -22px;
-        padding: 16px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-      }
-
-      .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
-
-      .prev:hover,
-      .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-
-      .fade {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 1.5s;
-      }
-
-      @-webkit-keyframes fade {
-        from {
-          opacity: 0.4;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fade {
-        from {
-          opacity: 0.4;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      #card-slider {
-        border: 2px solid;
-        height: 300px;
-      }
-
-      /* mid collections */
-      #collection {
-        /* border: 1px solid; */
-        padding: 1rem;
-        margin: 1rem 0;
-      }
-      .collection-heading {
-        text-align: center;
-        font-weight: bolder;
-        font-size: 1.8rem;
-        margin: 1rem 0;
-      }
-      #card-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-      }
-
-      .img-card-div img {
-        /* border: 1px solid; */
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-        display: block;
-        margin: auto;
-        border-radius: 3px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
-          rgba(0, 0, 0, 0.23) 0px 3px 6px;
-      }
-
-      @keyframes modal-animation {
-        0% {
-          opacity: 1;
-          transform: scale(1);
-        }
-        100% {
-          opacity: 0.9;
-          transform: scale(1.1);
-        }
-      }
-      .img-card-div img:hover {
-        animation: modal-animation 0.5s ease-out;
-      }
-
-      /* category section , merchandise*/
-
-      #category-card-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
-      }
-
-      .category-img-card-div {
-        padding: 0.5rem;
-      }
-      .category-img-card-div img {
-        width: 100%;
-      }
-
-      .category2,
-      #OFFICIAL-MERCHANDISE {
-        display: flex;
-        justify-content: space-around;
-        padding: 0.3rem;
-        margin: 0;
-      }
-      .category2 img,
-      #OFFICIAL-MERCHANDISE img {
-        display: block;
-        margin: auto;
-        width: 98%;
-      }
-
-      /* sarah - poster and below banner*/
-      .saradiv-poster {
-        margin: 2rem 0;
-      }
-      .saradiv-poster img {
-        width: 100%;
-      }
-      /* banner */
-
-      #banner-of-happy-custumer {
-        border: 1ox solid;
-      }
-
-      #home-brand-banner {
-        /* border: 1px solid; */
-        text-align: center;
-        padding: 0.5rem;
-        background-color: #e11b23;
-        color: white;
-      }
-
-      #happy-customers {
-        /* border: 1px solid; */
-        text-align: center;
-        padding: 1rem;
-      }
-
-      /* banner ends */
-      /* footer area */
-      footer {
-        /* border: 1px solid; */
-        background-color: #e6e7e8;
-      }
-      #main-footer-div {
-        /* border: 2px solid red; */
-        width: 70%;
-        margin: auto;
-      }
-      #top-details-footer-div {
-        display: flex;
-        justify-content: space-between;
-      }
-      .op-details-footer-div-childs {
-        /* border: 1px solid; */
-        text-align: left;
-      }
-      h3 {
-        text-align: center;
-        color: #ed2e30;
-      }
-      .op-details-footer-div-childs ul {
-        /* border: 1px solid; */
-        text-decoration: none;
-        list-style: none;
-        margin: 0;
-      }
-      .op-details-footer-div-childs ul li {
-        /* border: 1px solid; */
-        margin: 0;
-        padding: 0.3rem 0;
-      }
-      .op-details-footer-div-childs ul li a {
-        /* border: 1px solid; */
-        text-decoration: none;
-        color: rgb(35, 5, 5);
-        font-weight: bold;
-        font-size: 0.9rem;
-        text-align: left;
-      }
-      .op-details-footer-div-childs ul li a:hover {
-        color: red;
-      }
-
-      #COD-and-return {
-        margin-top: 0.6rem;
-      }
-      #COD-and-return li {
-        /* border: 1px solid; */
-        margin-top: 0.2rem;
-        font-size: 0.9rem;
-        display: flex;
-        align-items: center;
-      }
-      #COD-and-return img {
-        width: 15%;
-        margin-right: 0.3rem;
-      }
-      #middle-app-down-div {
-        /* border: 1px solid; */
-        margin: auto;
-        width: fit-content;
-        margin-top: 3rem;
-      }
-      #middle-app-down-div div {
-        /* border: 1px solid; */
-        margin: auto;
-        width: fit-content;
-        height: fit-content;
-      }
-
-      #social-handles {
-        /* border: 1px solid; */
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 30%;
-        margin: auto 72%;
-        font-size: 1rem;
-      }
-      #social-handles img {
-        width: 90%;
-      }
-      #social-handles img:hover {
-        width: 95%;
-      }
-      #navigation-link-and-who-div {
-        /* border: 1px solid; */
-        margin-top: 2rem;
-        font-size: 1rem;
-      }
-      .to-flex-divs-footer {
-        border: 1px solid gray;
-        display: flex;
-        margin-top: 0.2rem;
-        padding: 0 0.5rem;
-        justify-content: space-between;
-        font-size: 1rem;
-        color: #e11b23;
-      }
-      .to-flex-divs-footer button {
-        width: 5%;
-        border: none;
-        background-color: #e6e7e8;
-        font-size: 1.5rem;
-        color: #e11b23;
-        font-weight: bolder;
-        cursor: pointer;
-      }
-
-      #hidden-divs-footerOne,
-      #hidden-divs-footerTwo {
-        display: none;
-        border: 1px solid gray;
-        padding: 0.8rem;
-      }
-      #hidden-divs-footerOne a,
-      #hidden-divs-footerTwo a,
-      #hidden-divs-footerOne h4,
-      #hidden-divs-footerTwo h4 {
-        text-decoration-line: none;
-        color: rgb(62, 7, 7);
-        font-size: 0.9rem;
-      }
-      #hidden-divs-footerOne h4,
-      #hidden-divs-footerTwo h4 {
-        font-size: 1rem;
-      }
-
-      #pay-partners {
-        display: flex;
-        margin: auto;
-        font-size: 0.7rem;
-        margin: 2rem 0;
-      }
-      .pay-partners-flex-divs {
-        /* border: 1px solid; */
-        display: flex;
-        align-items: center;
-      }
-      .pay-partners-flex-divs div:nth-child(1) {
-        /* border: 1px solid; */
-        display: flex;
-        width: 30%;
-        align-items: center;
-      }
-      .pay-partners-flex-divs div:nth-child(2) {
-        width: 60%;
-      }
-      .pay-partners-flex-divs div:nth-child(2) img {
-        width: 100%;
-      }
-    </style>
   </head>
   <body>
     <!-- nav bar -->
     <nav class="navbar-1">
       <ul>
         <div class="flex-divs">
-          <li id="women-section-tab">
+          <li id="women-section-tab" onclick="womenfun()">
             <a id="women-section-tab-a-tag" href="#">WOMEN</a>
           </li>
-          <li id="men-section-tab">
+          <li id="men-section-tab" onclick="mensfun()">
             <a id="men-section-tab-a-tag" href="#">MEN</a>
           </li>
           <li id="kids-section-tab">
@@ -538,7 +42,7 @@
 
     <nav class="navbar-2">
       <div id="logo-img-div">
-        <img src="./img/Accessories Shop Logo.gif" alt="error" />
+        <img src="./img/mainlogo.png" alt="error" />
       </div>
       <div class="flex-divs">
         <ul>
@@ -590,10 +94,22 @@
           <li><a href="#">MEMBERSHIP</a></li>
         </ul>
       </div>
-      <div class="flex-divs icons-div">
+      <div class="icons-div">
         <ul>
           <li><i class="fa-solid fa-magnifying-glass"></i></li>
-          <li id="user-icon" onclick="logoutfun()"><i class="fa-regular fa-user"></i><span id="Logout-span" style="font-size: 1.2rem;"> | Logout</span></li>
+          <li id="user-icon-btn">
+            <i class="fa-regular fa-user"></i>
+          </li>
+          <div class="user-drop-wrap">
+            <ul>
+              <li id="closeDiv">❌</li>
+              <li id="login_option"><a href="./index.html">Login</a></li>
+              <li id="logout_option" onclick="logoutfun()">
+                <a href="#">Logout</a>
+              </li>
+              <li id="account_option"><a href="#">Account</a></li>
+            </ul>
+          </div>
           <li><i class="fa-regular fa-heart"></i></li>
           <li id="cart-icon">
             <span id="cart-count">0</span
@@ -602,8 +118,240 @@
         </ul>
       </div>
     </nav>
+
+    <!-- modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modal-msg">Modal content goes here.</p>
+      </div>
+    </div>
+
     <!-- maincontent -->
-    <div id="sections-div"></div>
+    <div id="sections-div">
+      <!-- women section -->
+      <div id="women-section">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img src="img/Web-Banner_1_1hVRa1i.webp" style="width: 100%" />
+          </div>
+
+          <div class="mySlides fade">
+            <img src="img/Web-Banner_1_h0DvwUm.webp" style="width: 100%" />
+          </div>
+
+          <div class="mySlides fade">
+            <img src="img/Web-Banner_1_rwFtTge.webp" style="width: 100%" />
+          </div>
+          <div class="mySlides fade">
+            <img
+              src="img/Homepage-Banner-Beautiful-Blues_1s9JnZs.webp"
+              style="width: 100%"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img src="img/Sara_Homepage_cS1WnKo.webp" style="width: 100%" />
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div id="collection">
+          <div class="collection-heading">COLLECTIONS</div>
+          <div id="card-container">
+            <div class="img-card-div">
+              <img src="./img/Collection-tile-joggerd_1.webp" alt="error" />
+            </div>
+            <div class="img-card-div">
+              <img src="./img/Collection-Tile2.webp" alt="error" />
+            </div>
+            <div class="img-card-div">
+              <img
+                src="./img/Collection-Tile3-Naruto_wNv392b.webp"
+                alt="error"
+              />
+            </div>
+            <div class="img-card-div">
+              <img src="./img/Collection-tile_1.webp" alt="error" />
+            </div>
+            <div class="img-card-div">
+              <img
+                src="./img/collection-tile_pretty-Pink_2_Jz32NqG.webp"
+                alt="error"
+              />
+            </div>
+            <div class="img-card-div">
+              <img src="./img/Colllection-Tiles-1-Sara-red.webp" alt="error" />
+            </div>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="collection-heading">CATEGORY</div>
+          <div id="category-card-container">
+            <div class="category-img-card-div">
+              <img src="./img/category1.webp" alt="error" />
+            </div>
+            <div class="category-img-card-div">
+              <img src="./img/category2.webp" alt="error" />
+            </div>
+            <div class="category-img-card-div">
+              <img src="./img/category3.webp" alt="error" />
+            </div>
+            <div class="category-img-card-div">
+              <img src="./img/category4.webp" alt="error" />
+            </div>
+            <div class="category-img-card-div">
+              <img src="./img/category5.webp" alt="error" />
+            </div>
+            <div class="category-img-card-div">
+              <img src="./img/category6.webp" alt="error" />
+            </div>
+          </div>
+        </div>
+
+        <div class="category2">
+          <div><img src="./img/category7.webp" alt="error" /></div>
+          <div><img src="./img/category8.webp" alt="error" /></div>
+          <div><img src="./img/category9.webp" alt="error" /></div>
+          <div><img src="./img/category10.webp" alt="error" /></div>
+        </div>
+
+        <div id="OFFICIAL-MERCHANDISE-parent">
+          <div class="collection-heading">OFFICIAL MERCHANDISE</div>
+          <div id="OFFICIAL-MERCHANDISE">
+            <div><img src="./img/netflix.webp" alt="error" /></div>
+            <div><img src="./img/marvel.webp" alt="error" /></div>
+            <div><img src="./img/disney.webp" alt="error" /></div>
+            <div><img src="./img/dc.webp" alt="error" /></div>
+          </div>
+        </div>
+
+        <div class="saradiv-poster">
+          <div class="collection-heading">
+            STRAIGHT OUT OF CELEBRITY CLOSETS
+          </div>
+          <img src="./img/sara poster.webp" alt="error" />
+        </div>
+        <div class="saradiv-poster">
+          <img src="./img/big bottom banner.webp" alt="" />
+        </div>
+      </div>
+
+      <!-- main section -->
+      <div id="men-section">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img src="./img/men sliders.webp" style="width: 100%" />
+          </div>
+
+          <div class="mySlides fade">
+            <img src="./img/men sliders2.webp" style="width: 100%" />
+          </div>
+
+          <div class="mySlides fade">
+            <img src="./img/men sliders3.webp" style="width: 100%" />
+          </div>
+
+          <a class="prev" onclick="minusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <!-- <div>
+          <div>
+            <img src="./img/men sliders.webp" style="width: 100%" />
+          </div>
+        </div> -->
+
+        <div id="collection">
+          <div class="collection-heading">COLLECTIONS</div>
+          <div id="card-container">
+            <div class="img-card-div">
+              <img src="./img/men collection1.webp" alt="error" />
+            </div>
+            <div class="img-card-div">
+              <img src="./img/men collection2.webp" alt="error" />
+            </div>
+            <div class="img-card-div">
+              <img src="./img/men collection3.webp" alt="error" />
+            </div>
+            <div class="img-card-div">
+              <img src="./img/men collection4.webp" alt="error" />
+            </div>
+            <div class="img-card-div">
+              <img src="./img/men collection5.webp" alt="error" />
+            </div>
+            <div class="img-card-div">
+              <img src="./img/men collection6.webp" alt="error" />
+            </div>
+          </div>
+        </div>
+
+        <div id="category">
+          <div class="collection-heading">CATEGORY</div>
+          <div id="category-card-container">
+            <div class="category-img-card-div">
+              <img src="./img/men category1.webp" alt="error" />
+            </div>
+            <div class="category-img-card-div">
+              <img src="./img/men category10.webp" alt="error" />
+            </div>
+            <div class="category-img-card-div">
+              <img src="./img/men category11.webp" alt="error" />
+            </div>
+            <div class="category-img-card-div">
+              <img src="./img/men category2.webp" alt="error" />
+            </div>
+            <div class="category-img-card-div">
+              <img src="./img/men category5.webp" alt="error" />
+            </div>
+            <div class="category-img-card-div">
+              <img src="./img/men category7.webp" alt="error" />
+            </div>
+          </div>
+        </div>
+
+        <div class="category2">
+          <div><img src="./img/men category6.webp" alt="error" /></div>
+          <div><img src="./img/men category3.webp" alt="error" /></div>
+          <div><img src="./img/men category4.webp" alt="error" /></div>
+          <div><img src="./img/men category8.webp" alt="error" /></div>
+          <div><img src="./img/men category2.webp" alt="error" /></div>
+          <div><img src="./img/men category11.webp" alt="error" /></div>
+        </div>
+
+        <div id="OFFICIAL-MERCHANDISE-parent">
+          <div class="collection-heading">OFFICIAL MERCHANDISE</div>
+          <div id="OFFICIAL-MERCHANDISE">
+            <div><img src="./img/netflix.webp" alt="error" /></div>
+            <div><img src="./img/marvel.webp" alt="error" /></div>
+            <div><img src="./img/disney.webp" alt="error" /></div>
+            <div><img src="./img/dc.webp" alt="error" /></div>
+          </div>
+        </div>
+
+        <div class="saradiv-poster">
+          <div class="collection-heading">
+            STRAIGHT OUT OF CELEBRITY CLOSETS
+          </div>
+          <img src="./img/hardik poster bottom.webp" alt="error" />
+        </div>
+        <div class="saradiv-poster">
+          <img src="./img/big bottom banner.webp" alt="" />
+        </div>
+      </div>
+
+      <div id="banner-of-happy-customer">
+        <div id="home-brand-banner">
+          <h1>HOMEGROWN INDIAN BRAND</h1>
+        </div>
+        <div id="happy-customers">
+          <h1>Over 5.5 Million Happy Customers</h1>
+        </div>
+      </div>
+    </div>
     <!-- footer -->
     <footer>
       <div id="main-footer-div">
@@ -818,499 +566,5 @@
     </footer>
   </body>
 </html>
-<script>
-  const logoutfun = () => {
-    if (sessionStorage.getItem("accesstoken")) {
-      const Logout_span = document.getElementById("Logout-span");
-      Logout_span.innerHTML = " | Logout"
-      sessionStorage.clear();
-      window.location.assign("http://127.0.0.1:5500/frontend/main.html");
-    } else {
-      const Logout_span = document.getElementById("Logout-span");
-      Logout_span.innerHTML = " | Login"
-      window.location.assign("http://127.0.0.1:5500/frontend/index.html");
-    }
-  };
-  const women_section_tab = document.getElementById("women-section-tab");
-  const women_section_tab_a = document.getElementById(
-    "women-section-tab-a-tag"
-  );
-  const men_section_tab = document.getElementById("men-section-tab");
-  const men_section_tab_a = document.getElementById("men-section-tab-a-tag");
-  const kids_section_tab = document.getElementById("kids-section-tab");
-  const kids_section_tab_a = document.getElementById("kids-section-tab-a-tag");
-
-  const themaincontet = document.getElementById("sections-div");
-
-  // nav icons
-  const cart_count = document.getElementById("cart-count");
-  if (sessionStorage.getItem("accesstoken")) {
-    cart_count.innerText = sessionStorage.getItem("cartCount");
-  } else {
-    cart_count.innerText = 0;
-  }
-  const cart_icon = document.getElementById("cart-icon");
-  cart_icon.addEventListener("click", () => {
-    window.location.assign("http://127.0.0.1:5500/frontend/cart.html");
-  });
-
-  const user_icon = document.getElementById("user-icon");
-  user_icon.addEventListener("click", () => {});
-  //   to load the sliders mens page
-  const showSlides = async (n) => {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) {
-      slideIndex = 1;
-    }
-    if (n < 1) {
-      slideIndex = slides.length;
-    }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    if (slides[slideIndex - 1] !== undefined) {
-      slides[slideIndex - 1].style.display = "block";
-    }
-  };
-
-  let slideIndex = 1;
-  showSlides(slideIndex);
-  const plusSlides = async (n) => {
-    showSlides((slideIndex += n));
-  };
-
-  //   women_section_tab.addEventListener("click", womenfun);
-
-  const womenfun = () => {
-    themaincontet.innerHTML = null;
-    const structure = `
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-          <img src="img/Web-Banner_1_1hVRa1i.webp" style="width: 100%" />
-        </div>
-  
-        <div class="mySlides fade">
-          <img src="img/Web-Banner_1_h0DvwUm.webp" style="width: 100%" />
-        </div>
-  
-        <div class="mySlides fade">
-          <img src="img/Web-Banner_1_rwFtTge.webp" style="width: 100%" />
-        </div>
-        <div class="mySlides fade">
-          <img
-            src="img/Homepage-Banner-Beautiful-Blues_1s9JnZs.webp"
-            style="width: 100%"
-          />
-        </div>
-        <div class="mySlides fade">
-          <img src="img/Sara_Homepage_cS1WnKo.webp" style="width: 100%" />
-        </div>
-  
-        <a class="prev" onclick = "plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-  
-      <div id="collection">
-        <div class="collection-heading">COLLECTIONS</div>
-        <div id="card-container">
-          <div class="img-card-div">
-            <img src="./img/Collection-tile-joggerd_1.webp" alt="error" />
-          </div>
-          <div class="img-card-div">
-            <img src="./img/Collection-Tile2.webp" alt="error" />
-          </div>
-          <div class="img-card-div">
-            <img src="./img/Collection-Tile3-Naruto_wNv392b.webp" alt="error" />
-          </div>
-          <div class="img-card-div">
-            <img src="./img/Collection-tile_1.webp" alt="error" />
-          </div>
-          <div class="img-card-div">
-            <img src="./img/collection-tile_pretty-Pink_2_Jz32NqG.webp" alt="error" />
-          </div>
-          <div class="img-card-div">
-            <img src="./img/Colllection-Tiles-1-Sara-red.webp" alt="error" />
-          </div>
-        </div>
-      </div>
-  
-      <div class="category">
-        <div class="collection-heading">CATEGORY</div>
-        <div id="category-card-container">
-          <div class="category-img-card-div">
-            <img src="./img/category1.webp" alt="error" />
-          </div>
-          <div class="category-img-card-div">
-            <img src="./img/category2.webp" alt="error" />
-          </div>
-          <div class="category-img-card-div">
-            <img src="./img/category3.webp" alt="error" />
-          </div>
-          <div class="category-img-card-div">
-            <img src="./img/category4.webp" alt="error" />
-          </div>
-          <div class="category-img-card-div">
-            <img src="./img/category5.webp" alt="error" />
-          </div>
-          <div class="category-img-card-div">
-            <img src="./img/category6.webp" alt="error" />
-          </div>
-        </div>
-      </div>
-  
-      <div class="category2">
-        <div><img src="./img/category7.webp" alt="error" /></div>
-        <div><img src="./img/category8.webp" alt="error" /></div>
-        <div><img src="./img/category9.webp" alt="error" /></div>
-        <div><img src="./img/category10.webp" alt="error" /></div>
-      </div>
-  
-      <div id="OFFICIAL-MERCHANDISE-parent">
-        <div class="collection-heading">OFFICIAL MERCHANDISE</div>
-        <div id="OFFICIAL-MERCHANDISE">
-          <div><img src="./img/netflix.webp" alt="error" /></div>
-          <div><img src="./img/marvel.webp" alt="error" /></div>
-          <div><img src="./img/disney.webp" alt="error" /></div>
-          <div><img src="./img/dc.webp" alt="error" /></div>
-        </div>
-      </div>
-  
-      <div class="saradiv-poster">
-        <div class="collection-heading">STRAIGHT OUT OF CELEBRITY CLOSETS</div>
-        <img src="./img/sara poster.webp" alt="error" />
-      </div>
-      <div class="saradiv-poster">
-        <img src="./img/big bottom banner.webp" alt="" />
-      </div>
-      <div id="banner-of-happy-customer">
-        <div id="home-brand-banner">
-          <h1>HOMEGROWN INDIAN BRAND</h1>
-        </div>
-        <div id="happy-customers">
-          <h1>Over 5.5 Million Happy Customers</h1>
-        </div>
-      </div>
-       
-    `;
-    themaincontet.innerHTML = structure;
-
-    men_section_tab.style.backgroundColor = "#e11b23";
-    men_section_tab_a.style.color = "white";
-    women_section_tab.style.backgroundColor = "white";
-    women_section_tab_a.style.color = "black";
-    kids_section_tab.style.backgroundColor = "#e11b23";
-    kids_section_tab_a.style.color = "white";
-
-    nextpager();
-    const showSlides = async (n) => {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-
-      slides[slideIndex - 1].style.display = "block";
-    };
-
-    let slideIndex = 1;
-    showSlides(slideIndex);
-    const plusSlides = async (n) => {
-      showSlides((slideIndex += n));
-    };
-  };
-
-  //   on clicking the women section
-
-  women_section_tab.addEventListener("click", () => {
-    womenfun();
-    localStorage.setItem("pagetoLoad", "women");
-  });
-
-  //   on clicking the men section
-  const mens = () => {
-    themaincontet.innerHTML = null;
-    const structure = `
-    <div class="slideshow-container">
-      <div class="mySlides fade">
-        <img src="./img/men sliders.webp" style="width: 100%" />
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./img/men sliders2.webp" style="width: 100%" />
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./img/men sliders3.webp" style="width: 100%" />
-      </div>
-  
-        <a class="prev" onclick = "plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-  
-      <div id="collection">
-      <div class="collection-heading">COLLECTIONS</div>
-      <div id="card-container">
-        <div class="img-card-div">
-          <img src="./img/men collection1.webp" alt="error" />
-        </div>
-        <div class="img-card-div">
-          <img src="./img/men collection2.webp" alt="error" />
-        </div>
-        <div class="img-card-div">
-          <img src="./img/men collection3.webp" alt="error" />
-        </div>
-        <div class="img-card-div">
-          <img src="./img/men collection4.webp" alt="error" />
-        </div>
-        <div class="img-card-div">
-          <img src="./img/men collection5.webp" alt="error" />
-        </div>
-        <div class="img-card-div">
-          <img src="./img/men collection6.webp" alt="error" />
-        </div>
-      </div>
-    </div>
-  
-    <div id="category">
-      <div class="collection-heading">CATEGORY</div>
-      <div id="category-card-container">
-        <div class="category-img-card-div">
-          <img src="./img/men category1.webp" alt="error" />
-        </div>
-        <div class="category-img-card-div">
-          <img src="./img/men category10.webp" alt="error" />
-        </div>
-        <div class="category-img-card-div">
-          <img src="./img/men category11.webp" alt="error" />
-        </div>
-        <div class="category-img-card-div">
-          <img src="./img/men category2.webp" alt="error" />
-        </div>
-        <div class="category-img-card-div">
-          <img src="./img/men category5.webp" alt="error" />
-        </div>
-        <div class="category-img-card-div">
-          <img src="./img/men category7.webp" alt="error" />
-        </div>
-        
-      </div>
-    </div>
-  
-    <div class="category2">
-      <div><img src="./img/men category6.webp" alt="error" /></div>
-      <div><img src="./img/men category3.webp" alt="error" /></div>
-      <div><img src="./img/men category4.webp" alt="error" /></div>
-      <div><img src="./img/men category8.webp" alt="error" /></div>
-      <div><img src="./img/men category2.webp" alt="error" /></div>
-      <div><img src="./img/men category11.webp" alt="error" /></div>
-    </div>
-  
-      <div id="OFFICIAL-MERCHANDISE-parent">
-        <div class="collection-heading">OFFICIAL MERCHANDISE</div>
-        <div id="OFFICIAL-MERCHANDISE">
-          <div><img src="./img/netflix.webp" alt="error" /></div>
-          <div><img src="./img/marvel.webp" alt="error" /></div>
-          <div><img src="./img/disney.webp" alt="error" /></div>
-          <div><img src="./img/dc.webp" alt="error" /></div>
-        </div>
-      </div>
-  
-      <div class="saradiv-poster">
-        <div class="collection-heading">STRAIGHT OUT OF CELEBRITY CLOSETS</div>
-        <img src="./img/hardik poster bottom.webp" alt="error" />
-      </div>
-      <div class="saradiv-poster">
-        <img src="./img/big bottom banner.webp" alt="" />
-      </div>
-      <div id="banner-of-happy-customer">
-        <div id="home-brand-banner">
-          <h1>HOMEGROWN INDIAN BRAND</h1>
-        </div>
-        <div id="happy-customers">
-          <h1>Over 5.5 Million Happy Customers</h1>
-        </div>
-      </div>
-       
-    `;
-    themaincontet.innerHTML = structure;
-
-    men_section_tab.style.backgroundColor = "white";
-    men_section_tab_a.style.color = "black";
-    women_section_tab.style.backgroundColor = "#e11b23";
-    women_section_tab_a.style.color = "white";
-    kids_section_tab_a.style.color = "white";
-    kids_section_tab.style.backgroundColor = "#e11b23";
-
-    nextpager();
-  };
-  men_section_tab.addEventListener("click", () => {
-    localStorage.setItem("pagetoLoad", "men");
-    mens();
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    async function plusSlides(n) {
-      showSlides((slideIndex += n));
-    }
-
-    async function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex - 1].style.display = "block";
-    }
-  });
-
-  // on windows reload or from the login page
-  window.onload = () => {
-    const pagetoLoad = localStorage.getItem("pagetoLoad");
-    if (pagetoLoad === "women") {
-      womenfun();
-    } else if (pagetoLoad === "men") {
-      mens();
-    } else {
-      womenfun();
-    }
-    //   to load the sliders mens page
-    const showSlides = async (n) => {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      if (slides[slideIndex - 1] !== undefined) {
-        slides[slideIndex - 1].style.display = "block";
-      }
-    };
-
-    let slideIndex = 1;
-    showSlides(slideIndex);
-    const plusSlides = async (n) => {
-      showSlides((slideIndex += n));
-    };
-  };
-  //   on clidking the kids section
-  const kids = () => {
-    const structure = `
-      
-    
-    `;
-
-    men_section_tab.style.backgroundColor = "#e11b23";
-    men_section_tab_a.style.color = "white";
-    women_section_tab.style.backgroundColor = "#e11b23";
-    women_section_tab_a.style.color = "white";
-    kids_section_tab_a.style.color = "black";
-    kids_section_tab.style.backgroundColor = "white";
-  };
-
-  kids_section_tab.addEventListener("click", () => {
-    kids();
-  });
-
-  //footer
-  const nav_link_plus = document.getElementById("nav-link-plus");
-  const who_link_plus = document.getElementById("who-link-plus");
-  const hidden_divs_footerOne = document.getElementById(
-    "hidden-divs-footerOne"
-  );
-  const hidden_divs_footerTow = document.getElementById(
-    "hidden-divs-footerTwo"
-  );
-
-  const openNaviLinkfun = () => {
-    console.log(hidden_divs_footerOne.style.display);
-    if (hidden_divs_footerOne.style.display === "block") {
-      hidden_divs_footerOne.style.display = "none";
-      nav_link_plus.innerText = "+";
-    } else {
-      hidden_divs_footerOne.style.display = "block";
-      nav_link_plus.innerText = "-";
-    }
-  };
-
-  const openWhoLinkfun = () => {
-    if (hidden_divs_footerTow.style.display === "block") {
-      hidden_divs_footerTow.style.display = "none";
-      who_link_plus.innerText = "+";
-    } else {
-      hidden_divs_footerTow.style.display = "block";
-      who_link_plus.innerText = "-";
-    }
-  };
-
-  // to update the user cart total
-  // to update cart count
-  const updateCartcount = () => {
-    const cart_count = document.getElementById("cart-count");
-    if (sessionStorage.getItem("accesstoken")) {
-      cart_count.innerText = sessionStorage.getItem("cartCount");
-    } else {
-      cart_count.innerText = 0;
-    }
-    const cart_icon = document.getElementById("cart-icon");
-    cart_icon.addEventListener("click", () => {
-      window.location.assign("http://127.0.0.1:5500/frontend/cart.html");
-    });
-  };
-  // to count the cart total
-  const fetchuserCart = async () => {
-    const promise = await fetch("http://localhost:7200/user/getcart", {
-      headers: {
-        "Contet-type": "application/json",
-        Authorization: sessionStorage.getItem("accesstoken"),
-      },
-      method: "GET",
-    });
-    const res = await promise.json();
-    sessionStorage.setItem("cartCount", res.data.length);
-    updateCartcount();
-  };
-  fetchuserCart();
-  //  product page link
-
-  const nextpager = async () => {
-    const nextpagefun = () => {
-      window.location.assign("http://127.0.0.1:5500/frontend/mainproduct.html");
-    };
-
-    const slideshow_container = document.querySelectorAll(
-      "#card-container div"
-    );
-    const category_card_container = document.querySelectorAll(
-      "#category-card-container div"
-    );
-    const category2 = document.querySelectorAll(".category2 img");
-
-    slideshow_container.forEach((Element) => {
-      Element.addEventListener("click", nextpagefun);
-    });
-    category_card_container.forEach((Element) => {
-      Element.addEventListener("click", nextpagefun);
-    });
-    category2.forEach((Element) => {
-      Element.addEventListener("click", nextpagefun);
-    });
-  };
-</script>
+<script src="./scripts/navandfooter.js"></script>
+<script src="./scripts/main.js"></script>

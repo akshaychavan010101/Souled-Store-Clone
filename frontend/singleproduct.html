@@ -1,32 +1,29 @@
+<!-- single product page dont delete -->
 <!DOCTYPE html>
-
-<!-- main login and signup page -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login</title>
+    <title>Document</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/5cb8a0be4f.js"></script>
-
-    <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/navbar.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/singleproduct.css" />
+    <script src="https://kit.fontawesome.com/5cb8a0be4f.js"></script>
   </head>
   <body>
     <!-- nav bar -->
     <nav class="navbar-1">
       <ul>
         <div class="flex-divs">
-          <li id="women-section-tab" onclick="womenfun()">
+          <li id="women-section-tab">
             <a id="women-section-tab-a-tag" href="#">WOMEN</a>
           </li>
-          <li id="men-section-tab" onclick="mensfun()">
+          <li id="men-section-tab">
             <a id="men-section-tab-a-tag" href="#">MEN</a>
           </li>
           <li id="kids-section-tab">
@@ -108,7 +105,7 @@
               <li id="logout_option" onclick="logoutfun()">
                 <a href="#">Logout</a>
               </li>
-              <li id="account_option"><a href="#">Account</a></li>
+              <li id="account_option"><a href="">Account</a></li>
             </ul>
           </div>
           <li><i class="fa-regular fa-heart"></i></li>
@@ -120,11 +117,6 @@
       </div>
     </nav>
 
-    <div class="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
     <!-- modal -->
     <div id="myModal" class="modal">
       <!-- Modal content -->
@@ -134,157 +126,132 @@
       </div>
     </div>
 
-    <div id="page-container">
-      <div id="login-container">
-        <div id="main-login-content-container">
-          <div id="main-login-content-container-child1">
-            <h3>Login with TRY-LEAF Fashions</h3>
-          </div>
-          <div id="main-login-content-container-child2">
-            <div class="flex-div-for-login-signup">
-              <button
-                onclick="logintoggle()"
-                id="login-toggle-btn"
-                style="background-color: #117a7a; color: white; cursor: pointer"
-              >
-                Login
-              </button>
-              <button
-                onclick="registertoggle()"
-                id="register-toggle-btn"
-                style="cursor: pointer"
-              >
-                Register
-              </button>
-            </div>
-            <div id="login-content">
-              <div id="login-content-inner-div">
-                <!-- login -->
-                <div id="login-box">
-                  <div class="flex-divs">
-                    <a href="#">
-                      <span><i class="fa-brands fa-square-facebook"></i> </span>
-                      <span>Facebook</span>
-                    </a>
-                    <a href="http://localhost:4000/auth/google">
-                      <span><i class="fa-brands fa-google"></i></span>
-                      <span>Google</span>
-                    </a>
-                  </div>
-                  <div>-OR-</div>
-                  <div>
-                    <form onsubmit="submitloginfun(event)">
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter Email *"
-                        required
-                      />
-                      <input
-                        type="password"
-                        name="password"
-                        placeholder="Enter Password *"
-                        required
-                      />
-                      <input type="submit" value="Proceed" id="Proceed-btn" />
-                    </form>
-                  </div>
-                  <div>
-                    <span>New User ? </span
-                    ><span onclick="registertoggle()"
-                      ><a href="#">Create Account</a></span
-                    >
-                  </div>
-                </div>
+    <!-- main body -->
 
-                <!-- register -->
-                <div id="register-box">
-                  <div class="flex-divs">
-                    <a href="#">
-                      <span><i class="fa-brands fa-square-facebook"></i> </span>
-                      <span>Facebook</span>
-                    </a>
-                    <a href="http://localhost:4000/auth/google/callback">
-                      <span><i class="fa-brands fa-google"></i></span>
-                      <span>Google</span>
-                    </a>
-                  </div>
-                  <div>-OR-</div>
-                  <form onsubmit="submitregisterfun(event)">
-                    <div style="display: flex">
-                      <input
-                        style="width: 45%"
-                        type="text"
-                        name="first_name"
-                        required
-                        placeholder="First Name *"
-                      />
-                      <div style="width: 10%"></div>
-                      <input
-                        style="width: 45%"
-                        type="text"
-                        name="last_name"
-                        required
-                        placeholder="Last Name *"
-                      />
-                    </div>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="Email *"
-                    />
-                    <input
-                      type="password"
-                      name="password"
-                      required
-                      placeholder="Password *"
-                    />
-                    <input
-                      type="password"
-                      name="confirm_password"
-                      required
-                      placeholder="Confirm Password *"
-                    />
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      placeholder="Phone Number *"
-                    />
-                    <div
-                      style="
-                        display: flex;
-                        justify-content: space-between;
-                        box-sizing: border-box;
-                      "
-                    >
-                      <label for="Gender">Gender</label>
-                      &nbsp;
-                      <label for="male">Male</label>
-                      <input type="radio" name="gender" value="male" checked />
-                      <label for="female">Female</label>
-                      <input type="radio" name="gender" value="female" />
-                      <label for="other">Other</label>
-                      <input type="radio" name="gender" value="other" />
-                    </div>
-                    <input type="submit" id="form-register-btn" />
-                    &nbsp;
-                    <div>
-                      <span>Already a Customer ? </span
-                      ><span onclick="registertoggle()"
-                        ><a href="">Login</a></span
-                      >
-                    </div>
-                  </form>
-                </div>
-              </div>
+    <div id="page-container">
+      <div id="left-section">
+        <div id="no_result">
+          <div>
+            <img
+              src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-2506.jpg?size=626&ext=jpg"
+              alt="No Result Found"
+            />
+          </div>
+        </div>
+        <div id="preloader">
+          <div>
+            <img src="./img/loading.gif" alt="laoding" />
+          </div>
+        </div>
+      </div>
+
+      <div id="right-section">
+        <div id="product-title">
+          <h2>TSS Originals: Never Mind</h2>
+          <p>Women Oversized Cropped T-Shirts</p>
+        </div>
+
+        <div id="product-price">
+          <h4>$ 599</h4>
+        </div>
+
+        <div id="size-chart">
+          <p>Please select a size. <a href="">SIZE CHART</a></p>
+        </div>
+        <div id="size-chart-buttons">
+          <button id="XXS" onclick="selectsizefun(id)">XXS</button>
+          <button id="XS" onclick="selectsizefun(id)">XS</button>
+          <button id="S" onclick="selectsizefun(id)">S</button>
+          <button id="ML" onclick="selectsizefun(id)">ML</button>
+          <button id="XL" onclick="selectsizefun(id)">XL</button>
+          <button id="XXL" onclick="selectsizefun(id)">XXL</button>
+          <button id="XXXL" onclick="selectsizefun(id)">XXXL</button>
+        </div>
+
+        <div id="product-quantity">
+          <span>Quantity</span> &nbsp;
+          <span>
+            <select name="" id="product-quantity-select">
+              <option value="1" default>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </span>
+        </div>
+
+        <div id="add-to-cart-and-add-to-whishlist-btn">
+          <button onclick="addtoCartfun()">Add To Cart</button
+          ><button>💚 Add To Wishlist</button>
+        </div>
+        <div id="share-and-icons">
+          <span>Share</span>
+          <span>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+          </span>
+        </div>
+        <div id="drop-downs">
+          <div class="click-divs">Product Details</div>
+          <div class="open-click-div">
+            <div>
+              <h4>Material & Care:</h4>
+              <p>100% Cotton</p>
+              <p>Machine Wash</p>
             </div>
+            <div>
+              <h4>Country of Origin: India (and proud)</h4>
+            </div>
+            <div>
+              <h4>Manufactured & Sold By:</h4>
+              <p>The TRY_LEAF Fashions Pvt. Ltd.</p>
+              <p>224, Tantia Jogani Industrial Premises</p>
+              <p>J.R. Boricha Marg</p>
+              <p>Lower Parel (E)</p>
+              <p>Mumbai - 11</p>
+              <p><a href="#">connect@tryleafasions.com</a></p>
+            </div>
+          </div>
+
+          <div class="click-divs">Product Description</div>
+          <div class="open-click-div">
+            <p>
+              Buy TSS Originals Never Mind Women's Oversized Cropped T-Shirts at
+              The TRY-LEAF Fashions.
+            </p>
+          </div>
+
+          <div class="click-divs">Artist's Details</div>
+          <div class="open-click-div">
+            <p>
+              The TRY-LEAF Fashions was born out of a simple idea - love what
+              you do and follow your soul! Thus, our goal is to give everyone
+              something they'll love, something they can use to express
+              themselves, and, simply put, something to put a smile on their
+              face. So, whether it's superheroes like Superman, TV shows like
+              F.R.I.E.N.D.S, pop culture, music, sports, or quirky, funny stuff
+              you're looking for, we have something for everyone. TSS Originals
+              or The TRY-LEAF Fashions Originals is our exclusive range of
+              funny, funky, trendy and stylish designs. Designed by our kick-ass
+              team of in-house designers, TSS Originals are some cool and quirky
+              designs that help you speak your vibe.
+            </p>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="saradiv-poster">
+      <img src="./img/big bottom banner.webp" alt="" />
+    </div>
     <div id="banner-of-happy-customer">
       <div id="home-brand-banner">
         <h1>HOMEGROWN INDIAN BRAND</h1>
@@ -329,12 +296,16 @@
           <div class="op-details-footer-div-childs">
             <ul id="COD-and-return">
               <li>
-                <img src="./img//Screenshot 2023-02-23 131711.png" alt="" />COD
-                Available
+                <img
+                  src="./img//Screenshot 2023-02-23 131711.png"
+                  alt="error"
+                />COD Available
               </li>
               <li>
-                <img src="./img/Screenshot 2023-02-23 131818.png" alt="" />30
-                Days Easy Returns
+                <img
+                  src="./img/Screenshot 2023-02-23 131818.png"
+                  alt="error"
+                />30 Days Easy Returns
               </li>
             </ul>
           </div>
@@ -342,16 +313,16 @@
         <div id="middle-app-down-div">
           <div><h5>EXPERIENCE THE TRY-LEAF STORE APP</h5></div>
           <div>
-            <img src="./img/play store.png" alt="" />
-            <img src="./img/app store.png" alt="" />
+            <img src="./img/play store.png" alt="error" />
+            <img src="./img/app store.png" alt="error" />
           </div>
         </div>
         <div id="social-handles">
           <div>Follow Us:</div>
-          <div><img src="./img/facebook.png" alt="" /></div>
-          <div><img src="./img/insta.png" alt="" /></div>
-          <div><img src="./img/notify.png" alt="" /></div>
-          <div><img src="./img/twitter.png" alt="" /></div>
+          <div><img src="./img/facebook.png" alt="error" /></div>
+          <div><img src="./img/insta.png" alt="error" /></div>
+          <div><img src="./img/notify.png" alt="error" /></div>
+          <div><img src="./img/twitter.png" alt="error" /></div>
         </div>
         <div id="navigation-link-and-who-div">
           <div>
@@ -488,11 +459,11 @@
         <div id="pay-partners">
           <div class="pay-partners-flex-divs">
             <div><p>100% Secure Payment:</p></div>
-            <div><img src="./img/payment partners.png" alt="" /></div>
+            <div><img src="./img/payment partners.png" alt="error" /></div>
           </div>
           <div class="pay-partners-flex-divs">
             <div><p>Shipping Partners:</p></div>
-            <div><img src="./img/shipping partners.png" alt="" /></div>
+            <div><img src="./img/shipping partners.png" alt="error" /></div>
           </div>
         </div>
         <div style="margin: auto; width: fit-content">
@@ -505,4 +476,4 @@
   </body>
 </html>
 <script src="./scripts/navandfooter.js"></script>
-<script src="./scripts/index.js"></script>
+<script src="./scripts/singleproduct.js"></script>
