@@ -15,7 +15,7 @@ Packages : - Jsonwebtoken, Bcrypt, Dotenv, Cors
 
 ### This documentation provides an overview of the routes available in the project. It includes the user routes, product routes, and cart routes.
 
-User Routes
+## User Routes
 GET /users
 This route is used to fetch all the users.
 
@@ -37,7 +37,7 @@ This route is used to validate a user's token.
 GET /auth/google
 This route is used for authentication using Google OAuth.
 
-Product Routes
+## Product Routes
 GET /products
 This route is used to fetch all products.
 
@@ -62,7 +62,7 @@ This route is used to update a product based on the provided id.
 DELETE /products/delete/:id
 This route is used to delete a product based on the provided id.
 
-Cart Routes
+## Cart Routes
 GET /user/getcart
 This route is used to fetch the cart items for a specific user.
 
