@@ -1,4 +1,4 @@
-# Bagelly - The clone of "Th Souled Store"
+# Bagelly - The clone of "The Souled Store"
 
 Bagelly fashions-website This was a Solo project Executed in 5 days.
 
